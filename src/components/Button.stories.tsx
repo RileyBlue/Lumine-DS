@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { IconArrowRight, IconPlus } from '@tabler/icons-react'
+import { IconArrowRight, IconPlus, IconSettings, IconTrash } from '@tabler/icons-react'
 import { Button } from './Button'
 
 const meta = {
@@ -34,3 +34,31 @@ export const IconRight: Story = {
 }
 export const FullWidth: Story = { args: { fullWidth: true } }
 export const Disabled: Story = { args: { disabled: true } }
+
+export const IconOnly: Story = {
+  args: { iconOnly: true, icon: IconSettings, 'aria-label': 'Ajustes' },
+}
+
+export const IconOnlyVariants: Story = {
+  args: { iconOnly: true, icon: IconSettings, 'aria-label': 'Ajustes' },
+  render: (args) => (
+    <div className="flex items-center gap-3">
+      <Button {...args} variant="primary" />
+      <Button {...args} variant="secondary" />
+      <Button {...args} variant="outline" />
+      <Button {...args} variant="ghost" />
+      <Button {...args} variant="danger" icon={IconTrash} aria-label="Eliminar" />
+    </div>
+  ),
+}
+
+export const IconOnlySizes: Story = {
+  args: { iconOnly: true, icon: IconPlus, 'aria-label': 'Añadir' },
+  render: (args) => (
+    <div className="flex items-center gap-3">
+      <Button {...args} size="sm" />
+      <Button {...args} size="md" />
+      <Button {...args} size="lg" />
+    </div>
+  ),
+}
