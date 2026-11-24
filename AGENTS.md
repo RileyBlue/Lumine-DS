@@ -19,3 +19,14 @@ Lumine-DS es el design system de Lumine, la plataforma escolar interna de la aca
 - A partir de ahora, todo cambio va en una rama con su PR. No se sube directamente a `main`.
 - Los cambios se explican sin jerga.
 - Si cambia `package.json`, se actualiza `package-lock.json` en la misma PR.
+
+## Decisiones
+
+- Las decisiones del design system viven en `docs/adr/`.
+- Se leen antes de proponer cualquier cambio que afecte al alcance o a los principios.
+- Nunca se contradicen sin escribir un ADR nuevo.
+- Cada ADR nuevo se apunta en esta lista, en la misma PR que lo crea.
+
+Lista de ADR:
+
+- [ADR-001 · Alcance y principios](docs/adr/001-alcance.md)
