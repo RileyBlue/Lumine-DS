@@ -141,3 +141,58 @@ Cada tamaño de icono está atado a mano a la altura del componente (por ejemplo
 11. **`label` e `hint` son solo texto** (`string`), mientras que `title` y `description` de Card admiten cualquier contenido de React.
 12. **Los tipos se importan desde `src/components`**, con nombres como `ButtonVariant` y `InputSize`. El tipo base de Button, `ButtonBaseProps`, no se exporta ([Button.tsx:7](../src/components/Button.tsx)).
 13. **Los títulos de Storybook están en español** (`Componentes/Button`) y los ejemplos usan textos de la academia, no `Lorem ipsum`.
+
+## 5. Prueba sin reglas
+
+Prueba hecha con la pantalla [antes.tsx](../src/screens/antes.tsx) (commit `b331942`), escrita con los componentes del proyecto pero sin ninguna regla de diseño. Esta sección recoge lo que salió mal. La pantalla no se ha cambiado.
+
+Lo que sí salió bien: `Button` (líneas 55 y 94), `Input` (línea 87) y `Badge` (línea 68) se usaron con sus props reales y sin errores de TypeScript. Las tres cosas que la sección 4 advertía como difíciles de adivinar (`iconOnly` con `aria-label`, `type="submit"` y `className` de `Input`) se resolvieron bien.
+
+### 5.1 Valores escritos a mano
+
+Ningún valor viene de un token. Todo son clases de Tailwind y números escritos directamente, y se podrían escribir distinto en la próxima pantalla.
+
+| Qué | Archivo y línea | Valor |
+| --- | --- | --- |
+| Valor arbitrario de Tailwind (el primero que aparece en el proyecto) | [antes.tsx:73](../src/screens/antes.tsx) | `max-w-[85%]` |
+| Tamaño de icono en píxeles | [antes.tsx:48](../src/screens/antes.tsx) | `size={48}` (los componentes llegan a 24) |
+| Grosor de línea del icono | [antes.tsx:48](../src/screens/antes.tsx) | `stroke={1.25}` (el resto de iconos usa el valor por defecto) |
+| Color del icono del estado vacío | [antes.tsx:48](../src/screens/antes.tsx) | `text-gray-400` |
+| Color del texto de apoyo | [antes.tsx:51](../src/screens/antes.tsx) | `text-gray-500` |
+| Color del borde del campo de escribir | [antes.tsx:86](../src/screens/antes.tsx) | `border-gray-200` |
+| Colores de las burbujas | [antes.tsx:74](../src/screens/antes.tsx) | `bg-rose-600 text-white` y `bg-gray-100 text-gray-900` |
+| Radio de la burbuja | [antes.tsx:73](../src/screens/antes.tsx) | `rounded-2xl` (ningún componente usa este radio) |
+| Relleno de la burbuja | [antes.tsx:73](../src/screens/antes.tsx) | `px-4 py-2` |
+| Relleno de la zona de mensajes | [antes.tsx:45](../src/screens/antes.tsx) | `px-6 py-6` |
+| Relleno del campo de escribir | [antes.tsx:86](../src/screens/antes.tsx) | `p-4` |
+| Ancho máximo de la pantalla | [antes.tsx:44](../src/screens/antes.tsx) | `max-w-3xl` |
+| Separaciones entre elementos | [antes.tsx:47, 53, 62, 66, 86](../src/screens/antes.tsx) | `gap-4`, `gap-2`, `gap-4`, `gap-1`, `gap-2` |
+| Margen bajo el título | [antes.tsx:51](../src/screens/antes.tsx) | `mt-1` |
+| Tamaño y peso del título | [antes.tsx:50](../src/screens/antes.tsx) | `text-xl font-semibold` |
+
+### 5.2 Componentes copiados en vez de usados
+
+Estas piezas no usan un componente del proyecto. Se construyeron con clases sueltas, y varias copian valores de componentes que ya existen.
+
+| Pieza | Archivo y línea | Qué copia o qué falta |
+| --- | --- | --- |
+| Burbuja de mensaje | [antes.tsx:71 a 78](../src/screens/antes.tsx) | No existe un componente de burbuja y se hizo a mano con un `<p>`. El color del usuario copia el de `Button` primary ([Button.tsx:31](../src/components/Button.tsx): `bg-rose-600 text-white`). El del asistente copia el de `Badge` neutral ([Badge.tsx:16](../src/components/Badge.tsx): `bg-gray-100`, con un texto más oscuro, `text-gray-900` en vez de `text-gray-700`). |
+| Estado vacío | [antes.tsx:47 a 60](../src/screens/antes.tsx) | No existe un componente de estado vacío (icono, título, texto y acciones). El título copia el de `Card` pero con otro tamaño: `text-xl` aquí y `text-lg` en [Card.tsx:38](../src/components/Card.tsx). El texto de apoyo copia el de `Card` ([Card.tsx:39](../src/components/Card.tsx)) con otro tamaño: sin `text-sm` aquí. |
+| Barra del campo de escribir | [antes.tsx:86](../src/screens/antes.tsx) | Copia la franja inferior de `Card` ([Card.tsx:45](../src/components/Card.tsx): `border-t border-gray-200`), con otro relleno. |
+| Fila de mensaje (etiqueta y burbuja) | [antes.tsx:64 a 79](../src/screens/antes.tsx) | Combina `Badge` y la burbuja a mano. No hay un componente que junte quién habla y qué dijo. |
+
+### 5.3 Nombres distintos de los de los componentes
+
+| Qué | Archivo y línea | Diferencia |
+| --- | --- | --- |
+| Rol del mensaje | [antes.tsx:6, 68](../src/screens/antes.tsx) | La pantalla dice `user` y `assistant`. `Badge` dice `brand` y `neutral`. Hay que traducir a mano: `user` pasa a `brand` y `assistant` a `neutral`. Ningún nombre de `Badge` expresa quién habla. |
+| Etiqueta del campo | [antes.tsx:89](../src/screens/antes.tsx) | Se usó `aria-label="Mensaje"`, que es el nombre nativo, en vez de la prop `label` de `Input`. `label` pinta texto visible y el campo no tiene forma de llevar una etiqueta solo para lectores de pantalla. |
+| Tamaño del icono | [antes.tsx:48](../src/screens/antes.tsx) | Los componentes usan `size` con `sm`, `md` y `lg`. Aquí `size` es un número de píxeles. No hay un nombre de tamaño para un icono grande. |
+| Idioma de los nombres | [antes.tsx:14](../src/screens/antes.tsx) | La pantalla se llama `Antes` y su archivo `antes.tsx`, en español. Los componentes se llaman `Button`, `Input`, `Card` y `Badge`, en inglés. No hay regla sobre qué idioma usar. |
+| Nombre de la pieza de arriba | [antes.tsx:62 a 81](../src/screens/antes.tsx) | El historial es una lista `<ol>` sin nombre en el proyecto. En el código se llama `messages`, en la interfaz "historial" y en la petición "mensajes". |
+
+### Lo que esto indica
+
+- La pantalla no es mala, pero cada decisión se tomó de cero. Sin reglas, los valores salen distintos cada vez.
+- Faltan al menos tres piezas: burbuja de mensaje, estado vacío y barra de campo de escribir. Hoy cada pantalla las reconstruiría a su manera.
+- Los colores, radios y tamaños escritos a mano (5.1) son los que habría que convertir en tokens cuando llegue el manual de identidad.
