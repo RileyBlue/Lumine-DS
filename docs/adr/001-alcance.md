@@ -38,17 +38,41 @@ Además, `#812D45` sobre `#D2B1C2` da 4,51:1, que apenas cumple para texto.
 
 ### Principios
 
-Cada principio se comprueba con la lista de comprobación de la PR (ver Consecuencias).
+Cada principio se comprueba como indica la tabla de debajo.
 
-1. **Todo valor visual sale de un token.** Color, tipografía, espaciado, radio, sombra y tamaño de icono. *Se comprueba:* ningún archivo de `src/components/` ni de `src/screens/` contiene colores hex, medidas en píxeles, valores arbitrarios de Tailwind (`[...]`) ni colores de la paleta de Tailwind sueltos (por ejemplo `rose-600`).
-2. **Si falta algo, se para y se avisa.** Cuando una pantalla o un componente necesita un token o un componente que no existe, no se inventa ni se copia: se detiene el trabajo y se pregunta, sin construir nada. *Se comprueba:* la PR no añade ningún valor visual que no esté en los tokens ni ninguna pieza nueva que no se haya aprobado antes.
-3. **Los componentes se usan, no se copian.** Las pantallas se construyen con los componentes de `src/components/`. *Se comprueba:* ninguna pantalla repite las clases de un componente existente para imitarlo.
-4. **Accesibilidad WCAG 2.2 AA en todo.** *Se comprueba* en cada componente nuevo o cambiado:
+1. **Todo valor visual sale de un token.** Los colores, las tipografías, los radios y las sombras se usan por el nombre de un token definido en el tema de Tailwind (`src/index.css`). El espaciado usa solo la escala de Tailwind (`p-4`, `gap-2`) y el tamaño de los iconos, los tamaños `sm`, `md` y `lg` del componente. En `src/components/` y `src/screens/` no se escribe ningún color hex, ninguna medida en píxeles, ningún valor arbitrario de Tailwind (`[...]`) ni ningún color de la paleta de Tailwind (`rose-600`, `gray-100`).
+2. **Nada nuevo sin aprobación previa.** Si una pantalla o un componente necesita un token o un componente que no existe, se para y se abre un issue que lo pida, sin construir nada. La pieza nueva solo se añade cuando el issue está aprobado, y queda enlazado desde `docs/componentes.md` (componentes) o desde un comentario junto al token (tokens).
+3. **Las pantallas usan componentes, no los imitan.** En `src/screens/` solo hay clases de disposición (`flex`, `grid`, `gap`, `p-*`, `m-*`, anchos, altos, `overflow`, posición). Todo lo que tiene color, borde, radio, sombra o tipografía viene de un componente de `src/components/`.
+4. **Accesibilidad WCAG 2.2 AA.** Cada componente cumple, en todas sus historias de Storybook, estos cuatro criterios como mínimo:
    - el texto tiene un contraste de al menos 4,5:1 y los elementos de interfaz, de 3:1;
    - se maneja entero con el teclado y el foco se ve;
    - cada control tiene un nombre accesible;
    - los elementos pulsables miden al menos 24 por 24 píxeles.
-5. **Un solo vocabulario de nombres.** Las props y las variantes se escriben en inglés, y el mismo nombre significa lo mismo en todos los componentes (`variant`, `size` con `sm`, `md` y `lg`). Los textos que ve la usuaria están en español. *Se comprueba:* ningún nombre nuevo repite un significado que ya existe con otra palabra.
+5. **Un solo vocabulario de nombres.** Los nombres de componentes, props y variantes están en inglés, y el texto que ve la usuaria, en español. El estilo se llama siempre `variant` y el tamaño siempre `size`, y `size` solo usa `sm`, `md` y `lg`.
+
+### Cómo se comprueba cada principio
+
+| Principio | Cómo se comprueba | Dónde |
+| --- | --- | --- |
+| 1. Todo valor visual sale de un token | Ejecutar el comando 1 (abajo): no debe devolver ninguna línea. Después, abrir los archivos cambiados y confirmar que los colores, tipografías, radios y sombras usan nombres de token. | Código |
+| 2. Nada nuevo sin aprobación previa | Si la PR crea un componente en `src/components/`, su fila en `docs/componentes.md` enlaza el issue aprobado. Si añade un token en `src/index.css`, hay un comentario con el enlace del issue. Los cuatro componentes actuales son anteriores a esta regla y no la necesitan. | Código |
+| 3. Las pantallas usan componentes, no los imitan | Ejecutar el comando 2 (abajo): no debe devolver ninguna línea. Después, abrir la pantalla y confirmar que cada pieza con aspecto propio es un componente de `src/components/`. | Código |
+| 4. Accesibilidad WCAG 2.2 AA | En cada historia del componente cambiado: **contraste**, midiendo el texto y los bordes con el selector de color del inspector del navegador, que muestra la relación; **teclado**, recorriendo con Tab, activando con Enter y con Espacio y comprobando que el foco se ve; **nombre accesible**, leyendo el código para confirmar que cada control tiene texto visible, `label` o `aria-label`; **tamaño**, midiendo con el inspector que los elementos pulsables miden al menos 24 por 24 píxeles. | Storybook y código |
+| 5. Un solo vocabulario de nombres | Leer las props y las variantes del componente: están en inglés, el estilo es `variant`, el tamaño es `size` y sus valores son `sm`, `md` y `lg`. En Storybook, el panel de controles muestra los mismos nombres y los textos de las historias están en español. | Código y Storybook |
+
+Comando 1, valores visuales escritos a mano:
+
+```bash
+grep -rnE '#[0-9a-fA-F]{3,8}\b|\b[0-9]+px\b|-\[[^]]+\]|size=\{[0-9]+\}|\b(red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|slate|gray|zinc|neutral|stone)-[0-9]{2,3}\b' src/components src/screens --include='*.tsx' --exclude='*.stories.tsx'
+```
+
+Comando 2, estilos propios dentro de una pantalla:
+
+```bash
+grep -rnE '\b(bg|border|ring|outline|shadow|rounded|font|divide|fill|stroke)-|\btext-(xs|sm|base|lg|[0-9]xl|white|black|[a-z]+-[0-9]{2,3})\b|[" ](border|rounded|shadow)[" ]' src/screens --include='*.tsx'
+```
+
+Hoy los dos comandos devuelven líneas: los componentes actuales y `src/screens/antes.tsx` se escribieron antes de estas reglas (ver Consecuencias).
 
 ## Consecuencias
 
@@ -58,3 +82,5 @@ Cada principio se comprueba con la lista de comprobación de la PR (ver Consecue
 - **Pueden faltar piezas.** La burbuja de mensaje, el estado vacío y la barra del campo de escribir no existen como componentes. Por el principio 2, hay que decidir si se crean antes de volver a usarlas.
 - **La revisión es manual.** No hay reglas automáticas todavía, así que el principio 1 depende de que quien revisa lo compruebe. Si falla a menudo, se podrá automatizar con reglas de ESLint en otro ADR.
 - **Los límites son una decisión, no un olvido.** Las gráficas y los paneles de datos quedan fuera. Si hacen falta, se escribe un ADR nuevo antes de construirlos.
+- **La comprobación de accesibilidad es un mínimo.** Las cuatro revisiones del principio 4 se hacen en cada PR, pero no sustituyen a una auditoría completa de WCAG 2.2 AA.
+- **Hay que preparar dos archivos para poder comprobar.** `docs/componentes.md` necesita una columna con el enlace a la decisión (principio 2) y `src/index.css` necesita el tema de Tailwind con los tokens (principio 1). Se hace en PR aparte.
