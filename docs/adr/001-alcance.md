@@ -1,12 +1,12 @@
 # ADR-001 · Alcance y principios
 
-- **Estado:** Propuesto
+- **Estado:** Aceptado
 - **Fecha:** 2026-11-24
 - **Creado por:** Riley Sainz (RileyBlue)
 
 ## Contexto
 
-Lumine es un estudio de danza que da clases de ballet a jóvenes y adultas. Lumine-DS es el design system de su plataforma web. Lo mantiene una sola persona, que cubre diseño y desarrollo.
+Lumine es un estudio de danza que da clases de ballet a niñas, adolescentes y adultas. Lumine-DS es el design system de su plataforma web. Lo mantiene una sola persona, que cubre diseño y desarrollo.
 
 Hoy hay cuatro componentes (`Badge`, `Button`, `Card`, `Input`), una página de referencia de Tailwind y una pantalla de prueba, `src/screens/antes.tsx`. Se construyeron sin reglas de diseño a propósito, para ver qué salía mal. [La auditoría](../audit.md) recoge el resultado:
 
