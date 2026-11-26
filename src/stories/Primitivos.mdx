@@ -1,0 +1,381 @@
+import { Meta, Unstyled } from '@storybook/addon-docs/blocks'
+import tokens from '../../tokens/tokens.json'
+
+<Meta title="Fundamentos/Primitivos" />
+
+export const primitive = tokens.primitive
+
+export const entries = (group) =>
+  Object.entries(group)
+    .filter(([name]) => !name.startsWith('$'))
+    .sort(([, a], [, b]) => (a.$value?.value ?? 0) - (b.$value?.value ?? 0))
+
+export const size = ({ value, unit }) => `${value}${unit}`
+
+export const withPx = ({ value, unit }) =>
+  unit === 'rem' ? `${value}rem · ${value * 16}px` : `${value}${unit}`
+
+export const color = ({ colorSpace, components, alpha = 1 }) =>
+  colorSpace === 'oklch'
+    ? `oklch(${components.join(' ')} / ${alpha})`
+    : `color(${colorSpace} ${components.join(' ')} / ${alpha})`
+
+export const fontStack = (names) =>
+  names.map((name) => (name.includes(' ') ? `"${name}"` : name)).join(', ')
+
+export const sans = fontStack(primitive['font-family'].sans.$value)
+
+export const muted = { color: color(primitive.color.gray[600].$value) }
+
+export const line = `1px solid ${color(primitive.color.gray[200].$value)}`
+
+export const accent = color(primitive.color.brand[800].$value)
+
+export const Name = ({ children, detail }) => (
+  <div style={{ fontSize: '0.75rem', lineHeight: '1.25rem' }}>
+    <code style={{ fontWeight: 600 }}>{children}</code>
+    <div style={muted}>{detail}</div>
+  </div>
+)
+
+export const Row = ({ name, detail, children }) => (
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: '12rem minmax(0, 1fr)',
+      alignItems: 'center',
+      gap: '1rem',
+      padding: '0.75rem 0',
+      borderBottom: line,
+    }}
+  >
+    <Name detail={detail}>{name}</Name>
+    <div>{children}</div>
+  </div>
+)
+
+export const Tiles = ({ children }) => (
+  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', padding: '0.5rem 0' }}>
+    {children}
+  </div>
+)
+
+export const Colors = () => (
+  <Unstyled>
+    {Object.entries(primitive.color)
+      .filter(([name]) => !name.startsWith('$'))
+      .map(([family, steps]) => (
+        <section key={family} style={{ marginBottom: '1.5rem' }}>
+          <h3 style={{ fontWeight: 600, marginBottom: '0.5rem' }}>color.{family}</h3>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(9rem, 1fr))',
+              gap: '0.75rem',
+            }}
+          >
+            {Object.entries(steps)
+              .filter(([step]) => !step.startsWith('$'))
+              .map(([step, { $value }]) => (
+                <div key={step}>
+                  <div
+                    style={{
+                      height: '4rem',
+                      borderRadius: '0.5rem',
+                      border: line,
+                      background: color($value),
+                      marginBottom: '0.25rem',
+                    }}
+                  />
+                  <Name
+                    detail={
+                      <>
+                        {$value.hex && <div>{$value.hex}</div>}
+                        <div>oklch({$value.components.join(' ')})</div>
+                      </>
+                    }
+                  >
+                    {family}.{step}
+                  </Name>
+                </div>
+              ))}
+          </div>
+        </section>
+      ))}
+  </Unstyled>
+)
+
+export const Spacing = () => (
+  <Unstyled>
+    {entries(primitive.spacing).map(([name, { $value }]) => (
+      <Row key={name} name={`spacing.${name}`} detail={withPx($value)}>
+        <div style={{ width: size($value), height: '1rem', background: accent }} />
+      </Row>
+    ))}
+  </Unstyled>
+)
+
+export const Radius = () => (
+  <Unstyled>
+    <Tiles>
+      {entries(primitive.radius).map(([name, { $value }]) => (
+        <div key={name} style={{ width: '8rem' }}>
+          <div
+            style={{
+              width: '8rem',
+              height: '5rem',
+              borderRadius: size($value),
+              background: accent,
+              marginBottom: '0.25rem',
+            }}
+          />
+          <Name detail={withPx($value)}>radius.{name}</Name>
+        </div>
+      ))}
+    </Tiles>
+  </Unstyled>
+)
+
+export const BorderWidths = () => (
+  <Unstyled>
+    <Tiles>
+      {entries(primitive['border-width']).map(([name, { $value }]) => (
+        <div key={name} style={{ width: '8rem' }}>
+          <div
+            style={{
+              width: '8rem',
+              height: '4rem',
+              border: `${size($value)} solid ${accent}`,
+              background: color(primitive.color.gray[100].$value),
+              marginBottom: '0.25rem',
+            }}
+          />
+          <Name detail={size($value)}>border-width.{name}</Name>
+        </div>
+      ))}
+    </Tiles>
+  </Unstyled>
+)
+
+export const FontFamilies = () => (
+  <Unstyled>
+    {Object.entries(primitive['font-family'])
+      .filter(([name]) => !name.startsWith('$'))
+      .map(([name, { $value }]) => (
+        <Row key={name} name={`font-family.${name}`} detail={$value.join(', ')}>
+          <div style={{ fontFamily: fontStack($value), fontSize: '1.5rem' }}>
+            Clase de ballet · Ñandú 0123456789
+          </div>
+        </Row>
+      ))}
+  </Unstyled>
+)
+
+export const FontSizes = () => (
+  <Unstyled>
+    {entries(primitive['font-size']).map(([name, { $value }]) => (
+      <Row key={name} name={`font-size.${name}`} detail={withPx($value)}>
+        <div style={{ fontFamily: sans, fontSize: size($value), lineHeight: 1.4 }}>
+          Clase de ballet
+        </div>
+      </Row>
+    ))}
+  </Unstyled>
+)
+
+export const FontWeights = () => (
+  <Unstyled>
+    {Object.entries(primitive['font-weight'])
+      .filter(([name]) => !name.startsWith('$'))
+      .map(([name, { $value }]) => (
+        <Row key={name} name={`font-weight.${name}`} detail={$value}>
+          <div style={{ fontFamily: sans, fontSize: '1.5rem', fontWeight: $value }}>
+            Clase de ballet
+          </div>
+        </Row>
+      ))}
+  </Unstyled>
+)
+
+export const LineHeights = () => (
+  <Unstyled>
+    {entries(primitive['line-height']).map(([name, { $value }]) => (
+      <Row key={name} name={`line-height.${name}`} detail={withPx($value)}>
+        <div
+          style={{
+            fontFamily: sans,
+            fontSize: '0.875rem',
+            lineHeight: size($value),
+            maxWidth: '18rem',
+            background: color(primitive.color.brand[100].$value),
+          }}
+        >
+          La clase de las tardes empieza con barra y termina con una variación en el centro.
+        </div>
+      </Row>
+    ))}
+  </Unstyled>
+)
+
+export const ShadowSample = ({ name, detail, offset, blur, shade }) => (
+  <div style={{ width: '8rem' }}>
+    <div
+      style={{
+        width: '8rem',
+        height: '5rem',
+        borderRadius: '0.5rem',
+        border: line,
+        boxShadow: `0 ${size(offset)} ${size(blur)} ${color(shade)}`,
+        marginBottom: '1.25rem',
+      }}
+    />
+    <Name detail={detail}>{name}</Name>
+  </div>
+)
+
+export const shadow = primitive.shadow
+
+export const ShadowOffsets = () => (
+  <Unstyled>
+    <Tiles>
+      {entries(shadow.offset).map(([name, { $value }]) => (
+        <ShadowSample
+          key={name}
+          name={`shadow.offset.${name}`}
+          detail={size($value)}
+          offset={$value}
+          blur={shadow.blur[400].$value}
+          shade={shadow.color[25].$value}
+        />
+      ))}
+    </Tiles>
+  </Unstyled>
+)
+
+export const ShadowBlurs = () => (
+  <Unstyled>
+    <Tiles>
+      {entries(shadow.blur).map(([name, { $value }]) => (
+        <ShadowSample
+          key={name}
+          name={`shadow.blur.${name}`}
+          detail={size($value)}
+          offset={shadow.offset[200].$value}
+          blur={$value}
+          shade={shadow.color[25].$value}
+        />
+      ))}
+    </Tiles>
+  </Unstyled>
+)
+
+export const ShadowColors = () => (
+  <Unstyled>
+    <Tiles>
+      {Object.entries(shadow.color)
+        .filter(([name]) => !name.startsWith('$'))
+        .map(([name, { $value }]) => (
+          <ShadowSample
+            key={name}
+            name={`shadow.color.${name}`}
+            detail={`negro al ${name} %`}
+            offset={shadow.offset[400].$value}
+            blur={shadow.blur[1600].$value}
+            shade={$value}
+          />
+        ))}
+    </Tiles>
+  </Unstyled>
+)
+
+export const widest = Math.max(...entries(primitive.breakpoint).map(([, t]) => t.$value.value))
+
+export const Breakpoints = () => (
+  <Unstyled>
+    {entries(primitive.breakpoint).map(([name, { $value }]) => (
+      <Row key={name} name={`breakpoint.${name}`} detail={`desde ${size($value)}`}>
+        <div
+          style={{ width: `${($value.value / widest) * 100}%`, height: '1rem', background: accent }}
+        />
+      </Row>
+    ))}
+  </Unstyled>
+)
+
+# Primitivos
+
+Son los valores básicos de Lumine-DS: la materia prima de la que saldrán los demás tokens. Esta
+página se dibuja leyendo `tokens/tokens.json`, así que cambia sola cuando cambia el archivo.
+
+Parten de los valores de Tailwind. Lo propio de Lumine es la escala `color.brand` y la familia
+Inter. Los componentes todavía no usan estos tokens.
+
+## Color
+
+`brand.800` es el color principal de la marca. El resto de la escala se calcula a partir de él.
+
+<Colors />
+
+## Espaciado
+
+El nombre 100 equivale a 4px.
+
+<Spacing />
+
+## Radios
+
+<Radius />
+
+## Grosor de borde
+
+<BorderWidths />
+
+## Familias de letra
+
+Inter está nombrada en el token, pero su archivo de letra todavía no se carga. En un equipo que no la
+tenga instalada, las muestras usan la siguiente familia de la lista.
+
+<FontFamilies />
+
+## Tamaños de texto
+
+<FontSizes />
+
+## Pesos de texto
+
+<FontWeights />
+
+## Interlineado
+
+El nombre 100 equivale a 4px.
+
+<LineHeights />
+
+## Sombras
+
+Una sombra se arma con tres piezas: desplazamiento hacia abajo, desenfoque y color. En cada bloque
+cambia una pieza y las otras dos se quedan fijas.
+
+### Desplazamiento
+
+Con `blur.400` y `color.25`.
+
+<ShadowOffsets />
+
+### Desenfoque
+
+Con `offset.200` y `color.25`.
+
+<ShadowBlurs />
+
+### Color
+
+Con `offset.400` y `blur.1600`.
+
+<ShadowColors />
+
+## Breakpoints
+
+Anchos de pantalla a partir de los cuales puede cambiar la disposición.
+
+<Breakpoints />
