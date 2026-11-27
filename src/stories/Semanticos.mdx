@@ -48,12 +48,16 @@ export const accent = paint('background.brand.default')
 
 export const Label = ({ name, children }) => (
   <div style={{ fontSize: '0.75rem', lineHeight: '1.25rem', overflowWrap: 'anywhere' }}>
-    <code style={{ fontWeight: 600 }}>{name.replace('semantic.', '').replaceAll('.', '.\u200B')}</code>
+    <code style={{ fontWeight: 600 }}>
+      {name.replace(/^(semantic|component)\./, '').replaceAll('.', '.\u200B')}
+    </code>
     <div style={{ color: paint('text.neutral.subtle.default') }}>{children}</div>
   </div>
 )
 
-export const Arrow = ({ alias }) => <div>→ {target(alias).replace('primitive.', '')}</div>
+export const Arrow = ({ alias }) => (
+  <div>→ {target(alias).replace(/^(primitive|semantic)\./, '')}</div>
+)
 
 export const Grid = ({ children }) => (
   <div
@@ -302,11 +306,85 @@ export const Elevations = () => (
   </Unstyled>
 )
 
+export const componentNames = { button: 'Button', input: 'Input', card: 'Card', badge: 'Badge' }
+
+export const Preview = ({ name, value }) => {
+  const frame = { background: paint('background.neutral.default'), border: line }
+  if (value.colorSpace) {
+    return <div style={{ height: '3rem', borderRadius: '0.5rem', border: line, background: color(value) }} />
+  }
+  if (value.blur) {
+    return (
+      <div
+        style={{
+          ...frame,
+          height: '3rem',
+          borderRadius: '0.5rem',
+          boxShadow: `${size(value.offsetX)} ${size(value.offsetY)} ${size(value.blur)} ${size(value.spread)} ${color(value.color)}`,
+        }}
+      />
+    )
+  }
+  if (name.includes('.radius')) {
+    return <div style={{ height: '3rem', borderRadius: size(value), background: accent }} />
+  }
+  if (name.includes('.border-width')) {
+    return (
+      <div style={{ height: '3rem', borderRadius: '0.5rem', border: `${size(value)} solid ${accent}` }} />
+    )
+  }
+  if (/font-size|line-height|font-weight/.test(name)) {
+    const text = {
+      fontFamily: sans,
+      color: paint('text.neutral.default'),
+      ...(name.includes('font-size') && { fontSize: size(value), lineHeight: 1.4 }),
+      ...(name.includes('line-height') && {
+        fontSize: '0.875rem',
+        lineHeight: size(value),
+        background: paint('background.brand.subtle.default'),
+      }),
+      ...(name.includes('font-weight') && { fontSize: '1.25rem', fontWeight: value }),
+    }
+    return <div style={{ minHeight: '3rem', ...text }}>Clase de ballet</div>
+  }
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', height: '3rem' }}>
+      <div style={{ width: size(value), height: '1rem', background: accent }} />
+    </div>
+  )
+}
+
+export const ComponentTokens = () => (
+  <Unstyled>
+    {Object.entries(tokens.component).map(([component, group]) => (
+      <section key={component}>
+        <h3 style={{ fontWeight: 600, margin: '1.5rem 0 0.5rem' }}>
+          {componentNames[component] ?? component}
+        </h3>
+        <Grid>
+          {flatten(group, `component.${component}`).map(({ name, alias, value }) => (
+            <div key={name}>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <Preview name={name} value={value} />
+              </div>
+              <Label name={name}>
+                <Arrow alias={alias} />
+              </Label>
+            </div>
+          ))}
+        </Grid>
+      </section>
+    ))}
+  </Unstyled>
+)
+
 # Semánticos
 
 Son los tokens que dicen para qué se usa cada valor. Cada uno apunta a un primitivo: aquí se ve su
 nombre y, después de la flecha, el primitivo al que apunta. Para no repetir, los nombres van sin el
 prefijo `semantic.` y los destinos sin `primitive.`.
+
+Al final están los tokens de componente, que apuntan a un semántico.
 
 Esta página lee `tokens/tokens.json`. Los componentes todavía no usan estos tokens.
 
@@ -350,3 +428,10 @@ siguiente de la lista.
 ## Sombras
 
 <Elevations />
+
+## Tokens de componente
+
+Dicen qué usa cada parte de un componente. Cada uno apunta a un semántico, que aparece después de la
+flecha. Para no repetir, los nombres van sin el prefijo `component.` y los destinos sin `semantic.`.
+
+<ComponentTokens />

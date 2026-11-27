@@ -10,7 +10,7 @@ Antes de crear uno, hay que respetar el [ADR-001](../docs/adr/001-alcance.md): s
 | --- | --- | --- | --- |
 | `primitive` | Los valores básicos, sin significado | El valor escrito | `primitive.color.brand.800` |
 | `semantic` | Para qué se usa un valor | Un alias a `primitive` | `semantic.color.background.brand.default` |
-| `component` | Qué usa una parte de un componente | Un alias a `semantic` | `component.badge.color.background.brand.default` |
+| `component` | Qué usa una parte de un componente | Un alias a `semantic` | `component.badge.background.brand.subtle.default` |
 
 Cada nivel es un grupo en la raíz del archivo, y solo apunta al de abajo:
 
@@ -53,7 +53,7 @@ Describen el valor, no su uso. Se nombran por grupo y paso: `primitive.color.[fa
 - El nombre dice el significado, no el color: `error`, nunca `red`.
 - Hay una sola excepción sin `role`: `color.border.focus`, porque el anillo de foco es el mismo para todos los significados.
 - En `semantic`, la fórmula va detrás del nivel: `semantic.color.text.brand.default`.
-- En `component`, entre el nivel y la fórmula va el nombre del componente: `component.[componente].[category].[element].[role].[modifier].[state]`. En `role` se usa el nombre de la variante del componente (por ejemplo, `primary` o `ghost` en `Button`).
+- En `component`, el nombre del componente va delante y `category` no se escribe: `component.[componente].[element].[role].[modifier].[state]`. Desde `element`, la ruta es igual que la del token semántico al que apunta. Si el color es de una parte con nombre, la parte va antes de `element`.
 - Si hace falta un valor que no está en la tabla, se añade primero a este manual, en la misma PR que el token.
 
 ### Por qué el estado se escribe siempre
@@ -86,14 +86,32 @@ El formato ofrece también el nombre reservado `$root` para esto. Aquí no se us
 
 - `line-height` es un alias a la escala `primitive.line-height`, nunca una proporción. Por eso no se usa el tipo compuesto `typography` de DTCG, que pide una proporción.
 - No hay tokens de disposición (*layout*).
-- La forma de nombrar estas categorías en `component` está sin decidir. Se añade a este manual antes de crear el primero.
+
+### Nombres en `component`
+
+El color repite la ruta semántica sin `color`, detrás del componente y de la parte si la hay: `component.button.background.brand.hover` apunta a `{semantic.color.background.brand.hover}`. El resto se nombra por la parte del componente:
+
+| Qué | Nombre |
+| --- | --- |
+| Color de una parte | `component.[componente].[parte].[element].[role].[modifier].[state]` |
+| Relleno y separación | `component.[componente].[parte].[propiedad].[talla]`, con propiedades `padding`, `padding-x`, `padding-y` y `gap` |
+| Radio | `component.[componente].radius` |
+| Grosor de borde | `component.[componente].border-width.[default\|focus]` |
+| Separación del foco | `component.[componente].focus-offset` |
+| Tipografía | `component.[componente].[parte].[font-size\|line-height\|font-weight].[talla]` |
+| Sombra | `component.[componente].elevation` |
+
+- `[parte]` y `[talla]` se omiten cuando no hacen falta. `[talla]` solo admite `sm`, `md` y `lg`. En `gap` también puede nombrar qué se separa: `stack`, `icon`, `sections` o `header`.
+- Se nombra por el significado, no por la variante: las variantes `primary`, `secondary` y `danger` usan `brand`, `brand.subtle` y `error`. La `$description` dice a qué variante sirve.
+- Cada parte tiene su token, aunque apunte al mismo semántico que otra: `card.title.text.neutral.default` y `card.content.text.neutral.default`. Lleva `[parte]` todo texto de un componente con varios (`input.label`, `input.field`, `input.placeholder`, `input.message`) y toda zona propia (`card.footer`). Lo que pertenece a la caja principal o es único, como `button.text` o `input.icon`, va sin parte.
+- Solo hay token si hay algo que pintar o medir: un fondo transparente no lo tiene.
 
 ## Formato DTCG
 
 ### Reglas
 
 1. **Cada token tiene `$value` y `$description`.** La descripción va en español y dice cuándo usarlo, sin repetir el valor.
-2. **El `$type` va en el grupo, no en el token.** Lo llevan el grupo de la categoría (`color`) y cada grupo que contiene tokens directamente. Un grupo que mezcla tipos, como `primitive`, no lo lleva. Si un grupo contiene directamente tokens de tipos distintos, como un estilo de `typography`, cada token lleva su propio `$type`.
+2. **El `$type` va en el grupo, no en el token.** Lo llevan el grupo de la categoría (`color`) y cada grupo que contiene tokens directamente. Un grupo que mezcla tipos, como `primitive` o `component.button`, no lo lleva. Los tokens que cuelgan directamente de un grupo así, contando sus subgrupos, llevan su propio `$type`: pasa en los estilos de `typography` y en `component.button.radius`.
 3. **Un alias es el `$value` completo, escrito `{ruta.del.token}`.** La ruta empieza por el nivel y termina en un token, nunca en un grupo. Se escribe `{primitive.color.brand.800}`, no `{color.brand.800}`.
 4. **El tipo del alias coincide con el del token al que apunta.**
 5. **En un token compuesto**, como una sombra, cada pieza de `$value` es un alias al nivel de abajo.
@@ -127,7 +145,7 @@ El formato ofrece también el nombre reservado `$root` para esto. Aquí no se us
 
 ## Ejemplo completo
 
-La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens `component` de este ejemplo todavía no existen en `tokens.json`.
+La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens de este ejemplo están en `tokens.json`.
 
 ### 1. `primitive`: el valor
 
@@ -190,25 +208,18 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens `c
 {
   "component": {
     "badge": {
-      "color": {
-        "$type": "color",
-        "background": {
-          "brand": {
+      "background": {
+        "brand": {
+          "subtle": {
             "$type": "color",
-            "default": {
-              "$value": "{semantic.color.background.brand.subtle.default}",
-              "$description": "Fondo de la etiqueta de marca."
-            }
+            "default": {"$value": "{semantic.color.background.brand.subtle.default}", "$description": "Fondo de la etiqueta `brand`."}
           }
-        },
-        "text": {
-          "brand": {
-            "$type": "color",
-            "default": {
-              "$value": "{semantic.color.text.brand.default}",
-              "$description": "Texto de la etiqueta de marca."
-            }
-          }
+        }
+      },
+      "text": {
+        "brand": {
+          "$type": "color",
+          "default": {"$value": "{semantic.color.text.brand.default}", "$description": "Texto de la etiqueta `brand`."}
         }
       }
     }
@@ -227,5 +238,6 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens `c
 
 ## Pendiente
 
-- `tokens.json` todavía no tiene el nivel `component`.
+- Los componentes de `src/components/` todavía no usan los tokens `component`.
+- Faltan en `semantic` el fondo `brand.subtle` bajo el puntero y al pulsar, que necesita el botón `secondary`, y no hay tamaños para alturas ni iconos.
 - Falta conectar estos tokens con el tema de Tailwind (`src/index.css`), que es de donde el ADR-001 pide que los usen los componentes.
