@@ -1,0 +1,138 @@
+{ "$schema": "./contract.schema.json",
+  "name": "Badge",
+  "file": "src/components/Badge.tsx",
+  "import": "import { Badge } from '../components'",
+  "purpose": "Marcar con pocas palabras el estado o la categoría de algo.",
+  "neverUseFor": [
+    "Disparar una acción o ser pulsada: para eso está Button.",
+    "Mensajes largos o explicaciones.",
+    "Dar un significado solo con el color: el texto tiene que decirlo."
+  ],
+  "props": [
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": null,
+      "required": true,
+      "description": "Texto de la etiqueta.",
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "'neutral' | 'brand' | 'info' | 'success' | 'warning' | 'danger'",
+      "default": "neutral",
+      "required": false,
+      "description": "Color según el significado.",
+      "inherited": false
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md'",
+      "default": "md",
+      "required": false,
+      "description": "Tamaño de la etiqueta.",
+      "inherited": false
+    },
+    {
+      "name": "icon",
+      "type": "Icon",
+      "default": null,
+      "required": false,
+      "description": "Icono de Tabler decorativo junto al texto.",
+      "inherited": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "",
+      "required": false,
+      "description": "Clases que se añaden a la etiqueta.",
+      "inherited": true
+    }
+  ],
+  "states": {
+    "intrinsic": [],
+    "authored": []
+  },
+  "anatomy": [
+    {
+      "part": "root",
+      "element": "span",
+      "optional": false,
+      "description": "La etiqueta. El resto de atributos de `<span>`, salvo los de ratón, pasa a este elemento."
+    },
+    {
+      "part": "icon",
+      "element": "Icono de Tabler (svg)",
+      "optional": true,
+      "description": "Icono decorativo antes del texto."
+    },
+    {
+      "part": "label",
+      "element": "texto dentro de span",
+      "optional": false,
+      "description": "Texto de la etiqueta."
+    }
+  ],
+  "tokens": [
+    "component.badge.background.neutral.strong.default",
+    "component.badge.background.brand.subtle.default",
+    "component.badge.background.info.subtle.default",
+    "component.badge.background.success.subtle.default",
+    "component.badge.background.warning.subtle.default",
+    "component.badge.background.error.subtle.default",
+    "component.badge.text.neutral.default",
+    "component.badge.text.brand.default",
+    "component.badge.text.info.default",
+    "component.badge.text.success.default",
+    "component.badge.text.warning.default",
+    "component.badge.text.error.default",
+    "component.badge.icon.neutral.default",
+    "component.badge.icon.brand.default",
+    "component.badge.icon.info.default",
+    "component.badge.icon.success.default",
+    "component.badge.icon.warning.default",
+    "component.badge.icon.error.default",
+    "component.badge.radius",
+    "component.badge.padding-x.sm",
+    "component.badge.padding-x.md",
+    "component.badge.padding-y.sm",
+    "component.badge.padding-y.md",
+    "component.badge.gap.sm",
+    "component.badge.gap.md",
+    "component.badge.label.font-size.sm",
+    "component.badge.label.font-size.md",
+    "component.badge.label.line-height.sm",
+    "component.badge.label.line-height.md",
+    "component.badge.label.font-weight"
+  ],
+  "a11y": {
+    "role": "none",
+    "keyboard": [],
+    "notes": [
+      "Solo informa: no recibe el foco y no admite `onClick` ni otros eventos de ratón.",
+      "El texto es obligatorio; sin él, el código no compila.",
+      "El icono es decorativo y va oculto con `aria-hidden`.",
+      "El significado no depende solo del color porque el texto lo dice.",
+      "Contraste (docs/contraste.md): pasan las parejas que se exigen; texto, mínimo 6,41:1; icono, mínimo 4,49:1.",
+      "No se pulsa, así que la zona táctil no le aplica.",
+      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 9 historias. Prueba Keyboard: pasa. Con VoiceOver se escucharon las etiquetas sin nombrar los iconos."
+    ]
+  },
+  "usage": {
+    "scope": "general"
+  },
+  "governance": {
+    "mayExtendLocally": [
+      "Añadir con `className` clases de disposición, como márgenes o anchos.",
+      "Elegir cualquier icono de Tabler."
+    ],
+    "mustEscalateToDS": [
+      "Una variante o un tamaño nuevo.",
+      "Un color, una medida o un token que no exista.",
+      "Hacer que la etiqueta se pueda pulsar o cerrar."
+    ]
+  },
+  "guidelines": {},
+  "content": []
+}
