@@ -2,7 +2,7 @@
 
 Cómo se llaman las props y los valores de variante de los componentes de Lumine-DS. Entre varios nombres posibles, se elige el que un agente usaría por defecto.
 
-> **Estado: propuesta.** Se aplica cuando se acepte el ADR que la recoja. Hasta entonces, el código, los contratos y [`tokens/README.md`](../tokens/README.md) siguen como están.
+> **Estado: propuesta.** Se aplica cuando se acepte el [ADR-006](adr/006-api.md). Hasta entonces, el código, los contratos y [`tokens/README.md`](../tokens/README.md) siguen como están.
 
 ## 1. Vocabulario
 
