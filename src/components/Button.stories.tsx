@@ -18,7 +18,7 @@ export const Primary: Story = { args: { variant: 'primary' } }
 export const Secondary: Story = { args: { variant: 'secondary' } }
 export const Outline: Story = { args: { variant: 'outline' } }
 export const Ghost: Story = { args: { variant: 'ghost' } }
-export const Danger: Story = { args: { variant: 'danger', children: 'Eliminar' } }
+export const ErrorVariant: Story = { name: 'Error', args: { variant: 'error', children: 'Eliminar' } }
 
 export const Sizes: Story = {
   render: (args) => (
@@ -30,32 +30,32 @@ export const Sizes: Story = {
   ),
 }
 
-export const IconLeft: Story = { args: { icon: IconPlus, children: 'Nueva clase' } }
-export const IconRight: Story = {
-  args: { icon: IconArrowRight, iconPosition: 'right', children: 'Continuar' },
+export const IconStart: Story = { args: { iconStart: IconPlus, children: 'Nueva clase' } }
+export const IconEnd: Story = {
+  args: { iconEnd: IconArrowRight, children: 'Continuar' },
 }
 export const FullWidth: Story = { args: { fullWidth: true } }
 export const Disabled: Story = { args: { disabled: true } }
 
 export const IconOnly: Story = {
-  args: { iconOnly: true, icon: IconSettings, 'aria-label': 'Ajustes' },
+  args: { iconOnly: true, iconStart: IconSettings, 'aria-label': 'Ajustes' },
 }
 
 export const IconOnlyVariants: Story = {
-  args: { iconOnly: true, icon: IconSettings, 'aria-label': 'Ajustes' },
+  args: { iconOnly: true, iconStart: IconSettings, 'aria-label': 'Ajustes' },
   render: (args) => (
     <div className="flex items-center gap-3">
       <Button {...args} variant="primary" />
       <Button {...args} variant="secondary" />
       <Button {...args} variant="outline" />
       <Button {...args} variant="ghost" />
-      <Button {...args} variant="danger" icon={IconTrash} aria-label="Eliminar" />
+      <Button {...args} variant="error" iconStart={IconTrash} aria-label="Eliminar" />
     </div>
   ),
 }
 
 export const IconOnlySizes: Story = {
-  args: { iconOnly: true, icon: IconPlus, 'aria-label': 'Añadir' },
+  args: { iconOnly: true, iconStart: IconPlus, 'aria-label': 'Añadir' },
   render: (args) => (
     <div className="flex items-center gap-3">
       <Button {...args} size="sm" />
@@ -74,9 +74,9 @@ export const Keyboard: Story = {
       <Button onClick={onClick} variant="secondary">Secundario</Button>
       <Button onClick={onClick} variant="outline">Contorno</Button>
       <Button onClick={onClick} variant="ghost">Sin fondo</Button>
-      <Button onClick={onClick} variant="danger">Eliminar</Button>
+      <Button onClick={onClick} variant="error">Eliminar</Button>
       <Button onClick={onClick} disabled>Desactivado</Button>
-      <Button onClick={onClick} iconOnly icon={IconSettings} aria-label="Ajustes" />
+      <Button onClick={onClick} iconOnly iconStart={IconSettings} aria-label="Ajustes" />
     </div>
   ),
   play: async ({ args, canvas, step }) => {

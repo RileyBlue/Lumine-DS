@@ -34,19 +34,27 @@
       "inherited": false
     },
     {
-      "name": "error",
-      "type": "string",
-      "default": null,
+      "name": "invalid",
+      "type": "boolean",
+      "default": false,
       "required": false,
-      "description": "Mensaje de error. Marca el campo como no válido y reemplaza la ayuda.",
+      "description": "El valor no es válido: marca el campo y permite mostrar `errorMessage`.",
       "inherited": false
     },
     {
-      "name": "icon",
+      "name": "errorMessage",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Texto que explica el error. Reemplaza la ayuda cuando `invalid` es verdadero.",
+      "inherited": false
+    },
+    {
+      "name": "iconStart",
       "type": "Icon",
       "default": null,
       "required": false,
-      "description": "Icono de Tabler dentro del campo, a la izquierda.",
+      "description": "Icono de Tabler dentro del campo, delante del texto.",
       "inherited": false
     },
     {
@@ -97,8 +105,8 @@
     ],
     "authored": [
       {
-        "name": "error",
-        "description": "Hay un mensaje en `error`: el borde y el mensaje cambian de color y el campo se marca como no válido."
+        "name": "invalid",
+        "description": "`invalid` es verdadero: el borde cambia de color y el campo se marca como no válido. Si hay `errorMessage`, reemplaza la ayuda."
       }
     ]
   },
@@ -193,8 +201,9 @@
     "notes": [
       "El papel depende de `type`: `textbox` por defecto y con email, tel o url; `searchbox` con search; `spinbutton` con number; password no tiene papel.",
       "Nombre accesible: `label` o `aria-label`; sin ninguno, el código no compila. El `placeholder` no cuenta.",
-      "La ayuda o el error se unen al campo con `aria-describedby`, y el error lo marca con `aria-invalid`.",
+      "La ayuda o el mensaje de error se unen al campo con `aria-describedby`; `invalid` lo marca con `aria-invalid`.",
       "Si se pasa `aria-describedby` o `aria-invalid` desde fuera, sustituye al del componente y la ayuda o el error pueden dejar de anunciarse.",
+      "`errorMessage` sin `invalid` no se muestra ni se anuncia.",
       "El mensaje de error no se anuncia por sí solo al aparecer: se lee al entrar en el campo.",
       "El icono es decorativo y va oculto con `aria-hidden`.",
       "Foco visible: anillo doble, con 10,75:1 entre sus dos colores.",

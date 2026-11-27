@@ -110,8 +110,8 @@ El color repite la ruta semántica sin `color`, detrás del componente y de la p
 | Sombra | `component.[componente].elevation` |
 
 - `[parte]` y `[talla]` se omiten cuando no hacen falta. `[talla]` solo admite `sm`, `md` y `lg`. En `gap` también puede nombrar qué se separa: `stack`, `icon`, `sections` o `header`.
-- Se nombra por el significado, no por la variante: las variantes `primary`, `secondary` y `danger` usan `brand`, `brand.subtle` y `error`. La `$description` dice a qué variante sirve.
-- `danger` y `error` no son sinónimos: `danger` es la variante de una acción que puede causar una pérdida, como eliminar; `error` es el significado de color de algo que salió mal. La variante `danger` usa los tokens `error`.
+- Se nombra por el significado, no por la variante: las variantes `primary`, `secondary` y `error` usan `brand`, `brand.subtle` y `error`. La `$description` dice a qué variante sirve.
+- Los nombres de las variantes siguen [`docs/prop-map.md`](../docs/prop-map.md) ([ADR-006](../docs/adr/006-api.md)).
 - Las alturas y los tamaños de icono no tienen token: las alturas usan la escala de Tailwind y cada componente fija el tamaño de sus iconos con `sm`, `md` o `lg` ([ADR-001](../docs/adr/001-alcance.md), principio 1).
 - Cada parte tiene su token, aunque apunte al mismo semántico que otra: `card.title.text.neutral.default` y `card.content.text.neutral.default`. Lleva `[parte]` todo texto de un componente con varios (`input.label`, `input.field`, `input.placeholder`, `input.message`) y toda zona propia (`card.footer`). Lo que pertenece a la caja principal o es único, como `button.text` o `input.icon`, va sin parte.
 - Solo hay token si hay algo que pintar o medir: un fondo transparente no lo tiene.
