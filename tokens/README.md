@@ -51,7 +51,7 @@ Describen el valor, no su uso. Se nombran por grupo y paso: `primitive.color.[fa
 
 - El orden no cambia.
 - El nombre dice el significado, no el color: `error`, nunca `red`.
-- Hay una sola excepción sin `role`: `color.border.focus`, porque el anillo de foco es el mismo para todos los significados.
+- Hay dos excepciones sin `role`: `color.border.focus` y `color.border.focus-outer`, los dos colores del anillo de foco, que son los mismos para todos los significados. `focus-outer` ocupa el lugar de `state` y solo se usa ahí.
 - En `semantic`, la fórmula va detrás del nivel: `semantic.color.text.brand.default`.
 - En `component`, el nombre del componente va delante y `category` no se escribe: `component.[componente].[element].[role].[modifier].[state]`. Desde `element`, la ruta es igual que la del token semántico al que apunta. Si el color es de una parte con nombre, la parte va antes de `element`.
 - Si hace falta un valor que no está en la tabla, se añade primero a este manual, en la misma PR que el token.
@@ -69,12 +69,17 @@ El formato ofrece también el nombre reservado `$root` para esto. Aquí no se us
 
 ### Anillo de foco
 
-Así está aplicado hoy. La [guía de accesibilidad](../docs/accesibilidad.md) pide un anillo doble, que todavía no está hecho.
+Es doble, como pide la [guía de accesibilidad](../docs/accesibilidad.md). De dentro hacia fuera:
 
-- Se dibuja con `semantic.color.border.focus` y el grosor `semantic.border-width.focus`.
-- Va separado del control por la medida de `semantic.space.2xs` (en CSS, `outline-offset`). Así lo que rodea al anillo es el fondo de la pantalla, y contra ese fondo se mide su contraste.
-- Cumple el mínimo de 3:1 sobre blanco, los grises claros (hasta `gray.200`) y `gray.900`. Sobre un fondo de marca u otro color intenso no llega.
-- Cuando una pantalla necesite un control sobre uno de esos fondos, se pide el token `semantic.color.border.neutral.inverted.focus`, en blanco. Hasta entonces no se crea.
+| Banda | Token de color | Grosor |
+| --- | --- | --- |
+| Separación blanca | `semantic.color.border.focus-outer` | `semantic.space.2xs` |
+| Anillo de color | `semantic.color.border.focus` | `semantic.border-width.focus` |
+| Anillo exterior blanco | `semantic.color.border.focus-outer` | `semantic.border-width.focus` |
+
+- Los dos colores tienen 10,75:1 entre sí. Con al menos 9:1, uno de los dos llega a 3:1 sobre cualquier fondo liso.
+- Si cambia uno de los dos colores, hay que volver a comprobar ese 9:1.
+- En CSS, el anillo de color es un `outline` y el blanco, un `box-shadow` que empieza en el borde del control.
 
 ### Otras categorías en `semantic`
 
@@ -239,6 +244,8 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens de
 - [`src/styles/tokens.css`](../src/styles/tokens.css): una variable CSS por token;
 - [`src/styles/theme.css`](../src/styles/theme.css): las clases de Tailwind de `semantic` y `component`;
 - [`docs/tokens.md`](../docs/tokens.md): la tabla de cada token y su clase.
+
+Hay una clase calculada que no sale de un solo token: `ring-[componente]-focus-outer`, el grosor del anillo blanco, que suma la separación y dos veces el grosor del foco.
 
 No se editan a mano. `npm run tokens -- --check` avisa si están desactualizados, sin escribirlos. GitHub ejecuta esa comprobación en cada PR y en cada cambio de `main`.
 

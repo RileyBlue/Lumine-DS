@@ -75,6 +75,7 @@ componentes no los usan directamente.
 | `semantic.color.border.warning.default` | `border-border-warning` |
 | `semantic.color.border.error.default` | `border-border-error` |
 | `semantic.color.border.focus` | `outline-border-focus` |
+| `semantic.color.border.focus-outer` | `ring-border-focus-outer` |
 
 ### font-family
 
@@ -178,6 +179,7 @@ componentes no los usan directamente.
 | `component.button.icon.error.inverted.default` | `text-button-icon-error-inverted` |
 | `component.button.border.neutral.strong.default` | `border-button-border-neutral-strong` |
 | `component.button.border.focus` | `outline-button-border-focus` |
+| `component.button.border.focus-outer` | `ring-button-border-focus-outer`, `ring-button-focus-outer` |
 | `component.button.border-width.default` | `border-button-border-width-default` |
 | `component.button.border-width.focus` | `outline-button-border-width-focus` |
 | `component.button.focus-offset` | `outline-offset-button-focus-offset` |
@@ -207,6 +209,7 @@ componentes no los usan directamente.
 | `component.input.border.neutral.strong.default` | `border-input-border-neutral-strong` |
 | `component.input.border.error.default` | `border-input-border-error` |
 | `component.input.border.focus` | `outline-input-border-focus` |
+| `component.input.border.focus-outer` | `ring-input-border-focus-outer`, `ring-input-focus-outer` |
 | `component.input.label.text.neutral.default` | `text-input-label-text-neutral` |
 | `component.input.label.font-size` | `text-input-label` |
 | `component.input.label.line-height` | `text-input-label` |

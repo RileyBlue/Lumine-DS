@@ -48,7 +48,7 @@ El orden al pulsar Tab es lógico: el mismo en que se lee la pantalla.
 
 El control que tiene el foco se ve siempre, con un **anillo doble**: uno de color y, por fuera, otro blanco. Entre los dos colores hay al menos **9:1**. Así, sobre cualquier fondo liso, al menos uno de los dos llega a 3:1 ([técnica C40 de WCAG](https://www.w3.org/WAI/WCAG22/Techniques/css/C40)). Cada anillo mide al menos 2px.
 
-> **Estado actual:** el anillo doble todavía no está aplicado. Hoy hay un solo anillo, `border.focus`, que cumple sobre blanco, grises claros y `gray.900`, pero no sobre el fondo de marca (1,96:1). Su color tiene 4,47:1 con el blanco, así que no sirve para el anillo doble: haría falta uno como `brand.900` (10,75:1).
+`Button` e `Input` ya lo tienen: una separación blanca, el anillo de color (`brand.900`, 10,75:1 con el blanco) y el anillo blanco exterior.
 
 **Correcto:** un botón de verdad. Se llega con Tab y se activa con Enter y con Espacio.
 

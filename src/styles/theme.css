@@ -59,6 +59,7 @@
   --border-color-border-warning: var(--semantic-color-border-warning-default);
   --border-color-border-error: var(--semantic-color-border-error-default);
   --outline-color-border-focus: var(--semantic-color-border-focus);
+  --ring-color-border-focus-outer: var(--semantic-color-border-focus-outer);
   --font-family-default: var(--semantic-font-family-default);
   --text-display: var(--semantic-typography-display-font-size);
   --text-display--line-height: var(--semantic-typography-display-line-height);
@@ -126,6 +127,8 @@
   --text-color-button-icon-error-inverted: var(--component-button-icon-error-inverted-default);
   --border-color-button-border-neutral-strong: var(--component-button-border-neutral-strong-default);
   --outline-color-button-border-focus: var(--component-button-border-focus);
+  --ring-color-button-border-focus-outer: var(--component-button-border-focus-outer);
+  --ring-width-button-focus-outer: calc(var(--component-button-focus-offset) + 2 * var(--component-button-border-width-focus));
   --border-width-button-border-width-default: var(--component-button-border-width-default);
   --outline-width-button-border-width-focus: var(--component-button-border-width-focus);
   --outline-offset-button-focus-offset: var(--component-button-focus-offset);
@@ -152,6 +155,8 @@
   --border-color-input-border-neutral-strong: var(--component-input-border-neutral-strong-default);
   --border-color-input-border-error: var(--component-input-border-error-default);
   --outline-color-input-border-focus: var(--component-input-border-focus);
+  --ring-color-input-border-focus-outer: var(--component-input-border-focus-outer);
+  --ring-width-input-focus-outer: calc(var(--component-input-focus-offset) + 2 * var(--component-input-border-width-focus));
   --text-color-input-label-text-neutral: var(--component-input-label-text-neutral-default);
   --text-input-label: var(--component-input-label-font-size);
   --text-input-label--line-height: var(--component-input-label-line-height);

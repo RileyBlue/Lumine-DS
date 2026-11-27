@@ -73,7 +73,12 @@ function themeCss() {
       owners.set(className, owner)
     }
   }
-  const lines = entries.map(({ key, token }) => `  ${key}: var(${cssVariable(token.path)});`)
+  const variables = new Set(tokens.map((token) => cssVariable(token.path)))
+  const lines = entries.map(({ key, token, value, uses = [] }) => {
+    const missing = uses.filter((name) => !variables.has(name))
+    if (missing.length) throw new Error(`${key} necesita tokens que no existen: ${missing.join(', ')}`)
+    return `  ${key}: ${value ?? `var(${cssVariable(token.path)})`};`
+  })
   return `/* ${NOTICE} */\n@theme inline {\n${lines.join('\n')}\n}\n`
 }
 
