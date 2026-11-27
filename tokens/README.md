@@ -53,7 +53,7 @@ Describen el valor, no su uso. Se nombran por grupo y paso: `primitive.color.[fa
 - El nombre dice el significado, no el color: `error`, nunca `red`.
 - Hay una sola excepción sin `role`: `color.border.focus`, porque el anillo de foco es el mismo para todos los significados.
 - En `semantic`, la fórmula va detrás del nivel: `semantic.color.text.brand.default`.
-- En `component`, el nombre del componente va delante y `category` no se escribe: `component.[componente].[element].[role].[modifier].[state]`. El resto de la ruta es igual que la del token semántico al que apunta.
+- En `component`, el nombre del componente va delante y `category` no se escribe: `component.[componente].[element].[role].[modifier].[state]`. Desde `element`, la ruta es igual que la del token semántico al que apunta. Si el color es de una parte con nombre, la parte va antes de `element`.
 - Si hace falta un valor que no está en la tabla, se añade primero a este manual, en la misma PR que el token.
 
 ### Por qué el estado se escribe siempre
@@ -89,10 +89,11 @@ El formato ofrece también el nombre reservado `$root` para esto. Aquí no se us
 
 ### Nombres en `component`
 
-El color repite la ruta semántica sin `color`: `component.button.background.brand.hover` apunta a `{semantic.color.background.brand.hover}`. El resto se nombra por la parte del componente:
+El color repite la ruta semántica sin `color`, detrás del componente y de la parte si la hay: `component.button.background.brand.hover` apunta a `{semantic.color.background.brand.hover}`. El resto se nombra por la parte del componente:
 
 | Qué | Nombre |
 | --- | --- |
+| Color de una parte | `component.[componente].[parte].[element].[role].[modifier].[state]` |
 | Relleno y separación | `component.[componente].[parte].[propiedad].[talla]`, con propiedades `padding`, `padding-x`, `padding-y` y `gap` |
 | Radio | `component.[componente].radius` |
 | Grosor de borde | `component.[componente].border-width.[default\|focus]` |
@@ -102,7 +103,7 @@ El color repite la ruta semántica sin `color`: `component.button.background.bra
 
 - `[parte]` y `[talla]` se omiten cuando no hacen falta. `[talla]` solo admite `sm`, `md` y `lg`. En `gap` también puede nombrar qué se separa: `stack`, `icon`, `sections` o `header`.
 - Se nombra por el significado, no por la variante: las variantes `primary`, `secondary` y `danger` usan `brand`, `brand.subtle` y `error`. La `$description` dice a qué variante sirve.
-- Varias partes que usan el mismo semántico comparten un token.
+- Cada parte tiene su token, aunque apunte al mismo semántico que otra: `card.title.text.neutral.default` y `card.content.text.neutral.default`. Lleva `[parte]` todo texto de un componente con varios (`input.label`, `input.field`, `input.placeholder`, `input.message`) y toda zona propia (`card.footer`). Lo que pertenece a la caja principal o es único, como `button.text` o `input.icon`, va sin parte.
 - Solo hay token si hay algo que pintar o medir: un fondo transparente no lo tiene.
 
 ## Formato DTCG
