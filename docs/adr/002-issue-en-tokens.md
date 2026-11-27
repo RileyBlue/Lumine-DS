@@ -21,7 +21,6 @@ Los tokens se diseñan ahora en `tokens/tokens.json`, en formato DTCG. JSON no a
 - Un issue está aprobado cuando quien mantiene Lumine-DS escribe en él un comentario que dice «Aprobado».
 - Esto sustituye, solo para `tokens/tokens.json`, al comentario junto al token que pide el ADR-001. Todo lo demás del principio 2 sigue igual.
 - Se aplica desde este ADR. Los tokens anteriores no necesitan enlace.
-- Cambiar a qué primitivo apunta un token que ya existe no crea un token nuevo y no necesita issue.
 
 ### Cómo se comprueba
 
