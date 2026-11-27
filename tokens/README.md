@@ -69,6 +69,8 @@ El formato ofrece también el nombre reservado `$root` para esto. Aquí no se us
 
 ### Anillo de foco
 
+Así está aplicado hoy. La [guía de accesibilidad](../docs/accesibilidad.md) pide un anillo doble, que todavía no está hecho.
+
 - Se dibuja con `semantic.color.border.focus` y el grosor `semantic.border-width.focus`.
 - Va separado del control por la medida de `semantic.space.2xs` (en CSS, `outline-offset`). Así lo que rodea al anillo es el fondo de la pantalla, y contra ese fondo se mide su contraste.
 - Cumple el mínimo de 3:1 sobre blanco, los grises claros (hasta `gray.200`) y `gray.900`. Sobre un fondo de marca u otro color intenso no llega.
