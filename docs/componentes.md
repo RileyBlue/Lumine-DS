@@ -18,5 +18,6 @@ táctil. Se comprobó con la revisión de contraste, las historias `Keyboard`, e
 las comprobaciones del código y una revisión a mano. `Card` y `Badge` no se pueden pulsar, así que el
 nombre accesible y la zona táctil no les aplican.
 
-**Pendiente:** escuchar los componentes con un lector de pantalla (VoiceOver), el último punto de la
-lista de la regla 4. El ✅ no lo incluye.
+**VoiceOver:** el 27 de noviembre de 2026, Riley Sainz escuchó en Storybook los botones, el
+encabezado y la zona inferior de `Card`, el mensaje de error de `Input` y los iconos, y se anunciaron
+como se esperaba.
