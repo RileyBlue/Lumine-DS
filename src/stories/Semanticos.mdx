@@ -356,7 +356,9 @@ export const Preview = ({ name, value }) => {
 
 export const ComponentTokens = () => (
   <Unstyled>
-    {Object.entries(tokens.component).map(([component, group]) => (
+    {Object.entries(tokens.component)
+      .filter(([name]) => !name.startsWith('$'))
+      .map(([component, group]) => (
       <section key={component}>
         <h3 style={{ fontWeight: 600, margin: '1.5rem 0 0.5rem' }}>
           {componentNames[component] ?? component}
