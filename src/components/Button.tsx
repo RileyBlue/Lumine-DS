@@ -19,7 +19,7 @@ export type ButtonProps = ButtonBaseProps &
   (
     | { iconOnly?: false }
     | {
-        /** Botón redondo con solo el icono, sin texto. Exige `icon` y `aria-label`. */
+        /** Botón cuadrado con solo el icono, sin texto. Exige `icon` y `aria-label`. */
         iconOnly: true
         icon: Icon
         /** Texto que leen los lectores de pantalla, porque el botón no tiene texto visible. */
@@ -27,18 +27,50 @@ export type ButtonProps = ButtonBaseProps &
       }
   )
 
-const variants: Record<ButtonVariant, string> = {
-  primary: 'bg-rose-600 text-white hover:bg-rose-700 active:bg-rose-800',
-  secondary: 'bg-rose-100 text-rose-800 hover:bg-rose-200 active:bg-rose-300',
-  outline: 'border border-gray-300 bg-white text-gray-800 hover:bg-gray-50 active:bg-gray-100',
-  ghost: 'text-gray-700 hover:bg-gray-100 active:bg-gray-200',
-  danger: 'bg-red-600 text-white hover:bg-red-700 active:bg-red-800',
+const variants: Record<ButtonVariant, { box: string; icon: string }> = {
+  primary: {
+    box: 'bg-button-background-brand text-button-text-brand-inverted enabled:hover:bg-button-background-brand-hover enabled:active:bg-button-background-brand-pressed disabled:bg-button-background-neutral-disabled',
+    icon: 'text-button-icon-brand-inverted',
+  },
+  secondary: {
+    box: 'bg-button-background-brand-subtle text-button-text-brand enabled:hover:bg-button-background-brand-subtle-hover enabled:active:bg-button-background-brand-subtle-pressed disabled:bg-button-background-neutral-disabled',
+    icon: 'text-button-icon-brand',
+  },
+  outline: {
+    box: 'border-button-border-width-default border-button-border-neutral-strong bg-button-background-neutral text-button-text-neutral enabled:hover:bg-button-background-neutral-hover enabled:active:bg-button-background-neutral-pressed disabled:bg-button-background-neutral-disabled',
+    icon: 'text-button-icon-neutral',
+  },
+  // ghost no tiene fondo en reposo ni desactivado.
+  ghost: {
+    box: 'text-button-text-neutral enabled:hover:bg-button-background-neutral-hover enabled:active:bg-button-background-neutral-pressed',
+    icon: 'text-button-icon-neutral',
+  },
+  danger: {
+    box: 'bg-button-background-error text-button-text-error-inverted enabled:hover:bg-button-background-error-hover enabled:active:bg-button-background-error-pressed disabled:bg-button-background-neutral-disabled',
+    icon: 'text-button-icon-error-inverted',
+  },
 }
 
-const sizes: Record<ButtonSize, { box: string; square: string; icon: number }> = {
-  sm: { box: 'h-8 gap-1.5 px-4 text-sm', square: 'size-8', icon: 16 },
-  md: { box: 'h-10 gap-2 px-5 text-base', square: 'size-10', icon: 20 },
-  lg: { box: 'h-12 gap-2.5 px-7 text-lg', square: 'size-12', icon: 24 },
+// Las alturas usan la escala de Tailwind y el tamaño del icono lo fija cada talla (ADR-003).
+const sizes: Record<ButtonSize, { box: string; label: string; square: string; icon: number }> = {
+  sm: {
+    box: 'h-8 gap-button-gap-sm px-button-padding-x-sm',
+    label: 'text-button-label-sm',
+    square: 'size-8',
+    icon: 16,
+  },
+  md: {
+    box: 'h-10 gap-button-gap-md px-button-padding-x-md',
+    label: 'text-button-label-md',
+    square: 'size-10',
+    icon: 20,
+  },
+  lg: {
+    box: 'h-12 gap-button-gap-lg px-button-padding-x-lg',
+    label: 'text-button-label-lg',
+    square: 'size-12',
+    icon: 24,
+  },
 }
 
 export function Button({
@@ -53,16 +85,23 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const icon = IconComponent ? <IconComponent size={sizes[size].icon} aria-hidden="true" /> : null
+  const icon = IconComponent ? (
+    <IconComponent
+      size={sizes[size].icon}
+      aria-hidden="true"
+      className={`${variants[variant].icon} group-disabled:text-button-icon-neutral-disabled`}
+    />
+  ) : null
 
   return (
     <button
       type={type}
       className={[
-        'inline-flex items-center justify-center rounded-full font-medium transition-colors',
-        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500',
-        'disabled:cursor-not-allowed disabled:opacity-50',
-        variants[variant],
+        'group inline-flex items-center justify-center rounded-button-radius transition-colors',
+        'focus-visible:outline-button-border-width-focus focus-visible:outline-offset-button-focus-offset focus-visible:outline-button-border-focus',
+        'disabled:cursor-not-allowed disabled:text-button-text-neutral-disabled',
+        variants[variant].box,
+        sizes[size].label,
         iconOnly ? sizes[size].square : sizes[size].box,
         fullWidth && !iconOnly ? 'w-full' : '',
         className,

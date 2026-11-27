@@ -14,8 +14,8 @@ export interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'>
 }
 
 const variants: Record<CardVariant, string> = {
-  outlined: 'border border-gray-200 bg-white',
-  elevated: 'bg-white shadow-md',
+  outlined: 'border-card-border-width-default border-card-border-neutral bg-card-background-neutral',
+  elevated: 'bg-card-background-neutral shadow-card-elevation',
 }
 
 export function Card({
@@ -29,20 +29,20 @@ export function Card({
 }: CardProps) {
   return (
     <div
-      className={['overflow-hidden rounded-xl', variants[variant], className].join(' ')}
+      className={['overflow-hidden rounded-card-radius', variants[variant], className].join(' ')}
       {...props}
     >
-      <div className="flex flex-col gap-4 p-6">
+      <div className="flex flex-col gap-card-gap-sections p-card-padding">
         {(title || description) && (
-          <header className="flex flex-col gap-1">
-            {title && <h3 className="text-lg font-semibold text-gray-900">{title}</h3>}
-            {description && <p className="text-sm text-gray-500">{description}</p>}
+          <header className="flex flex-col gap-card-gap-header">
+            {title && <h3 className="text-card-title text-card-title-text-neutral">{title}</h3>}
+            {description && <p className="text-card-description text-card-description-text-neutral-subtle">{description}</p>}
           </header>
         )}
-        {children && <div className="text-gray-700">{children}</div>}
+        {children && <div className="text-card-content text-card-content-text-neutral">{children}</div>}
       </div>
       {footer && (
-        <footer className="flex items-center justify-end gap-2 border-t border-gray-200 bg-gray-50 px-6 py-3">
+        <footer className="flex items-center justify-end gap-card-footer-gap border-t-card-footer-border-width-default border-card-footer-border-neutral bg-card-footer-background-neutral-subtle px-card-footer-padding-x py-card-footer-padding-y">
           {footer}
         </footer>
       )}

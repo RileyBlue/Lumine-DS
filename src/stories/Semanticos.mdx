@@ -1,6 +1,7 @@
 import { Meta, Unstyled } from '@storybook/addon-docs/blocks'
 import { IconBell } from '@tabler/icons-react'
 import tokens from '../../tokens/tokens.json'
+import { classesByToken } from '../../scripts/token-classes.mjs'
 
 <Meta title="Fundamentos/Semánticos" />
 
@@ -46,12 +47,20 @@ export const line = `1px solid ${paint('border.neutral.default')}`
 
 export const accent = paint('background.brand.default')
 
+export const tailwind = classesByToken(tokens)
+
+export const classesFor = (name) => tailwind[name] ?? tailwind[`semantic.${name}`] ?? []
+
 export const Label = ({ name, children }) => (
   <div style={{ fontSize: '0.75rem', lineHeight: '1.25rem', overflowWrap: 'anywhere' }}>
     <code style={{ fontWeight: 600 }}>
       {name.replace(/^(semantic|component)\./, '').replaceAll('.', '.\u200B')}
     </code>
     <div style={{ color: paint('text.neutral.subtle.default') }}>{children}</div>
+    <div>
+      Clase:{' '}
+      <code>{classesFor(name).join(', ').replaceAll('-', '-\u200B')}</code>
+    </div>
   </div>
 )
 
@@ -388,7 +397,8 @@ prefijo `semantic.` y los destinos sin `primitive.`.
 
 Al final están los tokens de componente, que apuntan a un semántico.
 
-Esta página lee `tokens/tokens.json`. Los componentes todavía no usan estos tokens.
+Esta página lee `tokens/tokens.json`. Debajo de cada token aparece la clase de Tailwind que lo aplica.
+En un estilo de texto, el tamaño, el interlineado y el peso comparten una sola clase.
 
 ## Color de fondo
 
