@@ -34,3 +34,4 @@ Lista de ADR:
 - [ADR-002 · Enlace al issue en los tokens](docs/adr/002-issue-en-tokens.md)
 - [ADR-003 · Clases de tokens en los componentes](docs/adr/003-clases-de-tokens.md)
 - [ADR-004 · Letra de la interfaz](docs/adr/004-letra-de-la-interfaz.md)
+- [ADR-005 · Accesibilidad: cinco reglas](docs/adr/005-accesibilidad.md)

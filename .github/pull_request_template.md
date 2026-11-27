@@ -6,7 +6,7 @@
 
 Marca cada casilla. Si algo no aplica a esta PR, márcala y escribe «no aplica».
 
-Reglas: [ADR-001](https://github.com/RileyBlue/Lumine-DS/blob/main/docs/adr/001-alcance.md), [ADR-002](https://github.com/RileyBlue/Lumine-DS/blob/main/docs/adr/002-issue-en-tokens.md) y [ADR-003](https://github.com/RileyBlue/Lumine-DS/blob/main/docs/adr/003-clases-de-tokens.md).
+Reglas: [ADR-001](https://github.com/RileyBlue/Lumine-DS/blob/main/docs/adr/001-alcance.md), [ADR-002](https://github.com/RileyBlue/Lumine-DS/blob/main/docs/adr/002-issue-en-tokens.md), [ADR-003](https://github.com/RileyBlue/Lumine-DS/blob/main/docs/adr/003-clases-de-tokens.md) y [ADR-005](https://github.com/RileyBlue/Lumine-DS/blob/main/docs/adr/005-accesibilidad.md).
 
 ### 1. Todo valor visual sale de un token
 
@@ -25,13 +25,14 @@ Reglas: [ADR-001](https://github.com/RileyBlue/Lumine-DS/blob/main/docs/adr/001-
 - [ ] El comando 2 del ADR-001 no devuelve líneas nuevas.
 - [ ] Cada pieza con aspecto propio es un componente de `src/components/`.
 
-### 4. Accesibilidad WCAG 2.2 AA
+### 4. Accesibilidad
 
-En cada historia de Storybook de los componentes cambiados:
+En cada historia de Storybook de los componentes cambiados, según [la guía](https://github.com/RileyBlue/Lumine-DS/blob/main/docs/accesibilidad.md):
 
-- [ ] El contraste es de al menos 4,5:1 en el texto y 3:1 en los elementos de interfaz.
-- [ ] Todo se maneja con el teclado y el foco se ve.
+- [ ] El contraste es de al menos 4,5:1 en el texto y 3:1 en iconos, bordes de campos y anillo de foco.
+- [ ] Todo se maneja con el teclado, en un orden lógico, y el foco se ve.
 - [ ] Cada control tiene un nombre accesible.
+- [ ] Los encabezados van en orden, los iconos e imágenes con significado tienen texto alternativo y los decorativos están ocultos.
 - [ ] Los elementos pulsables miden al menos 24 por 24 píxeles.
 
 ### 5. Un solo vocabulario de nombres
