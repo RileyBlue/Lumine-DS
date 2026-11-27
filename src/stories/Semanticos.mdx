@@ -171,21 +171,32 @@ export const Borders = () => (
   <Unstyled>
     <Grid>
       {colorTokens('border').map(({ name, alias, value }) => {
-        const isFocus = name.endsWith('focus')
+        const isFocus = /focus(-outer)?$/.test(name)
         const width = size(resolve(semantic['border-width'][isFocus ? 'focus' : 'default'].$value))
+        const offset = size(resolve(semantic.space['2xs'].$value))
         return (
           <div key={name}>
             <Box
               background="background.neutral.default"
               style={
                 isFocus
-                  ? { outline: `${width} solid ${color(value)}`, outlineOffset: '2px' }
+                  ? {
+                      outline: `${width} solid ${paint('border.focus')}`,
+                      outlineOffset: offset,
+                      boxShadow: `0 0 0 calc(${offset} + 2 * ${width}) ${paint('border.focus-outer')}`,
+                      background: paint('background.brand.default'),
+                      margin: '0.5rem 0.5rem 0.75rem',
+                    }
                   : { border: `${width} solid ${color(value)}` }
               }
             />
             <Label name={name}>
               <Arrow alias={alias} />
-              <div>sobre background.neutral.default</div>
+              <div>
+                {isFocus
+                  ? 'anillo doble sobre un control de marca'
+                  : 'sobre background.neutral.default'}
+              </div>
             </Label>
           </div>
         )

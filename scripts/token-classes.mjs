@@ -25,13 +25,17 @@ export const cssVariable = (path) => `--${path.join('-')}`
 const withoutDefault = (parts) => (parts.at(-1) === 'default' ? parts.slice(0, -1) : parts)
 
 /** Variable del tema y clase para un color. `name` ya es el nombre que verá la clase. */
-function colorUtility(element, isFocus, name) {
+function colorUtility(element, state, name) {
   if (element === 'background') return { key: `--background-color-${name}`, classes: [`bg-${name}`] }
   if (element === 'text' || element === 'icon') {
     return { key: `--text-color-${name}`, classes: [`text-${name}`] }
   }
-  if (element === 'border' && isFocus) {
+  // El anillo de foco de color es un contorno; el blanco exterior, un anillo (box-shadow).
+  if (element === 'border' && state === 'focus') {
     return { key: `--outline-color-${name}`, classes: [`outline-${name}`] }
+  }
+  if (element === 'border' && state === 'focus-outer') {
+    return { key: `--ring-color-${name}`, classes: [`ring-${name}`] }
   }
   if (element === 'border') return { key: `--border-color-${name}`, classes: [`border-${name}`] }
   return null
@@ -40,7 +44,7 @@ function colorUtility(element, isFocus, name) {
 function semanticUtilities([group, ...rest], type) {
   const last = rest.at(-1)
   if (group === 'color' && type === 'color') {
-    const color = colorUtility(rest[0], last === 'focus', withoutDefault(rest).join('-'))
+    const color = colorUtility(rest[0], last, withoutDefault(rest).join('-'))
     return color && [color]
   }
   if (group === 'font-family') {
@@ -63,12 +67,28 @@ function semanticUtilities([group, ...rest], type) {
   return null
 }
 
+/**
+ * El anillo exterior llega desde el borde del control hasta después del anillo de color:
+ * separación, anillo de color y anillo blanco. No es un token, se calcula con dos que ya existen.
+ */
+function outerRingWidth(component) {
+  const offset = `--component-${component}-focus-offset`
+  const width = `--component-${component}-border-width-focus`
+  return {
+    key: `--ring-width-${component}-focus-outer`,
+    classes: [`ring-${component}-focus-outer`],
+    value: `calc(var(${offset}) + 2 * var(${width}))`,
+    uses: [offset, width],
+  }
+}
+
 function componentUtilities(parts, type) {
   const last = parts.at(-1)
   const name = parts.join('-')
   if (type === 'color') {
     const element = parts.find((part) => ['background', 'text', 'icon', 'border'].includes(part))
-    const color = colorUtility(element, last === 'focus', withoutDefault(parts).join('-'))
+    const color = colorUtility(element, last, withoutDefault(parts).join('-'))
+    if (color && last === 'focus-outer') return [color, outerRingWidth(parts[0])]
     return color && [color]
   }
   if (parts.includes('border-width')) {

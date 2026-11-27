@@ -98,7 +98,7 @@ export function Button({
       type={type}
       className={[
         'group inline-flex items-center justify-center rounded-button-radius transition-colors',
-        'focus-visible:outline-button-border-width-focus focus-visible:outline-offset-button-focus-offset focus-visible:outline-button-border-focus',
+        'focus-visible:outline-button-border-width-focus focus-visible:outline-offset-button-focus-offset focus-visible:outline-button-border-focus focus-visible:ring-button-focus-outer focus-visible:ring-button-border-focus-outer',
         'disabled:cursor-not-allowed disabled:text-button-text-neutral-disabled',
         variants[variant].box,
         sizes[size].label,
