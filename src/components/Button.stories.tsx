@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { IconArrowRight, IconPlus, IconSettings, IconTrash } from '@tabler/icons-react'
-import { expect, fn } from 'storybook/test'
+import { expect, fn, userEvent } from 'storybook/test'
 import { expectFocusRing, resetFocus } from '../stories/keyboard'
 import { Button } from './Button'
 
@@ -79,7 +79,7 @@ export const Keyboard: Story = {
       <Button onClick={onClick} iconOnly icon={IconSettings} aria-label="Ajustes" />
     </div>
   ),
-  play: async ({ args, canvas, step, userEvent }) => {
+  play: async ({ args, canvas, step }) => {
     const buttons = canvas.getAllByRole<HTMLButtonElement>('button')
     const enabled = buttons.filter((button) => !button.disabled)
     resetFocus()

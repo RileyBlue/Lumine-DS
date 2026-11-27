@@ -1,4 +1,6 @@
 // Comprobaciones compartidas por las historias Keyboard (regla 2 de docs/accesibilidad.md).
+// Las historias importan `userEvent` de 'storybook/test': el que llega en `play` no está preparado
+// cuando la página se abre sin https.
 import { expect } from 'storybook/test'
 
 type FocusableComponent = 'button' | 'input'

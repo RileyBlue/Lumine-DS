@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { IconSearch } from '@tabler/icons-react'
-import { expect } from 'storybook/test'
+import { expect, userEvent } from 'storybook/test'
 import { expectFocusRing, resetFocus } from '../stories/keyboard'
 import { Input } from './Input'
 
@@ -50,7 +50,7 @@ export const Keyboard: Story = {
       <Input aria-label="Mensaje" size="sm" />
     </div>
   ),
-  play: async ({ canvas, step, userEvent }) => {
+  play: async ({ canvas, step }) => {
     const fields = canvas.getAllByRole<HTMLInputElement>('textbox')
     const enabled = fields.filter((field) => !field.disabled)
     resetFocus()

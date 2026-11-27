@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { userEvent } from 'storybook/test'
 import { expectFocusRing, expectRingInside, resetFocus } from '../stories/keyboard'
 import { Button } from './Button'
 import { Card } from './Card'
@@ -44,7 +45,7 @@ export const Keyboard: Story = {
       </>
     ),
   },
-  play: async ({ canvas, userEvent }) => {
+  play: async ({ canvas }) => {
     const card = canvas.getByRole('heading').closest('.overflow-hidden')!
     resetFocus()
     // Primero el contenido y después la zona inferior, como se leen.
