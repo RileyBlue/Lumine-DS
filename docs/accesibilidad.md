@@ -141,6 +141,8 @@ Quien usa un lector de pantalla recorre la página por sus encabezados y escucha
 
 El título de `Card` es un `h3`. Si la tarjeta va justo debajo del `h1`, usa `headingLevel={2}`.
 
+Los iconos de `Button`, `Input` y `Badge` son decorativos y van ocultos: el nombre o el significado lo da el texto, que `Badge` exige. El panel **Accessibility** no detecta un icono o una muestra sin texto alternativo en todos los casos, así que esto también se revisa a mano.
+
 ### Checklist
 
 - [ ] Hay un solo `h1` y los encabezados no saltan niveles.
