@@ -30,3 +30,4 @@ Lumine-DS es el design system de Lumine, la plataforma escolar interna de la aca
 Lista de ADR:
 
 - [ADR-001 · Alcance y principios](docs/adr/001-alcance.md)
+- [ADR-002 · Enlace al issue en los tokens](docs/adr/002-issue-en-tokens.md)

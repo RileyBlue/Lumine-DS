@@ -60,6 +60,13 @@ export const Tiles = ({ children }) => (
   </div>
 )
 
+export const swatches = (family, group) =>
+  group.$value
+    ? [[family, group]]
+    : Object.entries(group)
+        .filter(([step]) => !step.startsWith('$'))
+        .map(([step, token]) => [`${family}.${step}`, token])
+
 export const Colors = () => (
   <Unstyled>
     {Object.entries(primitive.color)
@@ -74,10 +81,8 @@ export const Colors = () => (
               gap: '0.75rem',
             }}
           >
-            {Object.entries(steps)
-              .filter(([step]) => !step.startsWith('$'))
-              .map(([step, { $value }]) => (
-                <div key={step}>
+            {swatches(family, steps).map(([name, { $value }]) => (
+                <div key={name}>
                   <div
                     style={{
                       height: '4rem',
@@ -95,7 +100,7 @@ export const Colors = () => (
                       </>
                     }
                   >
-                    {family}.{step}
+                    {name}
                   </Name>
                 </div>
               ))}
@@ -308,7 +313,7 @@ Son los valores básicos de Lumine-DS: la materia prima de la que saldrán los d
 página se dibuja leyendo `tokens/tokens.json`, así que cambia sola cuando cambia el archivo.
 
 Parten de los valores de Tailwind. Lo propio de Lumine es la escala `color.brand` y la familia
-Inter. Los componentes todavía no usan estos tokens.
+Inter. `color.white` es el blanco del manual de marca. Los componentes todavía no usan estos tokens.
 
 ## Color
 
