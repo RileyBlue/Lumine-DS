@@ -237,7 +237,7 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens de
 - [`src/styles/theme.css`](../src/styles/theme.css): las clases de Tailwind de `semantic` y `component`;
 - [`docs/tokens.md`](../docs/tokens.md): la tabla de cada token y su clase.
 
-No se editan a mano. `npm run tokens -- --check` avisa si están desactualizados, sin escribirlos.
+No se editan a mano. `npm run tokens -- --check` avisa si están desactualizados, sin escribirlos. GitHub ejecuta esa comprobación en cada PR y en cada cambio de `main`.
 
 La clase es la utilidad de Tailwind seguida del nombre del token, sin el nivel, sin `color` y sin el `default` del color: `component.button.background.brand.default` es `bg-button-background-brand`. La regla completa está en [`scripts/token-classes.mjs`](../scripts/token-classes.mjs).
 

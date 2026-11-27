@@ -1,6 +1,6 @@
 # ADR-002 · Enlace al issue en los tokens
 
-- **Estado:** Propuesto
+- **Estado:** Aceptado
 - **Fecha:** 2026-11-26
 - **Creado por:** Riley Sainz (RileyBlue)
 
