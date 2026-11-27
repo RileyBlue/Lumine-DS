@@ -1,4 +1,5 @@
 { "$schema": "./contract.schema.json",
+  "$schema": "./contract.schema.json",
   "name": "Card",
   "file": "src/components/Card.tsx",
   "import": "import { Card } from '@/components'",
@@ -162,6 +163,27 @@
       "Hacer que la tarjeta se pueda pulsar."
     ]
   },
-  "guidelines": {},
-  "content": []
+  "guidelines": {
+    "do": [
+      "El texto que acompaña al título va en `description`; el resto, en `children`.",
+      "Si una pantalla necesita una pieza parecida que hace otra función, se pide un componente en vez de copiar sus clases."
+    ],
+    "combinations": [
+      {
+        "with": "Button",
+        "guidance": "Las acciones van en `footer`, con un solo botón `primary` como mucho."
+      },
+      {
+        "with": "Badge",
+        "guidance": "El estado de lo que cuenta la tarjeta se marca con `Badge`."
+      }
+    ]
+  },
+  "content": [
+    {
+      "rule": "El título nombra el asunto de la tarjeta.",
+      "correct": "Ballet clásico, nivel 2",
+      "incorrect": "Información"
+    }
+  ]
 }

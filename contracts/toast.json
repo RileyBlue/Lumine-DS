@@ -147,6 +147,22 @@
       "link": "https://github.com/RileyBlue/Lumine-DS/issues/52"
     }
   ],
-  "guidelines": {},
-  "content": []
+  "guidelines": {
+    "do": [
+      "`success` cuando algo salió bien; `error` cuando falló; `warning` cuando pide atención sin haber fallado; `info` para lo demás.",
+      "Muestra un solo aviso por cada cosa que pasa."
+    ]
+  },
+  "content": [
+    {
+      "rule": "Una frase corta que diga qué pasó.",
+      "correct": "La asistencia se guardó.",
+      "incorrect": "Operación realizada con éxito."
+    },
+    {
+      "rule": "Si algo falló, di qué hacer.",
+      "correct": "No se pudo guardar la asistencia. Inténtalo de nuevo.",
+      "incorrect": "Error 500"
+    }
+  ]
 }

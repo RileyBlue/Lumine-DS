@@ -1,4 +1,5 @@
 { "$schema": "./contract.schema.json",
+  "$schema": "./contract.schema.json",
   "name": "Button",
   "file": "src/components/Button.tsx",
   "import": "import { Button } from '@/components'",
@@ -217,6 +218,34 @@
       "Cambiar el anillo de foco, los colores o la forma de dar nombre al botón."
     ]
   },
-  "guidelines": {},
-  "content": []
+  "guidelines": {
+    "do": [
+      "Un solo botón `primary` por grupo de acciones.",
+      "La variante `error` solo para acciones destructivas, como eliminar.",
+      "Dentro de un formulario, el botón que lo envía lleva `type=\"submit\"`: sin eso no envía nada.",
+      "Usa `iconOnly` solo cuando el icono se entienda sin texto."
+    ],
+    "combinations": [
+      {
+        "with": "Dialog",
+        "guidance": "En el `footer`, el botón que confirma va el último y el de cancelar es `ghost`."
+      },
+      {
+        "with": "Card",
+        "guidance": "Las acciones de una tarjeta van en su `footer`."
+      }
+    ]
+  },
+  "content": [
+    {
+      "rule": "El texto dice qué pasa al pulsar.",
+      "correct": "Eliminar clase",
+      "incorrect": "Aceptar"
+    },
+    {
+      "rule": "El `aria-label` de un botón de solo icono dice lo que hace, no lo que dibuja.",
+      "correct": "Cerrar",
+      "incorrect": "Equis"
+    }
+  ]
 }

@@ -1,4 +1,5 @@
 { "$schema": "./contract.schema.json",
+  "$schema": "./contract.schema.json",
   "name": "Input",
   "file": "src/components/Input.tsx",
   "import": "import { Input } from '@/components'",
@@ -234,6 +235,28 @@
       "Cambiar el anillo de foco o la forma de dar nombre al campo."
     ]
   },
-  "guidelines": {},
-  "content": []
+  "guidelines": {
+    "do": [
+      "Pon un `label` a la vista; deja `aria-label` para cuando no deba verse texto, como en un buscador.",
+      "Lo que haga falta saber para rellenarlo va en `hint`, no en `placeholder`, que desaparece al escribir."
+    ],
+    "combinations": [
+      {
+        "with": "Button",
+        "guidance": "El formulario se envía con un solo botón `primary`."
+      }
+    ]
+  },
+  "content": [
+    {
+      "rule": "El `label` nombra el dato que se pide.",
+      "correct": "Nombre de la alumna",
+      "incorrect": "Escribe aquí"
+    },
+    {
+      "rule": "El `errorMessage` dice cómo corregirlo.",
+      "correct": "Escribe un correo válido.",
+      "incorrect": "Error"
+    }
+  ]
 }
