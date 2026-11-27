@@ -59,6 +59,8 @@ export function Input({
   id,
   className = '',
   style,
+  'aria-describedby': describedBy,
+  'aria-invalid': ariaInvalid,
   ...props
 }: InputProps) {
   const generatedId = useId()
@@ -94,8 +96,9 @@ export function Input({
         )}
         <input
           id={inputId}
-          aria-invalid={invalid || undefined}
-          aria-describedby={message ? messageId : undefined}
+          // Lo que llegue de fuera se suma: nunca borra el error ni la ayuda del componente.
+          aria-invalid={invalid ? true : ariaInvalid}
+          aria-describedby={[describedBy, message ? messageId : undefined].filter(Boolean).join(' ') || undefined}
           className={[
             'w-full rounded-input-radius border-input-border-width-default bg-input-background-neutral',
             'text-input-field-text-neutral placeholder:text-input-placeholder-text-neutral-subtle',

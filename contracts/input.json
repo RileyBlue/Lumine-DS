@@ -82,6 +82,14 @@
       "inherited": true
     },
     {
+      "name": "aria-describedby",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Identificadores de otros textos que describen el campo. Se suman a la ayuda o al error.",
+      "inherited": true
+    },
+    {
       "name": "className",
       "type": "string",
       "default": "",
@@ -201,8 +209,7 @@
     "notes": [
       "El papel depende de `type`: `textbox` por defecto y con email, tel o url; `searchbox` con search; `spinbutton` con number; password no tiene papel.",
       "Nombre accesible: `label` o `aria-label`; sin ninguno, el código no compila. El `placeholder` no cuenta.",
-      "La ayuda o el mensaje de error se unen al campo con `aria-describedby`; `invalid` lo marca con `aria-invalid`.",
-      "Si se pasa `aria-describedby` o `aria-invalid` desde fuera, sustituye al del componente y la ayuda o el error pueden dejar de anunciarse.",
+      "La ayuda o el mensaje de error se unen al campo con `aria-describedby`; `invalid` lo marca con `aria-invalid`. Lo que se pase en esos dos atributos no borra lo del componente: con `invalid` verdadero, el campo queda marcado como no válido; sin él, se respeta el `aria-invalid` que llegue.",
       "`errorMessage` sin `invalid` no se muestra ni se anuncia.",
       "El mensaje de error no se anuncia por sí solo al aparecer: se lee al entrar en el campo.",
       "El icono es decorativo y va oculto con `aria-hidden`.",
