@@ -1,0 +1,352 @@
+import { Meta, Unstyled } from '@storybook/addon-docs/blocks'
+import { IconBell } from '@tabler/icons-react'
+import tokens from '../../tokens/tokens.json'
+
+<Meta title="Fundamentos/Semánticos" />
+
+export const semantic = tokens.semantic
+
+export const find = (path) => path.split('.').reduce((node, part) => node[part], tokens)
+
+export const isAlias = (value) => typeof value === 'string' && value.startsWith('{')
+
+export const resolve = (value) => {
+  if (isAlias(value)) return resolve(find(value.slice(1, -1)).$value)
+  if (typeof value === 'object' && value !== null && !('unit' in value) && !('colorSpace' in value)) {
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, resolve(item)]))
+  }
+  return value
+}
+
+export const target = (alias) => alias.slice(1, -1)
+
+export const flatten = (group, path) =>
+  Object.entries(group)
+    .filter(([name]) => !name.startsWith('$'))
+    .flatMap(([name, node]) =>
+      node.$value === undefined
+        ? flatten(node, `${path}.${name}`)
+        : [{ name: `${path}.${name}`, alias: node.$value, value: resolve(node.$value) }],
+    )
+
+export const size = ({ value, unit }) => `${value}${unit}`
+
+export const color = ({ colorSpace, components, alpha = 1 }) =>
+  colorSpace === 'oklch'
+    ? `oklch(${components.join(' ')} / ${alpha})`
+    : `color(${colorSpace} ${components.join(' ')} / ${alpha})`
+
+export const paint = (name) => color(resolve(find(`semantic.color.${name}`).$value))
+
+export const sans = tokens.primitive['font-family'].sans.$value
+  .map((name) => (name.includes(' ') ? `"${name}"` : name))
+  .join(', ')
+
+export const line = `1px solid ${paint('border.neutral.default')}`
+
+export const accent = paint('background.brand.default')
+
+export const Label = ({ name, children }) => (
+  <div style={{ fontSize: '0.75rem', lineHeight: '1.25rem', overflowWrap: 'anywhere' }}>
+    <code style={{ fontWeight: 600 }}>{name.replace('semantic.', '')}</code>
+    <div style={{ color: paint('text.neutral.subtle.default') }}>{children}</div>
+  </div>
+)
+
+export const Arrow = ({ alias }) => <div>→ {target(alias).replace('primitive.', '')}</div>
+
+export const Grid = ({ children }) => (
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fill, minmax(14rem, 1fr))',
+      gap: '1.25rem',
+      padding: '0.5rem 0 1rem',
+    }}
+  >
+    {children}
+  </div>
+)
+
+export const Box = ({ background, style, children }) => (
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '0.5rem',
+      height: '5rem',
+      borderRadius: '0.5rem',
+      border: line,
+      background: paint(background),
+      fontFamily: sans,
+      marginBottom: '0.25rem',
+      ...style,
+    }}
+  >
+    {children}
+  </div>
+)
+
+export const colorTokens = (element) => flatten(semantic.color[element], `semantic.color.${element}`)
+
+export const short = (name) => name.replace('semantic.color.', '')
+
+export const textOn = (name) => {
+  const [, role, ...rest] = name.split('.')
+  if (rest.includes('disabled')) return 'text.neutral.disabled'
+  if (role === 'neutral') {
+    return rest.includes('inverted') ? 'text.neutral.inverted.default' : 'text.neutral.default'
+  }
+  return rest.includes('subtle') ? `text.${role}.default` : `text.${role}.inverted.default`
+}
+
+export const backgroundFor = (name) => {
+  const [, role, ...rest] = name.split('.')
+  if (rest.includes('disabled')) return ['background.neutral.disabled']
+  if (rest.includes('inverted')) {
+    return [role === 'neutral' ? 'background.neutral.inverted.default' : `background.${role}.default`]
+  }
+  if (role === 'neutral') return ['background.neutral.default']
+  return ['background.neutral.default', `background.${role}.subtle.default`]
+}
+
+export const Backgrounds = () => (
+  <Unstyled>
+    <Grid>
+      {colorTokens('background').map(({ name, alias }) => (
+        <div key={name}>
+          <Box background={short(name)} style={{ color: paint(textOn(short(name))) }}>
+            Clase de ballet
+          </Box>
+          <Label name={name}>
+            <Arrow alias={alias} />
+            <div>con {textOn(short(name))}</div>
+          </Label>
+        </div>
+      ))}
+    </Grid>
+  </Unstyled>
+)
+
+export const Foreground = ({ element }) => (
+  <Unstyled>
+    <Grid>
+      {colorTokens(element).map(({ name, alias, value }) => (
+        <div key={name}>
+          <div style={{ display: 'flex', gap: '0.5rem' }}>
+            {backgroundFor(short(name)).map((background) => (
+              <div key={background} style={{ flex: 1 }}>
+                <Box background={background} style={{ color: color(value) }}>
+                  {element === 'icon' ? <IconBell size={28} aria-hidden="true" /> : 'Clase de ballet'}
+                </Box>
+              </div>
+            ))}
+          </div>
+          <Label name={name}>
+            <Arrow alias={alias} />
+            <div>sobre {backgroundFor(short(name)).join(' y ')}</div>
+          </Label>
+        </div>
+      ))}
+    </Grid>
+  </Unstyled>
+)
+
+export const Borders = () => (
+  <Unstyled>
+    <Grid>
+      {colorTokens('border').map(({ name, alias, value }) => {
+        const isFocus = name.endsWith('focus')
+        const width = size(resolve(semantic['border-width'][isFocus ? 'focus' : 'default'].$value))
+        return (
+          <div key={name}>
+            <Box
+              background="background.neutral.default"
+              style={
+                isFocus
+                  ? { outline: `${width} solid ${color(value)}`, outlineOffset: '2px' }
+                  : { border: `${width} solid ${color(value)}` }
+              }
+            />
+            <Label name={name}>
+              <Arrow alias={alias} />
+              <div>sobre background.neutral.default</div>
+            </Label>
+          </div>
+        )
+      })}
+    </Grid>
+  </Unstyled>
+)
+
+export const examples = {
+  display: 'Lumine',
+  heading: 'Horario de clases',
+  title: 'Ballet para adultas',
+  body: 'La clase empieza con ejercicios en la barra y termina con una variación en el centro.',
+  label: 'Nombre de la alumna',
+  caption: 'Actualizado hace dos días',
+}
+
+export const TextStyles = () => (
+  <Unstyled>
+    {Object.entries(semantic.typography).map(([style, parts]) => (
+      <div key={style} style={{ padding: '1rem 0', borderBottom: line }}>
+        <div
+          style={{
+            fontFamily: sans,
+            fontSize: size(resolve(parts['font-size'].$value)),
+            lineHeight: size(resolve(parts['line-height'].$value)),
+            fontWeight: resolve(parts['font-weight'].$value),
+            color: paint('text.neutral.default'),
+            maxWidth: '28rem',
+            marginBottom: '0.5rem',
+          }}
+        >
+          {examples[style]}
+        </div>
+        <Grid>
+          {Object.entries(parts).map(([property, { $value }]) => (
+            <Label key={property} name={`typography.${style}.${property}`}>
+              <Arrow alias={$value} />
+            </Label>
+          ))}
+        </Grid>
+      </div>
+    ))}
+  </Unstyled>
+)
+
+export const Spaces = () => (
+  <Unstyled>
+    {flatten(semantic.space, 'semantic.space').map(({ name, alias, value }) => (
+      <div
+        key={name}
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '14rem minmax(0, 1fr)',
+          alignItems: 'center',
+          gap: '1rem',
+          padding: '0.75rem 0',
+          borderBottom: line,
+        }}
+      >
+        <Label name={name}>
+          <Arrow alias={alias} />
+        </Label>
+        <div style={{ width: size(value), height: '1rem', background: accent }} />
+      </div>
+    ))}
+  </Unstyled>
+)
+
+export const Radii = () => (
+  <Unstyled>
+    <Grid>
+      {flatten(semantic.radius, 'semantic.radius').map(({ name, alias, value }) => (
+        <div key={name}>
+          <Box
+            background="background.brand.default"
+            style={{ borderRadius: size(value), border: 'none' }}
+          />
+          <Label name={name}>
+            <Arrow alias={alias} />
+          </Label>
+        </div>
+      ))}
+    </Grid>
+  </Unstyled>
+)
+
+export const BorderWidths = () => (
+  <Unstyled>
+    <Grid>
+      {flatten(semantic['border-width'], 'semantic.border-width').map(({ name, alias, value }) => (
+        <div key={name}>
+          <Box
+            background="background.neutral.default"
+            style={{ border: `${size(value)} solid ${accent}` }}
+          />
+          <Label name={name}>
+            <Arrow alias={alias} />
+          </Label>
+        </div>
+      ))}
+    </Grid>
+  </Unstyled>
+)
+
+export const Elevations = () => (
+  <Unstyled>
+    <Grid>
+      {flatten(semantic.elevation, 'semantic.elevation').map(({ name, alias, value }) => (
+        <div key={name}>
+          <Box
+            background="background.neutral.default"
+            style={{
+              boxShadow: `${size(value.offsetX)} ${size(value.offsetY)} ${size(value.blur)} ${size(value.spread)} ${color(value.color)}`,
+              marginBottom: '1.5rem',
+            }}
+          />
+          <Label name={name}>
+            {Object.entries(alias).map(([part, ref]) => (
+              <div key={part}>
+                {part} → {target(ref).replace('primitive.', '')}
+              </div>
+            ))}
+          </Label>
+        </div>
+      ))}
+    </Grid>
+  </Unstyled>
+)
+
+# Semánticos
+
+Son los tokens que dicen para qué se usa cada valor. Cada uno apunta a un primitivo: aquí se ve su
+nombre y, después de la flecha, el primitivo al que apunta. Para no repetir, los nombres van sin el
+prefijo `semantic.` y los destinos sin `primitive.`.
+
+Esta página lee `tokens/tokens.json`. Los componentes todavía no usan estos tokens.
+
+## Color de fondo
+
+Cada fondo se muestra con el color de texto que le corresponde.
+
+<Backgrounds />
+
+## Color de texto
+
+<Foreground element="text" />
+
+## Color de icono
+
+<Foreground element="icon" />
+
+## Color de borde
+
+<Borders />
+
+## Estilos de texto
+
+Los ejemplos usan `font-family.sans`. Si el equipo no tiene instalada la letra Inter, se ve la
+siguiente de la lista.
+
+<TextStyles />
+
+## Espaciado
+
+<Spaces />
+
+## Radios
+
+<Radii />
+
+## Grosor de borde
+
+<BorderWidths />
+
+## Sombras
+
+<Elevations />

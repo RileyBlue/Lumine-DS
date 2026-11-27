@@ -45,12 +45,13 @@ Describen el valor, no su uso. Se nombran por grupo y paso: `primitive.color.[fa
 | --- | --- | --- | --- |
 | `category` | ¿Qué tipo de token es? | `color` | Sí |
 | `element` | ¿Qué se pinta? | `background`, `text`, `border`, `icon` | Sí |
-| `role` | ¿Qué significa? | `neutral`, `brand`, `info`, `success`, `warning`, `danger` | Sí |
-| `modifier` | ¿Con qué intensidad? | `subtle`, `strong`, `inverse` | No: se omite en la versión normal |
-| `state` | ¿En qué estado está? | `default`, `hover`, `active`, `focus`, `disabled` | Sí |
+| `role` | ¿Qué significa? | `neutral`, `brand`, `info`, `success`, `warning`, `error` | Sí, salvo en `color.border.focus` |
+| `modifier` | ¿Con qué intensidad? | `subtle`, `strong`, `inverted` | No: se omite en la versión normal |
+| `state` | ¿En qué estado está? | `default`, `hover`, `pressed`, `focus`, `disabled` | Sí |
 
 - El orden no cambia.
-- El nombre dice el significado, no el color: `danger`, nunca `red`.
+- El nombre dice el significado, no el color: `error`, nunca `red`.
+- Hay una sola excepción sin `role`: `color.border.focus`, porque el anillo de foco es el mismo para todos los significados.
 - En `semantic`, la fórmula va detrás del nivel: `semantic.color.text.brand.default`.
 - En `component`, entre el nivel y la fórmula va el nombre del componente: `component.[componente].[category].[element].[role].[modifier].[state]`. En `role` se usa el nombre de la variante del componente (por ejemplo, `primary` o `ghost` en `Button`).
 - Si hace falta un valor que no está en la tabla, se añade primero a este manual, en la misma PR que el token.
@@ -66,16 +67,26 @@ En DTCG, un nombre con `$value` es un token y no puede contener otros. Si existi
 
 El formato ofrece también el nombre reservado `$root` para esto. Aquí no se usa: `default` sigue la fórmula y se lee igual que los demás estados.
 
-### Otras categorías
+### Otras categorías en `semantic`
 
-La forma de nombrar el espaciado, los radios, las letras o las sombras en `semantic` y `component` está sin decidir. Se añade a este manual antes de crear el primero.
+| Qué | Nombre | Valores permitidos |
+| --- | --- | --- |
+| Tipografía | `semantic.typography.[estilo].[propiedad]` | Estilos: `display`, `heading`, `title`, `body`, `label`, `caption`. Propiedades: `font-size`, `line-height`, `font-weight` |
+| Espaciado | `semantic.space.[talla]` | `none`, `2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl` |
+| Radio | `semantic.radius.[talla]` | `none`, `sm`, `md`, `lg`, `xl`, `full` |
+| Grosor de borde | `semantic.border-width.[uso]` | `default`, `strong`, `focus` |
+| Sombra | `semantic.elevation.[talla]` | `sm`, `md`, `lg` |
+
+- `line-height` es un alias a la escala `primitive.line-height`, nunca una proporción. Por eso no se usa el tipo compuesto `typography` de DTCG, que pide una proporción.
+- No hay tokens de disposición (*layout*).
+- La forma de nombrar estas categorías en `component` está sin decidir. Se añade a este manual antes de crear el primero.
 
 ## Formato DTCG
 
 ### Reglas
 
 1. **Cada token tiene `$value` y `$description`.** La descripción va en español y dice cuándo usarlo, sin repetir el valor.
-2. **El `$type` va en el grupo, no en el token.** Lo llevan el grupo de la categoría (`color`) y cada grupo que contiene tokens directamente. Un grupo que mezcla tipos, como `primitive` o `component.badge`, no lo lleva.
+2. **El `$type` va en el grupo, no en el token.** Lo llevan el grupo de la categoría (`color`) y cada grupo que contiene tokens directamente. Un grupo que mezcla tipos, como `primitive`, no lo lleva. Si un grupo contiene directamente tokens de tipos distintos, como un estilo de `typography`, cada token lleva su propio `$type`.
 3. **Un alias es el `$value` completo, escrito `{ruta.del.token}`.** La ruta empieza por el nivel y termina en un token, nunca en un grupo. Se escribe `{primitive.color.brand.800}`, no `{color.brand.800}`.
 4. **El tipo del alias coincide con el del token al que apunta.**
 5. **En un token compuesto**, como una sombra, cada pieza de `$value` es un alias al nivel de abajo.
@@ -91,7 +102,7 @@ La forma de nombrar el espaciado, los radios, las letras o las sombras en `seman
 
 ## Ejemplo completo
 
-La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens `semantic` y `component` de este ejemplo todavía no existen en `tokens.json`.
+La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens `component` de este ejemplo todavía no existen en `tokens.json`.
 
 ### 1. `primitive`: el valor
 
@@ -129,7 +140,7 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens `s
             "$type": "color",
             "default": {
               "$value": "{primitive.color.brand.100}",
-              "$description": "Fondo suave para destacar algo propio de la marca."
+              "$description": "Selección y destacados suaves de la marca."
             }
           }
         }
@@ -139,7 +150,7 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens `s
           "$type": "color",
           "default": {
             "$value": "{primitive.color.brand.800}",
-            "$description": "Texto de marca sobre fondos claros."
+            "$description": "Texto de marca sobre fondos neutros o sobre su fondo suave."
           }
         }
       }
@@ -191,6 +202,6 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens `s
 
 ## Pendiente
 
-- `tokens.json` solo tiene el nivel `primitive`.
+- `tokens.json` todavía no tiene el nivel `component`.
 - Falta decidir dónde se enlaza el issue aprobado de un token de `tokens.json`. El ADR-001 pide un comentario junto al token, y JSON no admite comentarios.
 - Falta conectar estos tokens con el tema de Tailwind (`src/index.css`), que es de donde el ADR-001 pide que los usen los componentes.
