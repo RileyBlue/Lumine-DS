@@ -20,15 +20,18 @@ Los tokens se diseñan ahora en `tokens/tokens.json`, en formato DTCG. JSON no a
 
 - Un issue está aprobado cuando quien mantiene Lumine-DS escribe en él un comentario que dice «Aprobado».
 - Esto sustituye, solo para `tokens/tokens.json`, al comentario junto al token que pide el ADR-001. Todo lo demás del principio 2 sigue igual.
+- Si un mismo issue aprueba juntos varios tokens de un grupo, el enlace puede ir una sola vez en el `$extensions` de ese grupo. Vale solo para los tokens que ese issue aprobó. Un token añadido después lleva su propio enlace, que tiene preferencia sobre el del grupo. DTCG permite `$extensions` en un grupo, pero no dice que sus tokens lo hereden: esta regla es propia de Lumine-DS.
 - Se aplica desde este ADR. Los tokens anteriores no necesitan enlace.
 
 ### Cómo se comprueba
 
-Si la PR añade un token en `tokens/tokens.json`, el token tiene `com.lumine.issue` y el issue enlazado tiene el comentario de aprobación.
+Si la PR añade un token en `tokens/tokens.json`, el token tiene `com.lumine.issue` y el issue enlazado tiene el comentario de aprobación. El enlace del grupo solo sirve si el issue enlazado incluye ese token.
 
 ## Consecuencias
 
 - El enlace viaja con el token y se puede leer con un programa.
 - `$description` queda solo para explicar cuándo usar el token.
 - La revisión sigue siendo manual.
+- Un enlace de grupo no se ve al mirar un token suelto, y quien revisa tiene que abrir el issue para saber si lo incluye.
+- La capa `component` se enlaza así: su issue ([#22](https://github.com/RileyBlue/Lumine-DS/issues/22)) se aprobó después de crear los tokens.
 - Si los tokens se conectan con `src/index.css`, habrá que decidir si el enlace se repite allí como comentario.

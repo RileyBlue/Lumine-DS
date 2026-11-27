@@ -103,6 +103,8 @@ El color repite la ruta semántica sin `color`, detrás del componente y de la p
 
 - `[parte]` y `[talla]` se omiten cuando no hacen falta. `[talla]` solo admite `sm`, `md` y `lg`. En `gap` también puede nombrar qué se separa: `stack`, `icon`, `sections` o `header`.
 - Se nombra por el significado, no por la variante: las variantes `primary`, `secondary` y `danger` usan `brand`, `brand.subtle` y `error`. La `$description` dice a qué variante sirve.
+- `danger` y `error` no son sinónimos: `danger` es la variante de una acción que puede causar una pérdida, como eliminar; `error` es el significado de color de algo que salió mal. La variante `danger` usa los tokens `error`.
+- Las alturas y los tamaños de icono no tienen token: las alturas usan la escala de Tailwind y cada componente fija el tamaño de sus iconos con `sm`, `md` o `lg` ([ADR-001](../docs/adr/001-alcance.md), principio 1).
 - Cada parte tiene su token, aunque apunte al mismo semántico que otra: `card.title.text.neutral.default` y `card.content.text.neutral.default`. Lleva `[parte]` todo texto de un componente con varios (`input.label`, `input.field`, `input.placeholder`, `input.message`) y toda zona propia (`card.footer`). Lo que pertenece a la caja principal o es único, como `button.text` o `input.icon`, va sin parte.
 - Solo hay token si hay algo que pintar o medir: un fondo transparente no lo tiene.
 
@@ -115,7 +117,7 @@ El color repite la ruta semántica sin `color`, detrás del componente y de la p
 3. **Un alias es el `$value` completo, escrito `{ruta.del.token}`.** La ruta empieza por el nivel y termina en un token, nunca en un grupo. Se escribe `{primitive.color.brand.800}`, no `{color.brand.800}`.
 4. **El tipo del alias coincide con el del token al que apunta.**
 5. **En un token compuesto**, como una sombra, cada pieza de `$value` es un alias al nivel de abajo.
-6. **Un token nuevo enlaza su issue aprobado** en `$extensions`, con la clave `com.lumine.issue`.
+6. **Un token nuevo enlaza su issue aprobado** en `$extensions`, con la clave `com.lumine.issue`. Si un issue aprueba juntos los tokens de un grupo, el enlace puede ir una sola vez en el grupo. Vale solo para esos tokens: los que se añadan después llevan el suyo, que tiene preferencia sobre el del grupo ([ADR-002](../docs/adr/002-issue-en-tokens.md)).
 
 ### Cómo se escribe un valor en `primitive`
 
@@ -229,7 +231,7 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens de
 
 ## Antes de abrir la PR
 
-- [ ] El issue que pide el token está aprobado y su enlace está en `$extensions`.
+- [ ] El issue que pide el token está aprobado y su enlace está en el `$extensions` del propio token (o en el del grupo, si ese issue aprobó el grupo).
 - [ ] El token está en su nivel y su alias apunta solo al nivel de abajo.
 - [ ] El nombre sigue las reglas de este manual.
 - [ ] Tiene `$value` y `$description`. El `$type` está en su grupo o, si el grupo mezcla tipos, en el propio token.
@@ -239,5 +241,4 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens de
 ## Pendiente
 
 - Los componentes de `src/components/` todavía no usan los tokens `component`.
-- Faltan en `semantic` el fondo `brand.subtle` bajo el puntero y al pulsar, que necesita el botón `secondary`, y no hay tamaños para alturas ni iconos.
 - Falta conectar estos tokens con el tema de Tailwind (`src/index.css`), que es de donde el ADR-001 pide que los usen los componentes.
