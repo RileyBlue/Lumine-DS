@@ -19,6 +19,7 @@ Lumine-DS es el design system de Lumine, la plataforma escolar interna de la aca
 - A partir de ahora, todo cambio va en una rama con su PR. No se sube directamente a `main`.
 - Los cambios se explican sin jerga.
 - Si cambia `package.json`, se actualiza `package-lock.json` en la misma PR.
+- Cada PR rellena en su descripción la lista de `.github/pull_request_template.md`, también si se abre desde la terminal o la abre un asistente. Una casilla solo se marca si se comprobó; si no aplica, se marca y se escribe «no aplica».
 
 ## Decisiones
 
