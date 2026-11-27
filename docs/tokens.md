@@ -76,6 +76,12 @@ componentes no los usan directamente.
 | `semantic.color.border.error.default` | `border-border-error` |
 | `semantic.color.border.focus` | `outline-border-focus` |
 
+### font-family
+
+| Token | Clase de Tailwind |
+| --- | --- |
+| `semantic.font-family.default` | `font-family-default` |
+
 ### typography
 
 | Token | Clase de Tailwind |

@@ -59,6 +59,7 @@
   --border-color-border-warning: var(--semantic-color-border-warning-default);
   --border-color-border-error: var(--semantic-color-border-error-default);
   --outline-color-border-focus: var(--semantic-color-border-focus);
+  --font-family-default: var(--semantic-font-family-default);
   --text-display: var(--semantic-typography-display-font-size);
   --text-display--line-height: var(--semantic-typography-display-line-height);
   --text-display--font-weight: var(--semantic-typography-display-font-weight);

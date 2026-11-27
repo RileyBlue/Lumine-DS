@@ -1,3 +1,10 @@
 @import "tailwindcss" theme(static);
 @import "./styles/tokens.css";
 @import "./styles/theme.css";
+
+/* La letra de la interfaz (ADR-004). Los componentes la heredan. */
+@layer base {
+  html {
+    font-family: var(--semantic-font-family-default);
+  }
+}

@@ -78,6 +78,7 @@ El formato ofrece también el nombre reservado `$root` para esto. Aquí no se us
 
 | Qué | Nombre | Valores permitidos |
 | --- | --- | --- |
+| Familia de letra | `semantic.font-family.[uso]` | `default` |
 | Tipografía | `semantic.typography.[estilo].[propiedad]` | Estilos: `display`, `heading`, `title`, `body`, `label`, `caption`. Propiedades: `font-size`, `line-height`, `font-weight` |
 | Espaciado | `semantic.space.[talla]` | `none`, `2xs`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl` |
 | Radio | `semantic.radius.[talla]` | `none`, `sm`, `md`, `lg`, `xl`, `full` |
@@ -250,7 +251,3 @@ La clase es la utilidad de Tailwind seguida del nombre del token, sin el nivel, 
 - [ ] Tiene `$value` y `$description`. El `$type` está en su grupo o, si el grupo mezcla tipos, en el propio token.
 - [ ] El alias apunta a un token que existe.
 - [ ] Las parejas de color cumplen el contraste de WCAG 2.2 AA: 4,5:1 para texto y 3:1 para elementos de interfaz.
-
-## Pendiente
-
-- Los estilos de texto no incluyen familia de letra. Falta decidir entre Inter y las letras del manual de marca, y cargar la elegida.
