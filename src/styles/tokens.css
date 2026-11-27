@@ -147,7 +147,7 @@
   --semantic-color-background-brand-default: var(--primitive-color-brand-800);
   --semantic-color-background-brand-subtle-default: var(--primitive-color-brand-100);
   --semantic-color-background-brand-subtle-hover: var(--primitive-color-brand-200);
-  --semantic-color-background-brand-subtle-pressed: var(--primitive-color-brand-300);
+  --semantic-color-background-brand-subtle-pressed: var(--primitive-color-brand-200);
   --semantic-color-background-brand-hover: var(--primitive-color-brand-900);
   --semantic-color-background-brand-pressed: var(--primitive-color-brand-950);
   --semantic-color-background-info-default: var(--primitive-color-blue-700);
