@@ -1,0 +1,478 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Contrato de componente de Lumine-DS",
+  "description": "Qué hace un componente, cómo se usa y qué reglas cumple. Hay un contrato por componente.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "file",
+    "import",
+    "purpose",
+    "neverUseFor",
+    "props",
+    "states",
+    "anatomy",
+    "tokens",
+    "a11y",
+    "usage",
+    "governance"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Ruta a este esquema, para que el editor valide el contrato mientras se escribe.",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "description": "Nombre del componente, en inglés y en PascalCase.",
+      "minLength": 1,
+      "pattern": "^[A-Z][A-Za-z0-9]*$"
+    },
+    "file": {
+      "type": "string",
+      "description": "Archivo donde está el componente.",
+      "minLength": 1,
+      "pattern": "^src/components/[A-Z][A-Za-z0-9]*\\.tsx$"
+    },
+    "import": {
+      "type": "string",
+      "description": "Línea completa para importarlo.",
+      "minLength": 1,
+      "pattern": "^import .+ from .+$"
+    },
+    "purpose": {
+      "type": "string",
+      "description": "Para qué sirve, en una o dos frases.",
+      "minLength": 1
+    },
+    "neverUseFor": {
+      "type": "array",
+      "description": "Casos en los que no se debe usar.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "description": "Un caso en el que no se debe usar.",
+        "minLength": 1
+      }
+    },
+    "props": {
+      "type": "array",
+      "description": "Propiedades que se le pueden pasar. Puede estar vacía.",
+      "items": {
+        "type": "object",
+        "description": "Una propiedad del componente.",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "type",
+          "default",
+          "required",
+          "description",
+          "inherited"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Nombre de la propiedad, tal como se escribe en el código.",
+            "minLength": 1,
+            "pattern": "^[A-Za-z][A-Za-z0-9-]*$"
+          },
+          "type": {
+            "type": "string",
+            "description": "Tipo, como se escribe en TypeScript.",
+            "minLength": 1
+          },
+          "default": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ],
+            "description": "Valor si no se indica. null cuando no tiene valor por defecto."
+          },
+          "required": {
+            "type": "boolean",
+            "description": "true si es obligatoria."
+          },
+          "description": {
+            "type": "string",
+            "description": "Qué controla.",
+            "minLength": 1
+          },
+          "inherited": {
+            "type": "boolean",
+            "description": "true si la propiedad viene de HTML; false si la define el componente."
+          }
+        }
+      }
+    },
+    "states": {
+      "type": "object",
+      "description": "Estados en los que puede estar.",
+      "additionalProperties": false,
+      "required": [
+        "intrinsic",
+        "authored"
+      ],
+      "properties": {
+        "intrinsic": {
+          "type": "array",
+          "description": "Estados que dan el navegador o HTML. El reposo no se escribe. Puede estar vacía.",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "description": "Estado, con el mismo nombre que en los tokens.",
+            "enum": [
+              "hover",
+              "pressed",
+              "focus",
+              "disabled"
+            ]
+          }
+        },
+        "authored": {
+          "type": "array",
+          "description": "Estados que define el componente, como el de error. Puede estar vacía.",
+          "items": {
+            "type": "object",
+            "description": "Un estado definido por el componente.",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "description"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Nombre del estado, en inglés.",
+                "minLength": 1,
+                "pattern": "^[a-z][A-Za-z0-9-]*$"
+              },
+              "description": {
+                "type": "string",
+                "description": "Cuándo ocurre y qué cambia.",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "anatomy": {
+      "type": "array",
+      "description": "Partes que forman el componente.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "description": "Una parte del componente.",
+        "additionalProperties": false,
+        "required": [
+          "part",
+          "element",
+          "optional",
+          "description"
+        ],
+        "properties": {
+          "part": {
+            "type": "string",
+            "description": "Nombre de la parte, en inglés, como en los tokens.",
+            "minLength": 1,
+            "pattern": "^[a-z][A-Za-z0-9-]*$"
+          },
+          "element": {
+            "type": "string",
+            "description": "Etiqueta HTML o componente con el que se dibuja.",
+            "minLength": 1
+          },
+          "optional": {
+            "type": "boolean",
+            "description": "true si el componente puede aparecer sin esta parte."
+          },
+          "description": {
+            "type": "string",
+            "description": "Qué es y para qué sirve.",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "tokens": {
+      "type": "array",
+      "description": "Tokens de la capa component de tokens/tokens.json que usa, con su ruta completa.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "description": "Ruta de un token, como component.button.radius.",
+        "minLength": 1,
+        "pattern": "^component\\.[a-z][a-z0-9-]*(\\.[a-z0-9-]+)+$"
+      }
+    },
+    "a11y": {
+      "type": "object",
+      "description": "Accesibilidad, según docs/accesibilidad.md.",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "keyboard",
+        "notes"
+      ],
+      "properties": {
+        "role": {
+          "type": "string",
+          "description": "Papel que anuncia un lector de pantalla, como button o textbox. \"none\" si no tiene ninguno propio.",
+          "minLength": 1
+        },
+        "keyboard": {
+          "type": "array",
+          "description": "Teclas con las que se maneja. Vacía si no se puede pulsar.",
+          "items": {
+            "type": "object",
+            "description": "Una tecla y lo que hace.",
+            "additionalProperties": false,
+            "required": [
+              "key",
+              "action"
+            ],
+            "properties": {
+              "key": {
+                "type": "string",
+                "description": "Tecla.",
+                "enum": [
+                  "Tab",
+                  "Shift+Tab",
+                  "Enter",
+                  "Space",
+                  "Escape",
+                  "ArrowUp",
+                  "ArrowDown",
+                  "ArrowLeft",
+                  "ArrowRight"
+                ]
+              },
+              "action": {
+                "type": "string",
+                "description": "Qué ocurre al pulsarla.",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "notes": {
+          "type": "array",
+          "description": "Otras indicaciones, como de dónde sale el nombre accesible. Puede estar vacía.",
+          "items": {
+            "type": "string",
+            "description": "Una indicación.",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "description": "Dónde tiene sentido usarlo.",
+      "additionalProperties": false,
+      "required": [
+        "scope"
+      ],
+      "properties": {
+        "scope": {
+          "type": "string",
+          "description": "general si sirve en cualquier pantalla; specific si solo en algunas.",
+          "enum": [
+            "general",
+            "specific"
+          ]
+        },
+        "where": {
+          "type": "array",
+          "description": "Dónde tiene sentido. Solo cuando scope es specific.",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "description": "Una pantalla o situación.",
+            "minLength": 1
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "scope": {
+            "const": "specific"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "where"
+        ]
+      },
+      "else": {
+        "not": {
+          "required": [
+            "where"
+          ]
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "description": "Qué se puede cambiar sin consultar y qué pasa por el design system.",
+      "additionalProperties": false,
+      "required": [
+        "mayExtendLocally",
+        "mustEscalateToDS"
+      ],
+      "properties": {
+        "mayExtendLocally": {
+          "type": "array",
+          "description": "Cambios que una pantalla puede hacer por su cuenta. Vacía si ninguno.",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "description": "Un cambio permitido.",
+            "minLength": 1
+          }
+        },
+        "mustEscalateToDS": {
+          "type": "array",
+          "description": "Cambios que necesitan un issue aprobado antes de hacerse (ADR-001, principio 2; ADR-002).",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "description": "Un cambio que se consulta.",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "composedOf": {
+      "type": "array",
+      "description": "Componentes del design system que usa por dentro.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "description": "Nombre de un componente.",
+        "minLength": 1,
+        "pattern": "^[A-Z][A-Za-z0-9]*$"
+      }
+    },
+    "exceptions": {
+      "type": "array",
+      "description": "Reglas del design system que este componente no cumple, con su motivo.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "description": "Una excepción.",
+        "additionalProperties": false,
+        "required": [
+          "rule",
+          "reason"
+        ],
+        "properties": {
+          "rule": {
+            "type": "string",
+            "description": "Regla que no se cumple.",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "description": "Por qué no se cumple.",
+            "minLength": 1
+          },
+          "link": {
+            "type": "string",
+            "description": "Dirección del issue o la decisión que lo explica.",
+            "minLength": 1,
+            "pattern": "^https://"
+          }
+        }
+      }
+    },
+    "guidelines": {
+      "type": "object",
+      "description": "Cómo se usa bien y cómo se combina con otros.",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {
+        "do": {
+          "type": "array",
+          "description": "Recomendaciones de uso.",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "description": "Una recomendación.",
+            "minLength": 1
+          }
+        },
+        "combinations": {
+          "type": "array",
+          "description": "Cómo se combina con otros componentes.",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "description": "Una combinación.",
+            "additionalProperties": false,
+            "required": [
+              "with",
+              "guidance"
+            ],
+            "properties": {
+              "with": {
+                "type": "string",
+                "description": "Nombre del otro componente.",
+                "minLength": 1,
+                "pattern": "^[A-Z][A-Za-z0-9]*$"
+              },
+              "guidance": {
+                "type": "string",
+                "description": "Cómo se usan juntos.",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "minProperties": 1
+    },
+    "content": {
+      "type": "array",
+      "description": "Cómo se escribe su texto.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "description": "Una regla de redacción.",
+        "additionalProperties": false,
+        "required": [
+          "rule"
+        ],
+        "properties": {
+          "rule": {
+            "type": "string",
+            "description": "La regla.",
+            "minLength": 1
+          },
+          "correct": {
+            "type": "string",
+            "description": "Un ejemplo bien escrito.",
+            "minLength": 1
+          },
+          "incorrect": {
+            "type": "string",
+            "description": "Un ejemplo mal escrito.",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
