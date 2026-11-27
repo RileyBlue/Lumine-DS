@@ -200,7 +200,7 @@
       "Foco visible: anillo doble, con 10,75:1 entre sus dos colores.",
       "Zona táctil: la talla más pequeña mide 32 píxeles de alto.",
       "Contraste (docs/contraste.md): pasan las parejas que se exigen; texto, mínimo 7,56:1; bordes e icono, mínimo 4,39:1. Los colores de desactivado están exentos (2,36:1).",
-      "Panel Accessibility (27-11-2026): sin fallos en sus 8 historias. Prueba Keyboard: pasa. Con VoiceOver se escuchó el mensaje de error."
+      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 8 historias. Prueba Keyboard: pasa. Con VoiceOver se escuchó el mensaje de error."
     ]
   },
   "usage": {

@@ -145,7 +145,7 @@
       "No admite `onClick` ni otros eventos de ratón.",
       "El anillo de foco de los botones de dentro no se recorta.",
       "Contraste (docs/contraste.md): texto, mínimo 7,56:1. El borde y la línea inferior son decorativos y están exentos (entre 1,18:1 y 1,23:1). El contraste de lo que se ponga dentro depende de cada pieza.",
-      "Panel Accessibility (27-11-2026): sin fallos en sus 6 historias. Prueba Keyboard: pasa. Con VoiceOver se escucharon el encabezado y la zona inferior."
+      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 6 historias. Prueba Keyboard: pasa. Con VoiceOver se escucharon el encabezado y la zona inferior."
     ]
   },
   "usage": {

@@ -116,7 +116,7 @@
       "El significado no depende solo del color porque el texto lo dice.",
       "Contraste (docs/contraste.md): pasan las parejas que se exigen; texto, mínimo 6,41:1; icono, mínimo 4,49:1.",
       "No se pulsa, así que la zona táctil no le aplica.",
-      "Panel Accessibility (27-11-2026): sin fallos en sus 9 historias. Prueba Keyboard: pasa."
+      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 9 historias. Prueba Keyboard: pasa. Con VoiceOver se escucharon las etiquetas sin nombrar los iconos."
     ]
   },
   "usage": {

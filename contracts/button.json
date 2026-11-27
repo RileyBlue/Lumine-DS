@@ -200,7 +200,7 @@
       "Contraste (docs/contraste.md): pasan las parejas que se exigen; texto, mínimo 6,28:1; bordes, mínimo 3,91:1. Los colores de desactivado están exentos (entre 2,36:1 y 2,60:1).",
       "El texto y el icono de `ghost` no tienen fondo propio: se comprobaron sobre el fondo claro de la pantalla.",
       "Un `className` puede anular las clases del componente, incluidas las del foco.",
-      "Panel Accessibility (27-11-2026): sin fallos en sus 14 historias. Prueba Keyboard: pasa."
+      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 14 historias. Prueba Keyboard: pasa. Con VoiceOver se escucharon los botones."
     ]
   },
   "usage": {
