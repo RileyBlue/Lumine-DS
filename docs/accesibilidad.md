@@ -97,7 +97,9 @@ El texto de ejemplo de un campo (`placeholder`) no cuenta: desaparece al escribi
 <Input placeholder="Buscar alumna" icon={IconSearch} />
 ```
 
-`Button` obliga a escribir `aria-label` cuando solo tiene icono, e `Input` obliga a escribir `label` o `aria-label`: sin ellos, el código no compila.
+`Button` obliga a escribir su texto o, si usa `iconOnly`, un `aria-label`. `Input` obliga a escribir `label` o `aria-label`. Sin ellos, el código no compila.
+
+Cada historia de Storybook muestra en el panel **Accessibility** los fallos que detecta una revisión automática (axe), como un control sin nombre o un campo que solo tiene texto de ejemplo. La revisión ocurre al abrir la historia y no juzga si el nombre se entiende: eso se revisa a mano.
 
 ### Checklist
 
