@@ -50,6 +50,8 @@ El control que tiene el foco se ve siempre, con un **anillo doble**: uno de colo
 
 `Button` e `Input` ya lo tienen: una separación blanca, el anillo de color (`brand.900`, 10,75:1 con el blanco) y el anillo blanco exterior.
 
+Cada componente tiene en Storybook una historia `Keyboard` que recorre sus partes con Tab y comprueba que el foco se ve. Se ejecuta al abrirla y el resultado aparece en el panel Interactions. `Card` y `Badge` no se pueden pulsar, así que no aceptan eventos de ratón como `onClick`.
+
 **Correcto:** un botón de verdad. Se llega con Tab y se activa con Enter y con Espacio.
 
 ```tsx
