@@ -1,6 +1,6 @@
 # ADR-004 · Letra de la interfaz
 
-- **Estado:** Propuesto
+- **Estado:** Aceptado
 - **Fecha:** 2026-11-26
 - **Creado por:** Riley Sainz (RileyBlue)
 
