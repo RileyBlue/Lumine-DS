@@ -1,6 +1,6 @@
 # ADR-003 · Clases de tokens en los componentes
 
-- **Estado:** Propuesto
+- **Estado:** Aceptado
 - **Fecha:** 2026-11-26
 - **Creado por:** Riley Sainz (RileyBlue)
 
@@ -35,5 +35,5 @@ Los tres comandos se ejecutan antes de fusionar:
 
 - Cambiar un token cambia los componentes que lo usan, sin tocar su código.
 - Los nombres de las clases son más largos que los de Tailwind.
-- Quien cambie `tokens.json` tiene que ejecutar `npm run tokens`. La comprobación es manual.
+- Quien cambie `tokens.json` tiene que ejecutar `npm run tokens`. GitHub comprueba en cada PR que los archivos generados están al día; los otros dos comandos se ejecutan a mano.
 - `src/screens/antes.tsx` no cambia, pero se ve distinta porque usa los componentes. La versión original sigue en la rama `antes`.
