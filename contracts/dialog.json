@@ -154,7 +154,7 @@
       "Pulsar el fondo oscuro no la cierra.",
       "Zona táctil: «Cerrar» mide 32 por 32 píxeles.",
       "Contraste (docs/contraste.md): título y contenido, 17,74:1. El fondo oscuro no lleva texto ni controles; los botones siguen el contrato de Button.",
-      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 4 historias. Prueba Keyboard: pasa. Esc, que Tab no salga de la ventana y que pulsar el fondo no la cierre se comprobaron con teclas y ratón en el navegador. Todavía no se ha escuchado con VoiceOver."
+      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 4 historias. Prueba Keyboard: pasa. Esc, que Tab no salga de la ventana y que pulsar el fondo no la cierre se comprobaron con teclas y ratón en el navegador. Riley Sainz lo revisó con VoiceOver y lo aprobó el 27-11-2026."
     ]
   },
   "usage": {
