@@ -29,4 +29,5 @@ export const WithFooter: Story = {
     ),
   },
 }
+export const HeadingLevel: Story = { args: { headingLevel: 2 } }
 export const OnlyContent: Story = { args: { title: undefined, description: undefined } }

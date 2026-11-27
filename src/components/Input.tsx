@@ -4,9 +4,7 @@ import type { InputHTMLAttributes } from 'react'
 
 export type InputSize = 'sm' | 'md' | 'lg'
 
-export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
-  /** Texto que se muestra encima del campo. */
-  label?: string
+interface InputBaseProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   /** Ayuda que se muestra debajo del campo. */
   hint?: string
   /** Mensaje de error. Si existe, el campo se marca en rojo y reemplaza la ayuda. */
@@ -15,6 +13,20 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   icon?: Icon
   size?: InputSize
 }
+
+/** Todo campo necesita un nombre: `label` o, si no hay texto a la vista, `aria-label`. */
+export type InputProps = InputBaseProps &
+  (
+    | {
+        /** Texto que se muestra encima del campo. */
+        label: string
+      }
+    | {
+        label?: undefined
+        /** Texto que leen los lectores de pantalla, porque el campo no tiene `label`. */
+        'aria-label': string
+      }
+  )
 
 // Las alturas usan la escala de Tailwind y el tamaño del icono lo fija cada talla (ADR-003).
 const sizes: Record<InputSize, { box: string; icon: number; iconPosition: string }> = {

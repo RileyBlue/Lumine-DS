@@ -95,9 +95,7 @@ El texto de ejemplo de un campo (`placeholder`) no cuenta: desaparece al escribi
 <Input placeholder="Buscar alumna" icon={IconSearch} />
 ```
 
-`Button` ya obliga a escribir `aria-label` cuando solo tiene icono.
-
-> **Estado actual:** `Input` permite usarlo sin `label`, y sus historias `Default`, `WithIcon` y `Sizes` solo tienen texto de ejemplo. No cumplen esta regla.
+`Button` obliga a escribir `aria-label` cuando solo tiene icono, e `Input` obliga a escribir `label` o `aria-label`: sin ellos, el código no compila.
 
 ### Checklist
 
@@ -118,7 +116,7 @@ Quien usa un lector de pantalla recorre la página por sus encabezados y escucha
 ```tsx
 <h1>Clases</h1>
 <h2>Esta semana</h2>
-<Card title="Ballet clásico, nivel 2" /> {/* su título es un h3 */}
+<Card headingLevel={3} title="Ballet clásico, nivel 2" />
 
 <IconAlertTriangle role="img" aria-label="Pago vencido" />
 <p><IconCalendar aria-hidden="true" /> Martes, 17:00</p>
@@ -137,7 +135,7 @@ Quien usa un lector de pantalla recorre la página por sus encabezados y escucha
 <img src={adorno} alt="imagen" />
 ```
 
-> **Estado actual:** el título de `Card` es siempre un `h3`. En una pantalla que solo tenga `h1`, se salta un nivel.
+El título de `Card` es un `h3`. Si la tarjeta va justo debajo del `h1`, usa `headingLevel={2}`.
 
 ### Checklist
 
