@@ -5,6 +5,8 @@ export type CardVariant = 'outlined' | 'elevated'
 export interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
   /** Título de la tarjeta. */
   title?: ReactNode
+  /** Nivel del encabezado del título, para que los encabezados de la pantalla vayan en orden. */
+  headingLevel?: 2 | 3 | 4 | 5 | 6
   /** Texto de apoyo debajo del título. */
   description?: ReactNode
   /** Zona inferior, normalmente con botones. */
@@ -20,6 +22,7 @@ const variants: Record<CardVariant, string> = {
 
 export function Card({
   title,
+  headingLevel = 3,
   description,
   footer,
   variant = 'outlined',
@@ -27,6 +30,8 @@ export function Card({
   children,
   ...props
 }: CardProps) {
+  const Heading = `h${headingLevel}` as const
+
   return (
     <div
       className={['overflow-hidden rounded-card-radius', variants[variant], className].join(' ')}
@@ -35,7 +40,7 @@ export function Card({
       <div className="flex flex-col gap-card-gap-sections p-card-padding">
         {(title || description) && (
           <header className="flex flex-col gap-card-gap-header">
-            {title && <h3 className="text-card-title text-card-title-text-neutral">{title}</h3>}
+            {title && <Heading className="text-card-title text-card-title-text-neutral">{title}</Heading>}
             {description && <p className="text-card-description text-card-description-text-neutral-subtle">{description}</p>}
           </header>
         )}
