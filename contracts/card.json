@@ -1,7 +1,7 @@
 { "$schema": "./contract.schema.json",
   "name": "Card",
   "file": "src/components/Card.tsx",
-  "import": "import { Card } from '../components'",
+  "import": "import { Card } from '@/components'",
   "purpose": "Agrupar la información de un mismo asunto: título, descripción, contenido y una zona inferior para acciones.",
   "neverUseFor": [
     "Ser pulsable entera: no admite eventos de ratón.",

@@ -2,7 +2,7 @@
   "$schema": "./contract.schema.json",
   "name": "Toast",
   "file": "src/components/Toast.tsx",
-  "import": "import { Toast } from '../components'",
+  "import": "import { Toast } from '@/components'",
   "purpose": "Avisar en pocas palabras de algo que acaba de pasar, como que se guardó o que falló.",
   "neverUseFor": [
     "Pedir una decisión o un dato: para eso está Dialog.",

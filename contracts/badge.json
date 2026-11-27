@@ -1,7 +1,7 @@
 { "$schema": "./contract.schema.json",
   "name": "Badge",
   "file": "src/components/Badge.tsx",
-  "import": "import { Badge } from '../components'",
+  "import": "import { Badge } from '@/components'",
   "purpose": "Marcar con pocas palabras el estado o la categoría de algo.",
   "neverUseFor": [
     "Disparar una acción o ser pulsada: para eso está Button.",

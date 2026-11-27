@@ -1,7 +1,7 @@
 { "$schema": "./contract.schema.json",
   "name": "Button",
   "file": "src/components/Button.tsx",
-  "import": "import { Button } from '../components'",
+  "import": "import { Button } from '@/components'",
   "purpose": "Ejecutar una acción, como guardar, enviar o eliminar.",
   "neverUseFor": [
     "Ir a otra página o dirección: para eso se usa un enlace.",

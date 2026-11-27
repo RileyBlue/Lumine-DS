@@ -2,8 +2,7 @@ import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, fn, userEvent, waitFor } from 'storybook/test'
 import { expectFocusRing, expectRingInside, resetFocus } from '../stories/keyboard'
-import { Button } from './Button'
-import { Dialog, type DialogProps } from './Dialog'
+import { Button, Dialog, type DialogProps } from '@/components'
 
 /** Cada historia empieza cerrada, con el botón que abre la ventana. */
 function Demo({ onClose, footer, ...args }: DialogProps) {

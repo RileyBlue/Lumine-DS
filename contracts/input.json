@@ -1,7 +1,7 @@
 { "$schema": "./contract.schema.json",
   "name": "Input",
   "file": "src/components/Input.tsx",
-  "import": "import { Input } from '../components'",
+  "import": "import { Input } from '@/components'",
   "purpose": "Pedir un dato escrito en una línea, con su nombre, una ayuda y un mensaje de error.",
   "neverUseFor": [
     "Textos de varias líneas.",

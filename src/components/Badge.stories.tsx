@@ -2,8 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { IconAlertTriangle, IconCheck } from '@tabler/icons-react'
 import { expect, userEvent } from 'storybook/test'
 import { resetFocus } from '../stories/keyboard'
-import { Badge } from './Badge'
-import { Button } from './Button'
+import { Badge, Button } from '@/components'
 
 const meta = {
   title: 'Componentes/Badge',

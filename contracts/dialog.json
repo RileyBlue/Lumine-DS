@@ -2,7 +2,7 @@
   "$schema": "./contract.schema.json",
   "name": "Dialog",
   "file": "src/components/Dialog.tsx",
-  "import": "import { Dialog } from '../components'",
+  "import": "import { Dialog } from '@/components'",
   "purpose": "Pedir atención en una ventana sobre la pantalla, para confirmar una acción o completar un paso corto antes de seguir.",
   "neverUseFor": [
     "Avisar de algo que ya pasó: para eso está Toast.",
