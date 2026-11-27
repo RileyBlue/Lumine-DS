@@ -120,7 +120,7 @@
       "Quien lo usa decide dónde se coloca y a dónde va el foco después de cerrarlo.",
       "Zona táctil: «Cerrar» mide 32 por 32 píxeles.",
       "Contraste (docs/contraste.md): texto, 17,74:1; iconos y bordes, mínimo 4,94:1.",
-      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 6 historias. Prueba Keyboard: pasa. Todavía no se ha escuchado con VoiceOver: falta confirmar que el aviso se anuncia al aparecer."
+      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 6 historias. Prueba Keyboard: pasa. Riley Sainz lo revisó con VoiceOver y lo aprobó el 27-11-2026."
     ]
   },
   "usage": {

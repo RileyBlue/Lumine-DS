@@ -204,7 +204,7 @@
       "Foco visible: anillo doble, con 10,75:1 entre sus dos colores.",
       "Zona táctil: la talla más pequeña, con sus 3 líneas, mide 70 píxeles de alto.",
       "Contraste (docs/contraste.md): texto, mínimo 7,56:1; bordes, mínimo 4,83:1. Los colores de desactivado están exentos (2,36:1).",
-      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 7 historias. Prueba Keyboard: pasa. Todavía no se ha escuchado con VoiceOver."
+      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 7 historias. Prueba Keyboard: pasa. Riley Sainz lo revisó con VoiceOver y lo aprobó el 27-11-2026."
     ]
   },
   "usage": {

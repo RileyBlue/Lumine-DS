@@ -5,10 +5,10 @@
 | Badge | ✅ | ✅ | ✅ | ✅ | Anterior a la regla |
 | Button | ✅ | ✅ | ✅ | ✅ | Anterior a la regla |
 | Card | ✅ | ✅ | ✅ | ✅ | Anterior a la regla |
-| Dialog | ✅ | ✅ | Falta VoiceOver | ✅ | [#51](https://github.com/RileyBlue/Lumine-DS/issues/51) |
+| Dialog | ✅ | ✅ | ✅ | ✅ | [#51](https://github.com/RileyBlue/Lumine-DS/issues/51) |
 | Input | ✅ | ✅ | ✅ | ✅ | Anterior a la regla |
-| Textarea | ✅ | ✅ | Falta VoiceOver | ✅ | [#50](https://github.com/RileyBlue/Lumine-DS/issues/50) |
-| Toast | ✅ | ✅ | Falta VoiceOver | ✅ | [#52](https://github.com/RileyBlue/Lumine-DS/issues/52) |
+| Textarea | ✅ | ✅ | ✅ | ✅ | [#50](https://github.com/RileyBlue/Lumine-DS/issues/50) |
+| Toast | ✅ | ✅ | ✅ | ✅ | [#52](https://github.com/RileyBlue/Lumine-DS/issues/52) |
 
 **Solo tokens** significa que el color, la letra, el espaciado, el radio, el borde y la sombra del
 componente salen de sus tokens. Las alturas y los tamaños de icono no tienen token: usan la escala de
@@ -24,7 +24,7 @@ nombre accesible y la zona táctil no les aplican.
 
 **VoiceOver:** el 27 de noviembre de 2026, Riley Sainz escuchó en Storybook los botones, el
 encabezado y la zona inferior de `Card`, el mensaje de error de `Input` y los iconos, y se anunciaron
-como se esperaba. `Dialog`, `Textarea` y `Toast` todavía no se han escuchado.
+como se esperaba. El mismo día revisó con VoiceOver `Dialog`, `Textarea` y `Toast`, y los aprobó.
 
 **Aprobación** enlaza el issue que aprobó el componente
 ([ADR-001](https://github.com/RileyBlue/Lumine-DS/blob/main/docs/adr/001-alcance.md), principio 2). Los cuatro
