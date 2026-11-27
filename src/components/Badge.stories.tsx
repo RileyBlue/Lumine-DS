@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { IconAlertTriangle, IconCheck } from '@tabler/icons-react'
-import { expect } from 'storybook/test'
+import { expect, userEvent } from 'storybook/test'
 import { resetFocus } from '../stories/keyboard'
 import { Badge } from './Badge'
 import { Button } from './Button'
@@ -49,7 +49,7 @@ export const Keyboard: Story = {
       <Button size="sm">Después</Button>
     </div>
   ),
-  play: async ({ canvas, userEvent }) => {
+  play: async ({ canvas }) => {
     resetFocus()
     await userEvent.tab()
     await expect(canvas.getByRole('button', { name: 'Antes' })).toHaveFocus()
