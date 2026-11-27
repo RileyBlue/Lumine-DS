@@ -2,7 +2,7 @@
 
 Este manual fija la estructura de cualquier token nuevo de Lumine-DS. Los tokens se diseñan en [`tokens.json`](tokens.json), en formato [DTCG](https://www.designtokens.org/tr/2025.10/format/).
 
-Antes de crear uno, hay que respetar el [ADR-001](../docs/adr/001-alcance.md): si el token no existe, se abre un issue que lo pida y no se construye nada hasta que esté aprobado (principio 2). Los nombres van en inglés (principio 5).
+Antes de crear uno, hay que respetar el [ADR-001](../docs/adr/001-alcance.md): si el token no existe, se abre un issue que lo pida y no se construye nada hasta que esté aprobado (principio 2). El token nuevo guarda el enlace a ese issue, como indica el [ADR-002](../docs/adr/002-issue-en-tokens.md). Los nombres van en inglés (principio 5).
 
 ## Los tres niveles
 
@@ -33,7 +33,7 @@ Todos los nombres van en inglés, en minúsculas y con guiones entre palabras (`
 
 ### Primitivos
 
-Describen el valor, no su uso. Se nombran por grupo y paso: `primitive.color.[familia].[paso]`, `primitive.spacing.[paso]`. No siguen la fórmula de color.
+Describen el valor, no su uso. Se nombran por grupo y paso: `primitive.color.[familia].[paso]`, `primitive.spacing.[paso]`. No siguen la fórmula de color. La excepción es `primitive.color.white`, que es un solo color y no lleva paso.
 
 ### Color en `semantic` y `component`
 
@@ -67,6 +67,13 @@ En DTCG, un nombre con `$value` es un token y no puede contener otros. Si existi
 
 El formato ofrece también el nombre reservado `$root` para esto. Aquí no se usa: `default` sigue la fórmula y se lee igual que los demás estados.
 
+### Anillo de foco
+
+- Se dibuja con `semantic.color.border.focus` y el grosor `semantic.border-width.focus`.
+- Va separado del control por la medida de `semantic.space.2xs` (en CSS, `outline-offset`). Así lo que rodea al anillo es el fondo de la pantalla, y contra ese fondo se mide su contraste.
+- Cumple el mínimo de 3:1 sobre blanco, los grises claros (hasta `gray.200`) y `gray.900`. Sobre un fondo de marca u otro color intenso no llega.
+- Cuando una pantalla necesite un control sobre uno de esos fondos, se pide el token `semantic.color.border.neutral.inverted.focus`, en blanco. Hasta entonces no se crea.
+
 ### Otras categorías en `semantic`
 
 | Qué | Nombre | Valores permitidos |
@@ -90,6 +97,7 @@ El formato ofrece también el nombre reservado `$root` para esto. Aquí no se us
 3. **Un alias es el `$value` completo, escrito `{ruta.del.token}`.** La ruta empieza por el nivel y termina en un token, nunca en un grupo. Se escribe `{primitive.color.brand.800}`, no `{color.brand.800}`.
 4. **El tipo del alias coincide con el del token al que apunta.**
 5. **En un token compuesto**, como una sombra, cada pieza de `$value` es un alias al nivel de abajo.
+6. **Un token nuevo enlaza su issue aprobado** en `$extensions`, con la clave `com.lumine.issue`.
 
 ### Cómo se escribe un valor en `primitive`
 
@@ -99,6 +107,23 @@ El formato ofrece también el nombre reservado `$root` para esto. Aquí no se us
 | `dimension` | `{ "value": 1, "unit": "rem" }`. La unidad es `px` o `rem` y se escribe también cuando el valor es 0 |
 | `fontFamily` | `["Inter", "sans-serif"]`, de la preferida a la última opción |
 | `fontWeight` | `600` |
+
+### Enlace al issue
+
+```json
+{
+  "primitive": {
+    "color": {
+      "$type": "color",
+      "white": {
+        "$value": { "colorSpace": "oklch", "components": [1, 0, 0], "hex": "#FFFFFF" },
+        "$description": "Blanco del manual de marca. Para el fondo base y para texto e iconos sobre fondos oscuros o intensos.",
+        "$extensions": { "com.lumine.issue": "https://github.com/RileyBlue/Lumine-DS/issues/18" }
+      }
+    }
+  }
+}
+```
 
 ## Ejemplo completo
 
@@ -193,7 +218,7 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens `c
 
 ## Antes de abrir la PR
 
-- [ ] El issue que pide el token está aprobado.
+- [ ] El issue que pide el token está aprobado y su enlace está en `$extensions`.
 - [ ] El token está en su nivel y su alias apunta solo al nivel de abajo.
 - [ ] El nombre sigue las reglas de este manual.
 - [ ] Tiene `$value` y `$description`. El `$type` está en su grupo o, si el grupo mezcla tipos, en el propio token.
@@ -203,5 +228,4 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens `c
 ## Pendiente
 
 - `tokens.json` todavía no tiene el nivel `component`.
-- Falta decidir dónde se enlaza el issue aprobado de un token de `tokens.json`. El ADR-001 pide un comentario junto al token, y JSON no admite comentarios.
 - Falta conectar estos tokens con el tema de Tailwind (`src/index.css`), que es de donde el ADR-001 pide que los usen los componentes.
