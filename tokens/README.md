@@ -191,6 +191,6 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens `s
 
 ## Pendiente
 
-- `tokens.json` solo tiene el nivel `primitive`, y casi todos sus tokens son anteriores a este manual y no tienen `$description`.
+- `tokens.json` solo tiene el nivel `primitive`.
 - Falta decidir dónde se enlaza el issue aprobado de un token de `tokens.json`. El ADR-001 pide un comentario junto al token, y JSON no admite comentarios.
 - Falta conectar estos tokens con el tema de Tailwind (`src/index.css`), que es de donde el ADR-001 pide que los usen los componentes.
