@@ -1,0 +1,222 @@
+{ "$schema": "./contract.schema.json",
+  "name": "Button",
+  "file": "src/components/Button.tsx",
+  "import": "import { Button } from '../components'",
+  "purpose": "Ejecutar una acción, como guardar, enviar o eliminar.",
+  "neverUseFor": [
+    "Ir a otra página o dirección: para eso se usa un enlace.",
+    "Mostrar un estado que no se puede pulsar: para eso está Badge."
+  ],
+  "props": [
+    {
+      "name": "variant",
+      "type": "'primary' | 'secondary' | 'outline' | 'ghost' | 'danger'",
+      "default": "primary",
+      "required": false,
+      "description": "Estilo según la importancia o el riesgo de la acción.",
+      "inherited": false
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "default": "md",
+      "required": false,
+      "description": "Tamaño del botón.",
+      "inherited": false
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "description": "Texto del botón y su nombre. Obligatorio salvo con `iconOnly`, donde no se muestra.",
+      "inherited": false
+    },
+    {
+      "name": "icon",
+      "type": "Icon",
+      "default": null,
+      "required": false,
+      "description": "Icono de Tabler. Obligatorio con `iconOnly`.",
+      "inherited": false
+    },
+    {
+      "name": "iconPosition",
+      "type": "'left' | 'right'",
+      "default": "left",
+      "required": false,
+      "description": "Lado del texto en el que va el icono.",
+      "inherited": false
+    },
+    {
+      "name": "iconOnly",
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "description": "Muestra solo el icono, en un botón cuadrado. Exige `icon` y `aria-label`.",
+      "inherited": false
+    },
+    {
+      "name": "fullWidth",
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "description": "Ocupa todo el ancho disponible. No tiene efecto con `iconOnly`.",
+      "inherited": false
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Nombre que lee un lector de pantalla. Obligatorio con `iconOnly`.",
+      "inherited": true
+    },
+    {
+      "name": "type",
+      "type": "'button' | 'submit' | 'reset'",
+      "default": "button",
+      "required": false,
+      "description": "Qué hace dentro de un formulario.",
+      "inherited": true
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "description": "Desactiva el botón.",
+      "inherited": true
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "",
+      "required": false,
+      "description": "Clases que se añaden al botón.",
+      "inherited": true
+    }
+  ],
+  "states": {
+    "intrinsic": [
+      "hover",
+      "pressed",
+      "focus",
+      "disabled"
+    ],
+    "authored": []
+  },
+  "anatomy": [
+    {
+      "part": "root",
+      "element": "button",
+      "optional": false,
+      "description": "El botón. El resto de atributos de `<button>` pasa a este elemento."
+    },
+    {
+      "part": "icon",
+      "element": "Icono de Tabler (svg)",
+      "optional": true,
+      "description": "Icono decorativo junto al texto, o solo con `iconOnly`."
+    },
+    {
+      "part": "label",
+      "element": "texto dentro de button",
+      "optional": true,
+      "description": "Texto del botón. No se muestra con `iconOnly`."
+    }
+  ],
+  "tokens": [
+    "component.button.background.neutral.default",
+    "component.button.background.neutral.hover",
+    "component.button.background.neutral.pressed",
+    "component.button.background.neutral.disabled",
+    "component.button.background.brand.default",
+    "component.button.background.brand.hover",
+    "component.button.background.brand.pressed",
+    "component.button.background.brand.subtle.default",
+    "component.button.background.brand.subtle.hover",
+    "component.button.background.brand.subtle.pressed",
+    "component.button.background.error.default",
+    "component.button.background.error.hover",
+    "component.button.background.error.pressed",
+    "component.button.text.neutral.default",
+    "component.button.text.neutral.disabled",
+    "component.button.text.brand.default",
+    "component.button.text.brand.inverted.default",
+    "component.button.text.error.inverted.default",
+    "component.button.icon.neutral.default",
+    "component.button.icon.neutral.disabled",
+    "component.button.icon.brand.default",
+    "component.button.icon.brand.inverted.default",
+    "component.button.icon.error.inverted.default",
+    "component.button.border.neutral.strong.default",
+    "component.button.border.focus",
+    "component.button.border.focus-outer",
+    "component.button.border-width.default",
+    "component.button.border-width.focus",
+    "component.button.focus-offset",
+    "component.button.radius",
+    "component.button.padding-x.sm",
+    "component.button.padding-x.md",
+    "component.button.padding-x.lg",
+    "component.button.gap.sm",
+    "component.button.gap.md",
+    "component.button.gap.lg",
+    "component.button.label.font-size.sm",
+    "component.button.label.font-size.md",
+    "component.button.label.font-size.lg",
+    "component.button.label.line-height.sm",
+    "component.button.label.line-height.md",
+    "component.button.label.line-height.lg",
+    "component.button.label.font-weight"
+  ],
+  "a11y": {
+    "role": "button",
+    "keyboard": [
+      {
+        "key": "Tab",
+        "action": "Lleva el foco al botón. Un botón desactivado se salta."
+      },
+      {
+        "key": "Shift+Tab",
+        "action": "Vuelve al control anterior."
+      },
+      {
+        "key": "Enter",
+        "action": "Activa el botón."
+      },
+      {
+        "key": "Space",
+        "action": "Activa el botón."
+      }
+    ],
+    "notes": [
+      "Nombre accesible: el texto del botón. Con `iconOnly` hace falta `aria-label`; sin texto ni `aria-label` el código no compila.",
+      "En un botón con texto, un `aria-label` sustituye lo que se lee: debe incluir el texto visible.",
+      "El icono es decorativo y va oculto con `aria-hidden`.",
+      "Foco visible: anillo doble, con 10,75:1 entre sus dos colores.",
+      "Zona táctil: la talla más pequeña mide 32 por 32 píxeles.",
+      "Contraste (docs/contraste.md): pasan las parejas que se exigen; texto, mínimo 6,28:1; bordes, mínimo 3,91:1. Los colores de desactivado están exentos (entre 2,36:1 y 2,60:1).",
+      "El texto y el icono de `ghost` no tienen fondo propio: se comprobaron sobre el fondo claro de la pantalla.",
+      "Un `className` puede anular las clases del componente, incluidas las del foco.",
+      "Panel Accessibility (27-11-2026): sin fallos en sus 14 historias. Prueba Keyboard: pasa."
+    ]
+  },
+  "usage": {
+    "scope": "general"
+  },
+  "governance": {
+    "mayExtendLocally": [
+      "Añadir con `className` clases de disposición, como márgenes o anchos.",
+      "Elegir cualquier icono de Tabler."
+    ],
+    "mustEscalateToDS": [
+      "Una variante o un tamaño nuevo.",
+      "Un color, una medida o un token que no exista.",
+      "Cambiar el anillo de foco, los colores o la forma de dar nombre al botón."
+    ]
+  },
+  "guidelines": {},
+  "content": []
+}

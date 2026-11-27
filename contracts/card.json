@@ -1,0 +1,167 @@
+{ "$schema": "./contract.schema.json",
+  "name": "Card",
+  "file": "src/components/Card.tsx",
+  "import": "import { Card } from '../components'",
+  "purpose": "Agrupar la información de un mismo asunto: título, descripción, contenido y una zona inferior para acciones.",
+  "neverUseFor": [
+    "Ser pulsable entera: no admite eventos de ratón.",
+    "Mostrar un estado o una categoría suelta: para eso está Badge."
+  ],
+  "props": [
+    {
+      "name": "title",
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "description": "Título de la tarjeta. Sustituye al atributo `title` de HTML.",
+      "inherited": false
+    },
+    {
+      "name": "headingLevel",
+      "type": "2 | 3 | 4 | 5 | 6",
+      "default": 3,
+      "required": false,
+      "description": "Nivel del encabezado del título.",
+      "inherited": false
+    },
+    {
+      "name": "description",
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "description": "Texto de apoyo debajo del título.",
+      "inherited": false
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "description": "Contenido de la tarjeta.",
+      "inherited": false
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "description": "Zona inferior, normalmente con botones.",
+      "inherited": false
+    },
+    {
+      "name": "variant",
+      "type": "'outlined' | 'elevated'",
+      "default": "outlined",
+      "required": false,
+      "description": "Con borde o con sombra.",
+      "inherited": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "",
+      "required": false,
+      "description": "Clases que se añaden a la tarjeta.",
+      "inherited": true
+    }
+  ],
+  "states": {
+    "intrinsic": [],
+    "authored": []
+  },
+  "anatomy": [
+    {
+      "part": "root",
+      "element": "div",
+      "optional": false,
+      "description": "La tarjeta. El resto de atributos de `<div>`, salvo los de ratón, pasa a este elemento."
+    },
+    {
+      "part": "header",
+      "element": "div",
+      "optional": true,
+      "description": "Agrupa el título y la descripción."
+    },
+    {
+      "part": "title",
+      "element": "h2 a h6",
+      "optional": true,
+      "description": "Título, con el nivel que indica `headingLevel`."
+    },
+    {
+      "part": "description",
+      "element": "p",
+      "optional": true,
+      "description": "Texto de apoyo."
+    },
+    {
+      "part": "content",
+      "element": "div",
+      "optional": true,
+      "description": "Contenido."
+    },
+    {
+      "part": "footer",
+      "element": "div",
+      "optional": true,
+      "description": "Zona inferior, separada por una línea."
+    }
+  ],
+  "tokens": [
+    "component.card.background.neutral.default",
+    "component.card.border.neutral.default",
+    "component.card.title.text.neutral.default",
+    "component.card.title.font-size",
+    "component.card.title.line-height",
+    "component.card.title.font-weight",
+    "component.card.description.text.neutral.subtle.default",
+    "component.card.description.font-size",
+    "component.card.description.line-height",
+    "component.card.description.font-weight",
+    "component.card.content.text.neutral.default",
+    "component.card.content.font-size",
+    "component.card.content.line-height",
+    "component.card.content.font-weight",
+    "component.card.footer.background.neutral.subtle.default",
+    "component.card.footer.border.neutral.default",
+    "component.card.footer.border-width.default",
+    "component.card.footer.padding-x",
+    "component.card.footer.padding-y",
+    "component.card.footer.gap",
+    "component.card.border-width.default",
+    "component.card.radius",
+    "component.card.elevation",
+    "component.card.padding",
+    "component.card.gap.sections",
+    "component.card.gap.header"
+  ],
+  "a11y": {
+    "role": "none",
+    "keyboard": [],
+    "notes": [
+      "No recibe el foco. Con Tab se recorre lo que lleva dentro: primero el contenido y después la zona inferior.",
+      "Con `headingLevel` se mantiene el orden de los encabezados: usa 2 si la tarjeta va justo debajo del `h1`.",
+      "La cabecera y la zona inferior son `div`, para que no se anuncien como cabecera y pie de toda la página.",
+      "No admite `onClick` ni otros eventos de ratón.",
+      "El anillo de foco de los botones de dentro no se recorta.",
+      "Contraste (docs/contraste.md): texto, mínimo 7,56:1. El borde y la línea inferior son decorativos y están exentos (entre 1,18:1 y 1,23:1). El contraste de lo que se ponga dentro depende de cada pieza.",
+      "Panel Accessibility (27-11-2026): sin fallos en sus 6 historias. Prueba Keyboard: pasa. Con VoiceOver se escucharon el encabezado y la zona inferior."
+    ]
+  },
+  "usage": {
+    "scope": "general"
+  },
+  "governance": {
+    "mayExtendLocally": [
+      "Añadir con `className` clases de disposición, como márgenes o anchos.",
+      "Poner cualquier contenido en `children` y en `footer`."
+    ],
+    "mustEscalateToDS": [
+      "Una variante nueva.",
+      "Un color, una medida o un token que no exista.",
+      "Hacer que la tarjeta se pueda pulsar."
+    ]
+  },
+  "guidelines": {},
+  "content": []
+}

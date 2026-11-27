@@ -1,0 +1,223 @@
+{ "$schema": "./contract.schema.json",
+  "name": "Input",
+  "file": "src/components/Input.tsx",
+  "import": "import { Input } from '../components'",
+  "purpose": "Pedir un dato escrito en una línea, con su nombre, una ayuda y un mensaje de error.",
+  "neverUseFor": [
+    "Textos de varias líneas.",
+    "Casillas, opciones de una lista o archivos: está pensado para campos de una línea.",
+    "Mostrar un dato que no se puede editar."
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Texto encima del campo y su nombre. Obligatorio si no hay `aria-label`.",
+      "inherited": false
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Nombre del campo cuando no hay texto a la vista. Obligatorio si no hay `label`.",
+      "inherited": true
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Ayuda debajo del campo.",
+      "inherited": false
+    },
+    {
+      "name": "error",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Mensaje de error. Marca el campo como no válido y reemplaza la ayuda.",
+      "inherited": false
+    },
+    {
+      "name": "icon",
+      "type": "Icon",
+      "default": null,
+      "required": false,
+      "description": "Icono de Tabler dentro del campo, a la izquierda.",
+      "inherited": false
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "default": "md",
+      "required": false,
+      "description": "Tamaño del campo. Sustituye al atributo `size` de HTML.",
+      "inherited": false
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Identificador del campo. Si no se indica, se genera uno.",
+      "inherited": true
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "description": "Desactiva el campo.",
+      "inherited": true
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "",
+      "required": false,
+      "description": "Clases que se añaden al contenedor, no al campo.",
+      "inherited": true
+    },
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "default": null,
+      "required": false,
+      "description": "Estilos del campo. Se combinan con el hueco del icono.",
+      "inherited": true
+    }
+  ],
+  "states": {
+    "intrinsic": [
+      "focus",
+      "disabled"
+    ],
+    "authored": [
+      {
+        "name": "error",
+        "description": "Hay un mensaje en `error`: el borde y el mensaje cambian de color y el campo se marca como no válido."
+      }
+    ]
+  },
+  "anatomy": [
+    {
+      "part": "root",
+      "element": "div",
+      "optional": false,
+      "description": "Contenedor del campo y sus textos. Recibe `className`."
+    },
+    {
+      "part": "label",
+      "element": "label",
+      "optional": true,
+      "description": "Nombre visible, unido al campo."
+    },
+    {
+      "part": "field",
+      "element": "input",
+      "optional": false,
+      "description": "El campo. El resto de atributos de `<input>` pasa a este elemento."
+    },
+    {
+      "part": "placeholder",
+      "element": "atributo placeholder de input",
+      "optional": true,
+      "description": "Texto de ejemplo mientras el campo está vacío."
+    },
+    {
+      "part": "icon",
+      "element": "Icono de Tabler (svg)",
+      "optional": true,
+      "description": "Icono decorativo dentro del campo."
+    },
+    {
+      "part": "message",
+      "element": "p",
+      "optional": true,
+      "description": "Ayuda o mensaje de error."
+    }
+  ],
+  "tokens": [
+    "component.input.background.neutral.default",
+    "component.input.background.neutral.disabled",
+    "component.input.icon.neutral.subtle.default",
+    "component.input.icon.neutral.disabled",
+    "component.input.border.neutral.strong.default",
+    "component.input.border.error.default",
+    "component.input.border.focus",
+    "component.input.border.focus-outer",
+    "component.input.label.text.neutral.default",
+    "component.input.label.font-size",
+    "component.input.label.line-height",
+    "component.input.label.font-weight",
+    "component.input.field.text.neutral.default",
+    "component.input.field.text.neutral.disabled",
+    "component.input.field.font-size.sm",
+    "component.input.field.font-size.md",
+    "component.input.field.font-size.lg",
+    "component.input.field.line-height.sm",
+    "component.input.field.line-height.md",
+    "component.input.field.line-height.lg",
+    "component.input.field.font-weight",
+    "component.input.placeholder.text.neutral.subtle.default",
+    "component.input.message.text.neutral.subtle.default",
+    "component.input.message.text.error.default",
+    "component.input.message.font-size",
+    "component.input.message.line-height",
+    "component.input.message.font-weight",
+    "component.input.border-width.default",
+    "component.input.border-width.focus",
+    "component.input.focus-offset",
+    "component.input.radius",
+    "component.input.padding-x.sm",
+    "component.input.padding-x.md",
+    "component.input.padding-x.lg",
+    "component.input.gap.stack",
+    "component.input.gap.icon"
+  ],
+  "a11y": {
+    "role": "textbox",
+    "keyboard": [
+      {
+        "key": "Tab",
+        "action": "Lleva el foco al campo. Un campo desactivado se salta."
+      },
+      {
+        "key": "Shift+Tab",
+        "action": "Vuelve al control anterior."
+      }
+    ],
+    "notes": [
+      "El papel depende de `type`: `textbox` por defecto y con email, tel o url; `searchbox` con search; `spinbutton` con number; password no tiene papel.",
+      "Nombre accesible: `label` o `aria-label`; sin ninguno, el código no compila. El `placeholder` no cuenta.",
+      "La ayuda o el error se unen al campo con `aria-describedby`, y el error lo marca con `aria-invalid`.",
+      "Si se pasa `aria-describedby` o `aria-invalid` desde fuera, sustituye al del componente y la ayuda o el error pueden dejar de anunciarse.",
+      "El mensaje de error no se anuncia por sí solo al aparecer: se lee al entrar en el campo.",
+      "El icono es decorativo y va oculto con `aria-hidden`.",
+      "Foco visible: anillo doble, con 10,75:1 entre sus dos colores.",
+      "Zona táctil: la talla más pequeña mide 32 píxeles de alto.",
+      "Contraste (docs/contraste.md): pasan las parejas que se exigen; texto, mínimo 7,56:1; bordes e icono, mínimo 4,39:1. Los colores de desactivado están exentos (2,36:1).",
+      "Panel Accessibility (27-11-2026): sin fallos en sus 8 historias. Prueba Keyboard: pasa. Con VoiceOver se escuchó el mensaje de error."
+    ]
+  },
+  "usage": {
+    "scope": "general"
+  },
+  "governance": {
+    "mayExtendLocally": [
+      "Añadir con `className` clases de disposición, como márgenes o anchos.",
+      "Usar los atributos propios de un campo, como `placeholder`, `type` de texto o `autoComplete`."
+    ],
+    "mustEscalateToDS": [
+      "Un tamaño o un estado nuevo.",
+      "Un color, una medida o un token que no exista.",
+      "Usarlo con un tipo que no sea de texto en una línea.",
+      "Cambiar el anillo de foco o la forma de dar nombre al campo."
+    ]
+  },
+  "guidelines": {},
+  "content": []
+}

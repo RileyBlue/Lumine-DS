@@ -1,11 +1,11 @@
 # Estado de los componentes
 
-| Componente | Storybook | Solo tokens | Accesibilidad |
-| --- | --- | --- | --- |
-| Badge | ✅ | ✅ | ✅ |
-| Button | ✅ | ✅ | ✅ |
-| Card | ✅ | ✅ | ✅ |
-| Input | ✅ | ✅ | ✅ |
+| Componente | Storybook | Solo tokens | Accesibilidad | Contrato |
+| --- | --- | --- | --- | --- |
+| Badge | ✅ | ✅ | ✅ | ✅ |
+| Button | ✅ | ✅ | ✅ | ✅ |
+| Card | ✅ | ✅ | ✅ | ✅ |
+| Input | ✅ | ✅ | ✅ | ✅ |
 
 **Solo tokens** significa que el color, la letra, el espaciado, el radio, el borde y la sombra del
 componente salen de sus tokens. Las alturas y los tamaños de icono no tienen token: usan la escala de
@@ -21,3 +21,7 @@ nombre accesible y la zona táctil no les aplican.
 **VoiceOver:** el 27 de noviembre de 2026, Riley Sainz escuchó en Storybook los botones, el
 encabezado y la zona inferior de `Card`, el mensaje de error de `Input` y los iconos, y se anunciaron
 como se esperaba.
+
+**Contrato** significa que el componente tiene su ficha en
+[`contracts/`](https://github.com/RileyBlue/Lumine-DS/tree/main/contracts), que cumple el esquema y que
+todos los tokens que nombra existen. Sus apartados de guías de uso y de textos están por escribir.

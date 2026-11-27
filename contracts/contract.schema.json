@@ -441,13 +441,11 @@
             }
           }
         }
-      },
-      "minProperties": 1
+      }
     },
     "content": {
       "type": "array",
       "description": "Cómo se escribe su texto.",
-      "minItems": 1,
       "items": {
         "type": "object",
         "description": "Una regla de redacción.",
