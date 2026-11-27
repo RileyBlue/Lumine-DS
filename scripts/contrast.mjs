@@ -75,6 +75,11 @@ if (ungrouped.length) fail(`faltan fondos por agrupar: ${ungrouped.join(', ')}`)
 
 const covered = new Set()
 const rules = config.rules.map((rule) => {
+  const exceptions = new Map((rule.except ?? []).map(({ token, reason }) => [token, reason]))
+  for (const [token, reason] of exceptions) {
+    if (!reason?.trim()) fail(`la excepción ${token} de la regla ${rule.id} no tiene motivo`)
+  }
+  const used = new Set()
   const pairs = rule.pairs.flatMap(({ foreground, inverted, backgrounds }) => {
     if (!groups[backgrounds]) fail(`la regla ${rule.id} usa un grupo que no existe: ${backgrounds}`)
     const matches = colorNames.filter(
@@ -85,13 +90,21 @@ const rules = config.rules.map((rule) => {
     if (!matches.length) fail(`la regla ${rule.id} no encuentra ningún token para ${foreground}`)
     return matches.flatMap((name) => {
       covered.add(name)
+      if (exceptions.has(name)) used.add(name)
       return groups[backgrounds].map((background) => {
         const ratio = contrast(name, background)
         return { foreground: name, background, ratio, minimum: rule.minimum, passes: ratio >= rule.minimum }
       })
     })
   })
-  return { ...rule, results: pairs }
+  // Una excepción que no coincide con nada suele ser un nombre mal escrito.
+  const unused = [...exceptions.keys()].filter((token) => !used.has(token))
+  if (unused.length) fail(`la regla ${rule.id} exceptúa tokens que no revisa: ${unused.join(', ')}`)
+  return {
+    ...rule,
+    results: pairs.filter((pair) => !exceptions.has(pair.foreground)),
+    exempt: pairs.filter((pair) => exceptions.has(pair.foreground)),
+  }
 })
 const uncovered = colorNames.filter(
   (name) => /^color\.(text|icon|border)\./.test(name) && !covered.has(name),
@@ -99,6 +112,8 @@ const uncovered = colorNames.filter(
 
 const all = rules.flatMap((rule) => rule.results)
 const failing = all.filter((pair) => !pair.passes)
+const exempt = rules.flatMap((rule) => rule.exempt)
+const total = all.length + exempt.length
 
 // Se trunca, no se redondea: 4,497 no debe leerse como 4,50.
 const show = (ratio) => `${(Math.floor(ratio * 100) / 100).toFixed(2)}:1`
@@ -112,6 +127,29 @@ const table = (rows) =>
         `| ${code(pair.foreground)} | ${code(pair.background)} | ${show(pair.ratio)} | ${pair.minimum}:1 | ${pair.passes ? 'Pasa' : '**No pasa**'} |`,
     ),
   ].join('\n')
+
+/** Una excepción: por qué no se exige y cuánto contraste tiene en cada fondo. */
+const exemptSections = rules
+  .flatMap((rule) =>
+    (rule.except ?? []).map(({ token, reason }) => {
+      const rows = rule.exempt.filter((pair) => pair.foreground === token)
+      const lines = rows.map((pair) => `| ${code(pair.background)} | ${show(pair.ratio)} |`).join('\n')
+      return `### ${token}
+
+${reason}
+
+<details>
+<summary>Contraste en sus ${rows.length} parejas</summary>
+
+| Fondo | Contraste |
+| --- | --- |
+${lines}
+
+</details>
+`
+    }),
+  )
+  .join('\n')
 
 /** Qué hay que saber de un token que falla: a qué apunta y quién lo usa. */
 function failureSection(name) {
@@ -132,7 +170,8 @@ ${table(rows)}
 const summary = rules
   .map((rule) => {
     const bad = rule.results.filter((pair) => !pair.passes).length
-    return `| ${rule.description} | ${rule.kind} | ${rule.minimum}:1 | ${rule.results.length} | ${rule.results.length - bad} | ${bad} |`
+    const checked = rule.results.length
+    return `| ${rule.description} | ${rule.kind} | ${rule.minimum}:1 | ${checked + rule.exempt.length} | ${checked - bad} | ${bad} | ${rule.exempt.length} |`
   })
   .join('\n')
 
@@ -140,10 +179,10 @@ const report = `<!-- Generado con \`npm run contrast\` desde tokens/tokens.json 
 
 # Contraste
 
-${all.length} parejas: ${all.length - failing.length} pasan y ${failing.length} no pasan.
+${total} parejas: ${all.length - failing.length} pasan, ${failing.length} no pasan y ${exempt.length} están exentas.
 
-| Regla | Tipo | Mínimo | Parejas | Pasan | No pasan |
-| --- | --- | --- | --- | --- | --- |
+| Regla | Tipo | Mínimo | Parejas | Pasan | No pasan | Exentas |
+| --- | --- | --- | --- | --- | --- | --- |
 ${summary}
 
 Los valores se truncan a dos decimales. Los colores fuera de sRGB se recortan antes de calcular.
@@ -155,12 +194,15 @@ ${uncovered.length ? uncovered.map((name) => `- ${code(name)}`).join('\n') : 'To
 ## Parejas que no pasan
 
 ${failing.length ? [...new Set(failing.map((pair) => pair.foreground))].map(failureSection).join('\n') : 'Todas pasan.\n'}
-## Todas las parejas
+## Exentas
+
+${exemptSections || 'Ninguna.\n'}
+## Todas las parejas que se exigen
 
 ${rules.map((rule) => `<details>\n<summary>${rule.description} (${rule.results.length})</summary>\n\n${table(rule.results)}\n\n</details>`).join('\n\n')}
 `
 
 writeFileSync(join(root, 'docs/contraste.md'), report)
-console.log(`${all.length} parejas: ${all.length - failing.length} pasan, ${failing.length} no pasan.`)
+console.log(`${total} parejas: ${all.length - failing.length} pasan, ${failing.length} no pasan, ${exempt.length} exentas.`)
 if (uncovered.length) console.log(`Sin regla: ${uncovered.join(', ')}`)
 console.log('Escrito docs/contraste.md')

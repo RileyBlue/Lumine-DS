@@ -47,6 +47,12 @@
           "inverted": false,
           "backgrounds": "light"
         }
+      ],
+      "except": [
+        {
+          "token": "color.text.neutral.disabled",
+          "reason": "Los controles desactivados quedan fuera de los mínimos de contraste (docs/accesibilidad.md). Con más contraste parecerían activos."
+        }
       ]
     },
     {
@@ -72,6 +78,16 @@
           "foreground": "color.border",
           "backgrounds": "light"
         }
+      ],
+      "except": [
+        {
+          "token": "color.border.neutral.default",
+          "reason": "Es la línea de los divisores: es decorativa y no delimita un control. Para los controles está color.border.neutral.strong."
+        },
+        {
+          "token": "color.border.focus-outer",
+          "reason": "Es el anillo blanco exterior del foco. El foco cumple junto con color.border.focus, que tiene al menos 9:1 con él (ADR-005); una pareja suelta no lo puede medir."
+        }
       ]
     },
     {
@@ -89,6 +105,12 @@
           "foreground": "color.icon",
           "inverted": true,
           "backgrounds": "strong"
+        }
+      ],
+      "except": [
+        {
+          "token": "color.icon.neutral.disabled",
+          "reason": "Los controles desactivados quedan fuera de los mínimos de contraste (docs/accesibilidad.md). Con más contraste parecerían activos."
         }
       ]
     }

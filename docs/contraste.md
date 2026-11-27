@@ -2,14 +2,14 @@
 
 # Contraste
 
-445 parejas: 384 pasan y 61 no pasan.
+445 parejas: 384 pasan, 9 no pasan y 52 están exentas.
 
-| Regla | Tipo | Mínimo | Parejas | Pasan | No pasan |
-| --- | --- | --- | --- | --- | --- |
-| Texto que no es inverted, sobre los fondos claros. | text | 4.5:1 | 104 | 88 | 16 |
-| Texto inverted, sobre los fondos fuertes. | text | 4.5:1 | 60 | 60 | 0 |
-| Bordes, sobre los fondos claros. | ui | 3:1 | 117 | 88 | 29 |
-| Iconos como el texto: los que no son inverted sobre los fondos claros y los inverted sobre los fuertes. | ui | 3:1 | 164 | 148 | 16 |
+| Regla | Tipo | Mínimo | Parejas | Pasan | No pasan | Exentas |
+| --- | --- | --- | --- | --- | --- | --- |
+| Texto que no es inverted, sobre los fondos claros. | text | 4.5:1 | 104 | 88 | 3 | 13 |
+| Texto inverted, sobre los fondos fuertes. | text | 4.5:1 | 60 | 60 | 0 | 0 |
+| Bordes, sobre los fondos claros. | ui | 3:1 | 117 | 88 | 3 | 26 |
+| Iconos como el texto: los que no son inverted sobre los fondos claros y los inverted sobre los fuertes. | ui | 3:1 | 164 | 148 | 3 | 13 |
 
 Los valores se truncan a dos decimales. Los colores fuera de sRGB se recortan antes de calcular.
 
@@ -28,27 +28,6 @@ Todos los textos, iconos y bordes semánticos entran en alguna regla.
 | --- | --- | --- | --- | --- |
 | `color.text.neutral.subtle.default` | `color.background.brand.subtle.pressed` | 4.25:1 | 4.5:1 | **No pasa** |
 
-### color.text.neutral.disabled
-
-- Apunta a `primitive.color.gray.400`.
-- Lo usan: `component.button.text.neutral.disabled`, `component.input.field.text.neutral.disabled`.
-
-| Delante | Fondo | Contraste | Mínimo | Resultado |
-| --- | --- | --- | --- | --- |
-| `color.text.neutral.disabled` | `color.background.neutral.default` | 2.60:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.neutral.subtle.default` | 2.49:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.neutral.strong.default` | 2.10:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.neutral.hover` | 2.36:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.neutral.pressed` | 2.10:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.neutral.disabled` | 2.36:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.brand.subtle.default` | 2.19:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.brand.subtle.hover` | 1.86:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.brand.subtle.pressed` | 1.46:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.info.subtle.default` | 2.13:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.success.subtle.default` | 2.36:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.warning.subtle.default` | 2.26:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.error.subtle.default` | 2.13:1 | 4.5:1 | **No pasa** |
-
 ### color.text.success.default
 
 - Apunta a `primitive.color.green.800`.
@@ -66,27 +45,6 @@ Todos los textos, iconos y bordes semánticos entran en alguna regla.
 | Delante | Fondo | Contraste | Mínimo | Resultado |
 | --- | --- | --- | --- | --- |
 | `color.text.warning.default` | `color.background.brand.subtle.pressed` | 4.13:1 | 4.5:1 | **No pasa** |
-
-### color.border.neutral.default
-
-- Apunta a `primitive.color.gray.200`.
-- Lo usan: `component.card.border.neutral.default`, `component.card.footer.border.neutral.default`.
-
-| Delante | Fondo | Contraste | Mínimo | Resultado |
-| --- | --- | --- | --- | --- |
-| `color.border.neutral.default` | `color.background.neutral.default` | 1.23:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.neutral.subtle.default` | 1.18:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.neutral.strong.default` | 1.00:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.neutral.hover` | 1.12:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.neutral.pressed` | 1.00:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.neutral.disabled` | 1.12:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.brand.subtle.default` | 1.04:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.brand.subtle.hover` | 1.12:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.brand.subtle.pressed` | 1.43:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.info.subtle.default` | 1.01:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.success.subtle.default` | 1.12:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.warning.subtle.default` | 1.07:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.error.subtle.default` | 1.01:1 | 3:1 | **No pasa** |
 
 ### color.border.neutral.strong.default
 
@@ -115,27 +73,6 @@ Todos los textos, iconos y bordes semánticos entran en alguna regla.
 | --- | --- | --- | --- | --- |
 | `color.border.warning.default` | `color.background.brand.subtle.pressed` | 2.94:1 | 3:1 | **No pasa** |
 
-### color.border.focus-outer
-
-- Apunta a `primitive.color.white`.
-- Lo usan: `component.button.border.focus-outer`, `component.input.border.focus-outer`.
-
-| Delante | Fondo | Contraste | Mínimo | Resultado |
-| --- | --- | --- | --- | --- |
-| `color.border.focus-outer` | `color.background.neutral.default` | 1.00:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.neutral.subtle.default` | 1.04:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.neutral.strong.default` | 1.23:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.neutral.hover` | 1.10:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.neutral.pressed` | 1.23:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.neutral.disabled` | 1.10:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.brand.subtle.default` | 1.18:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.brand.subtle.hover` | 1.39:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.brand.subtle.pressed` | 1.77:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.info.subtle.default` | 1.21:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.success.subtle.default` | 1.09:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.warning.subtle.default` | 1.14:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.error.subtle.default` | 1.22:1 | 3:1 | **No pasa** |
-
 ### color.icon.neutral.subtle.default
 
 - Apunta a `primitive.color.gray.500`.
@@ -144,27 +81,6 @@ Todos los textos, iconos y bordes semánticos entran en alguna regla.
 | Delante | Fondo | Contraste | Mínimo | Resultado |
 | --- | --- | --- | --- | --- |
 | `color.icon.neutral.subtle.default` | `color.background.brand.subtle.pressed` | 2.71:1 | 3:1 | **No pasa** |
-
-### color.icon.neutral.disabled
-
-- Apunta a `primitive.color.gray.400`.
-- Lo usan: `component.button.icon.neutral.disabled`, `component.input.icon.neutral.disabled`.
-
-| Delante | Fondo | Contraste | Mínimo | Resultado |
-| --- | --- | --- | --- | --- |
-| `color.icon.neutral.disabled` | `color.background.neutral.default` | 2.60:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.neutral.subtle.default` | 2.49:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.neutral.strong.default` | 2.10:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.neutral.hover` | 2.36:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.neutral.pressed` | 2.10:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.neutral.disabled` | 2.36:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.brand.subtle.default` | 2.19:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.brand.subtle.hover` | 1.86:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.brand.subtle.pressed` | 1.46:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.info.subtle.default` | 2.13:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.success.subtle.default` | 2.36:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.warning.subtle.default` | 2.26:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.error.subtle.default` | 2.13:1 | 3:1 | **No pasa** |
 
 ### color.icon.success.default
 
@@ -184,10 +100,112 @@ Todos los textos, iconos y bordes semánticos entran en alguna regla.
 | --- | --- | --- | --- | --- |
 | `color.icon.warning.default` | `color.background.brand.subtle.pressed` | 2.94:1 | 3:1 | **No pasa** |
 
-## Todas las parejas
+## Exentas
+
+### color.text.neutral.disabled
+
+Los controles desactivados quedan fuera de los mínimos de contraste (docs/accesibilidad.md). Con más contraste parecerían activos.
 
 <details>
-<summary>Texto que no es inverted, sobre los fondos claros. (104)</summary>
+<summary>Contraste en sus 13 parejas</summary>
+
+| Fondo | Contraste |
+| --- | --- |
+| `color.background.neutral.default` | 2.60:1 |
+| `color.background.neutral.subtle.default` | 2.49:1 |
+| `color.background.neutral.strong.default` | 2.10:1 |
+| `color.background.neutral.hover` | 2.36:1 |
+| `color.background.neutral.pressed` | 2.10:1 |
+| `color.background.neutral.disabled` | 2.36:1 |
+| `color.background.brand.subtle.default` | 2.19:1 |
+| `color.background.brand.subtle.hover` | 1.86:1 |
+| `color.background.brand.subtle.pressed` | 1.46:1 |
+| `color.background.info.subtle.default` | 2.13:1 |
+| `color.background.success.subtle.default` | 2.36:1 |
+| `color.background.warning.subtle.default` | 2.26:1 |
+| `color.background.error.subtle.default` | 2.13:1 |
+
+</details>
+
+### color.border.neutral.default
+
+Es la línea de los divisores: es decorativa y no delimita un control. Para los controles está color.border.neutral.strong.
+
+<details>
+<summary>Contraste en sus 13 parejas</summary>
+
+| Fondo | Contraste |
+| --- | --- |
+| `color.background.neutral.default` | 1.23:1 |
+| `color.background.neutral.subtle.default` | 1.18:1 |
+| `color.background.neutral.strong.default` | 1.00:1 |
+| `color.background.neutral.hover` | 1.12:1 |
+| `color.background.neutral.pressed` | 1.00:1 |
+| `color.background.neutral.disabled` | 1.12:1 |
+| `color.background.brand.subtle.default` | 1.04:1 |
+| `color.background.brand.subtle.hover` | 1.12:1 |
+| `color.background.brand.subtle.pressed` | 1.43:1 |
+| `color.background.info.subtle.default` | 1.01:1 |
+| `color.background.success.subtle.default` | 1.12:1 |
+| `color.background.warning.subtle.default` | 1.07:1 |
+| `color.background.error.subtle.default` | 1.01:1 |
+
+</details>
+
+### color.border.focus-outer
+
+Es el anillo blanco exterior del foco. El foco cumple junto con color.border.focus, que tiene al menos 9:1 con él (ADR-005); una pareja suelta no lo puede medir.
+
+<details>
+<summary>Contraste en sus 13 parejas</summary>
+
+| Fondo | Contraste |
+| --- | --- |
+| `color.background.neutral.default` | 1.00:1 |
+| `color.background.neutral.subtle.default` | 1.04:1 |
+| `color.background.neutral.strong.default` | 1.23:1 |
+| `color.background.neutral.hover` | 1.10:1 |
+| `color.background.neutral.pressed` | 1.23:1 |
+| `color.background.neutral.disabled` | 1.10:1 |
+| `color.background.brand.subtle.default` | 1.18:1 |
+| `color.background.brand.subtle.hover` | 1.39:1 |
+| `color.background.brand.subtle.pressed` | 1.77:1 |
+| `color.background.info.subtle.default` | 1.21:1 |
+| `color.background.success.subtle.default` | 1.09:1 |
+| `color.background.warning.subtle.default` | 1.14:1 |
+| `color.background.error.subtle.default` | 1.22:1 |
+
+</details>
+
+### color.icon.neutral.disabled
+
+Los controles desactivados quedan fuera de los mínimos de contraste (docs/accesibilidad.md). Con más contraste parecerían activos.
+
+<details>
+<summary>Contraste en sus 13 parejas</summary>
+
+| Fondo | Contraste |
+| --- | --- |
+| `color.background.neutral.default` | 2.60:1 |
+| `color.background.neutral.subtle.default` | 2.49:1 |
+| `color.background.neutral.strong.default` | 2.10:1 |
+| `color.background.neutral.hover` | 2.36:1 |
+| `color.background.neutral.pressed` | 2.10:1 |
+| `color.background.neutral.disabled` | 2.36:1 |
+| `color.background.brand.subtle.default` | 2.19:1 |
+| `color.background.brand.subtle.hover` | 1.86:1 |
+| `color.background.brand.subtle.pressed` | 1.46:1 |
+| `color.background.info.subtle.default` | 2.13:1 |
+| `color.background.success.subtle.default` | 2.36:1 |
+| `color.background.warning.subtle.default` | 2.26:1 |
+| `color.background.error.subtle.default` | 2.13:1 |
+
+</details>
+
+## Todas las parejas que se exigen
+
+<details>
+<summary>Texto que no es inverted, sobre los fondos claros. (91)</summary>
 
 | Delante | Fondo | Contraste | Mínimo | Resultado |
 | --- | --- | --- | --- | --- |
@@ -217,19 +235,6 @@ Todos los textos, iconos y bordes semánticos entran en alguna regla.
 | `color.text.neutral.subtle.default` | `color.background.success.subtle.default` | 6.87:1 | 4.5:1 | Pasa |
 | `color.text.neutral.subtle.default` | `color.background.warning.subtle.default` | 6.59:1 | 4.5:1 | Pasa |
 | `color.text.neutral.subtle.default` | `color.background.error.subtle.default` | 6.19:1 | 4.5:1 | Pasa |
-| `color.text.neutral.disabled` | `color.background.neutral.default` | 2.60:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.neutral.subtle.default` | 2.49:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.neutral.strong.default` | 2.10:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.neutral.hover` | 2.36:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.neutral.pressed` | 2.10:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.neutral.disabled` | 2.36:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.brand.subtle.default` | 2.19:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.brand.subtle.hover` | 1.86:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.brand.subtle.pressed` | 1.46:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.info.subtle.default` | 2.13:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.success.subtle.default` | 2.36:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.warning.subtle.default` | 2.26:1 | 4.5:1 | **No pasa** |
-| `color.text.neutral.disabled` | `color.background.error.subtle.default` | 2.13:1 | 4.5:1 | **No pasa** |
 | `color.text.brand.default` | `color.background.neutral.default` | 8.76:1 | 4.5:1 | Pasa |
 | `color.text.brand.default` | `color.background.neutral.subtle.default` | 8.40:1 | 4.5:1 | Pasa |
 | `color.text.brand.default` | `color.background.neutral.strong.default` | 7.09:1 | 4.5:1 | Pasa |
@@ -367,23 +372,10 @@ Todos los textos, iconos y bordes semánticos entran en alguna regla.
 </details>
 
 <details>
-<summary>Bordes, sobre los fondos claros. (117)</summary>
+<summary>Bordes, sobre los fondos claros. (91)</summary>
 
 | Delante | Fondo | Contraste | Mínimo | Resultado |
 | --- | --- | --- | --- | --- |
-| `color.border.neutral.default` | `color.background.neutral.default` | 1.23:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.neutral.subtle.default` | 1.18:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.neutral.strong.default` | 1.00:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.neutral.hover` | 1.12:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.neutral.pressed` | 1.00:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.neutral.disabled` | 1.12:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.brand.subtle.default` | 1.04:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.brand.subtle.hover` | 1.12:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.brand.subtle.pressed` | 1.43:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.info.subtle.default` | 1.01:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.success.subtle.default` | 1.12:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.warning.subtle.default` | 1.07:1 | 3:1 | **No pasa** |
-| `color.border.neutral.default` | `color.background.error.subtle.default` | 1.01:1 | 3:1 | **No pasa** |
 | `color.border.neutral.strong.default` | `color.background.neutral.default` | 4.83:1 | 3:1 | Pasa |
 | `color.border.neutral.strong.default` | `color.background.neutral.subtle.default` | 4.63:1 | 3:1 | Pasa |
 | `color.border.neutral.strong.default` | `color.background.neutral.strong.default` | 3.91:1 | 3:1 | Pasa |
@@ -475,24 +467,11 @@ Todos los textos, iconos y bordes semánticos entran en alguna regla.
 | `color.border.focus` | `color.background.success.subtle.default` | 9.78:1 | 3:1 | Pasa |
 | `color.border.focus` | `color.background.warning.subtle.default` | 9.37:1 | 3:1 | Pasa |
 | `color.border.focus` | `color.background.error.subtle.default` | 8.80:1 | 3:1 | Pasa |
-| `color.border.focus-outer` | `color.background.neutral.default` | 1.00:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.neutral.subtle.default` | 1.04:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.neutral.strong.default` | 1.23:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.neutral.hover` | 1.10:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.neutral.pressed` | 1.23:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.neutral.disabled` | 1.10:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.brand.subtle.default` | 1.18:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.brand.subtle.hover` | 1.39:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.brand.subtle.pressed` | 1.77:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.info.subtle.default` | 1.21:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.success.subtle.default` | 1.09:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.warning.subtle.default` | 1.14:1 | 3:1 | **No pasa** |
-| `color.border.focus-outer` | `color.background.error.subtle.default` | 1.22:1 | 3:1 | **No pasa** |
 
 </details>
 
 <details>
-<summary>Iconos como el texto: los que no son inverted sobre los fondos claros y los inverted sobre los fuertes. (164)</summary>
+<summary>Iconos como el texto: los que no son inverted sobre los fondos claros y los inverted sobre los fuertes. (151)</summary>
 
 | Delante | Fondo | Contraste | Mínimo | Resultado |
 | --- | --- | --- | --- | --- |
@@ -522,19 +501,6 @@ Todos los textos, iconos y bordes semánticos entran en alguna regla.
 | `color.icon.neutral.subtle.default` | `color.background.success.subtle.default` | 4.39:1 | 3:1 | Pasa |
 | `color.icon.neutral.subtle.default` | `color.background.warning.subtle.default` | 4.21:1 | 3:1 | Pasa |
 | `color.icon.neutral.subtle.default` | `color.background.error.subtle.default` | 3.96:1 | 3:1 | Pasa |
-| `color.icon.neutral.disabled` | `color.background.neutral.default` | 2.60:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.neutral.subtle.default` | 2.49:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.neutral.strong.default` | 2.10:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.neutral.hover` | 2.36:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.neutral.pressed` | 2.10:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.neutral.disabled` | 2.36:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.brand.subtle.default` | 2.19:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.brand.subtle.hover` | 1.86:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.brand.subtle.pressed` | 1.46:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.info.subtle.default` | 2.13:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.success.subtle.default` | 2.36:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.warning.subtle.default` | 2.26:1 | 3:1 | **No pasa** |
-| `color.icon.neutral.disabled` | `color.background.error.subtle.default` | 2.13:1 | 3:1 | **No pasa** |
 | `color.icon.brand.default` | `color.background.neutral.default` | 6.36:1 | 3:1 | Pasa |
 | `color.icon.brand.default` | `color.background.neutral.subtle.default` | 6.10:1 | 3:1 | Pasa |
 | `color.icon.brand.default` | `color.background.neutral.strong.default` | 5.14:1 | 3:1 | Pasa |
