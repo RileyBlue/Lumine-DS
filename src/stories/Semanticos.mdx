@@ -48,7 +48,7 @@ export const accent = paint('background.brand.default')
 
 export const Label = ({ name, children }) => (
   <div style={{ fontSize: '0.75rem', lineHeight: '1.25rem', overflowWrap: 'anywhere' }}>
-    <code style={{ fontWeight: 600 }}>{name.replace('semantic.', '')}</code>
+    <code style={{ fontWeight: 600 }}>{name.replace('semantic.', '').replaceAll('.', '.\u200B')}</code>
     <div style={{ color: paint('text.neutral.subtle.default') }}>{children}</div>
   </div>
 )

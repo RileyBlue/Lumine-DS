@@ -196,7 +196,7 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens `c
 - [ ] El issue que pide el token está aprobado.
 - [ ] El token está en su nivel y su alias apunta solo al nivel de abajo.
 - [ ] El nombre sigue las reglas de este manual.
-- [ ] Tiene `$value` y `$description`, y su grupo tiene `$type`.
+- [ ] Tiene `$value` y `$description`. El `$type` está en su grupo o, si el grupo mezcla tipos, en el propio token.
 - [ ] El alias apunta a un token que existe.
 - [ ] Las parejas de color cumplen el contraste de WCAG 2.2 AA: 4,5:1 para texto y 3:1 para elementos de interfaz.
 
