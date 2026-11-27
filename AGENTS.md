@@ -4,7 +4,7 @@ Manual que se lee antes de cada tarea en este repo.
 
 ## Qué es
 
-Lumine-DS es el design system de Lumine, la plataforma escolar interna de la academia de ballet Lumine. Lo usan las maestras y la administración. La interfaz está en español.
+Lumine-DS es el design system de Lumine, la plataforma escolar interna de la academia de ballet Lumine. La usan las maestras y la administración. La interfaz está en español.
 
 ## Tecnología
 
@@ -12,20 +12,29 @@ Lumine-DS es el design system de Lumine, la plataforma escolar interna de la aca
 - Tailwind para los estilos.
 - Tabler Icons para los iconos.
 - Ninguna librería de componentes: los componentes se crean desde cero.
+- Storybook para ver y revisar los componentes, y Vitest con Testing Library para sus pruebas.
+- Node 22, la misma versión que usa GitHub: con Node 20.14, Storybook no arranca.
+- Las versiones y los comandos están en `package.json`; lo que GitHub ejecuta solo, en `.github/workflows/`.
 
 ## Cómo trabajamos
 
-- Todo se escribe y se responde en español.
-- A partir de ahora, todo cambio va en una rama con su PR. No se sube directamente a `main`.
+- Todo se escribe y se responde en español, salvo los nombres en el código, que van en inglés ([ADR-001](docs/adr/001-alcance.md), principio 5).
+- Todo cambio va en una rama con su PR. No se sube directamente a `main`.
 - Los cambios se explican sin jerga.
-- Si la interfaz cambia de idioma, se cambia el idioma declarado en `index.html` y en `.storybook/preview.ts`.
+- Si la interfaz cambia de idioma, se cambia el idioma declarado en `index.html` y en `.storybook/preview.ts`, y los textos escritos dentro de los componentes, como «Cerrar».
 - Si cambia `package.json`, se actualiza `package-lock.json` en la misma PR.
 - Cada PR rellena en su descripción la lista de `.github/pull_request_template.md`, también si se abre desde la terminal o la abre un asistente. Una casilla solo se marca si se comprobó; si no aplica, se marca y se escribe «no aplica».
+- Dónde está cada cosa:
+  - Componentes: [`src/components/`](src/components/), y su estado en [`docs/componentes.md`](docs/componentes.md).
+  - Contratos de los componentes: [`contracts/`](contracts/).
+  - Nombres de props y variantes: [`docs/prop-map.md`](docs/prop-map.md).
+  - Tokens: [`tokens/README.md`](tokens/README.md).
+  - Accesibilidad: [`docs/accesibilidad.md`](docs/accesibilidad.md).
 
 ## Decisiones
 
 - Las decisiones del design system viven en `docs/adr/`.
-- Se leen antes de proponer cualquier cambio que afecte al alcance o a los principios.
+- Se leen antes de proponer cualquier cambio que afecte a lo que deciden.
 - Nunca se contradicen sin escribir un ADR nuevo.
 - Cada ADR nuevo se apunta en esta tabla, en la misma PR que lo crea. Cuando cambia su estado, se actualiza aquí también.
 
