@@ -229,9 +229,22 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens de
 }
 ```
 
+## Del token a la clase
+
+`npm run tokens` lee `tokens.json` y genera:
+
+- [`src/styles/tokens.css`](../src/styles/tokens.css): una variable CSS por token;
+- [`src/styles/theme.css`](../src/styles/theme.css): las clases de Tailwind de `semantic` y `component`;
+- [`docs/tokens.md`](../docs/tokens.md): la tabla de cada token y su clase.
+
+No se editan a mano. `npm run tokens -- --check` avisa si están desactualizados, sin escribirlos.
+
+La clase es la utilidad de Tailwind seguida del nombre del token, sin el nivel, sin `color` y sin el `default` del color: `component.button.background.brand.default` es `bg-button-background-brand`. La regla completa está en [`scripts/token-classes.mjs`](../scripts/token-classes.mjs).
+
 ## Antes de abrir la PR
 
 - [ ] El issue que pide el token está aprobado y su enlace está en el `$extensions` del propio token (o en el del grupo, si ese issue aprobó el grupo).
+- [ ] Se ejecutó `npm run tokens` y se guardaron los archivos generados.
 - [ ] El token está en su nivel y su alias apunta solo al nivel de abajo.
 - [ ] El nombre sigue las reglas de este manual.
 - [ ] Tiene `$value` y `$description`. El `$type` está en su grupo o, si el grupo mezcla tipos, en el propio token.
@@ -240,5 +253,4 @@ La etiqueta de marca (`Badge`, variante `brand`), de abajo arriba. Los tokens de
 
 ## Pendiente
 
-- Los componentes de `src/components/` todavía no usan los tokens `component`.
-- Falta conectar estos tokens con el tema de Tailwind (`src/index.css`), que es de donde el ADR-001 pide que los usen los componentes.
+- Los estilos de texto no incluyen familia de letra. Falta decidir entre Inter y las letras del manual de marca, y cargar la elegida.

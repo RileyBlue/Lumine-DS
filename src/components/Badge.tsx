@@ -12,18 +12,43 @@ export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   children?: ReactNode
 }
 
-const variants: Record<BadgeVariant, string> = {
-  neutral: 'bg-gray-100 text-gray-700',
-  brand: 'bg-rose-100 text-rose-800',
-  info: 'bg-sky-100 text-sky-800',
-  success: 'bg-emerald-100 text-emerald-800',
-  warning: 'bg-amber-100 text-amber-800',
-  danger: 'bg-red-100 text-red-800',
+const variants: Record<BadgeVariant, { box: string; icon: string }> = {
+  neutral: {
+    box: 'bg-badge-background-neutral-strong text-badge-text-neutral',
+    icon: 'text-badge-icon-neutral',
+  },
+  brand: {
+    box: 'bg-badge-background-brand-subtle text-badge-text-brand',
+    icon: 'text-badge-icon-brand',
+  },
+  info: {
+    box: 'bg-badge-background-info-subtle text-badge-text-info',
+    icon: 'text-badge-icon-info',
+  },
+  success: {
+    box: 'bg-badge-background-success-subtle text-badge-text-success',
+    icon: 'text-badge-icon-success',
+  },
+  warning: {
+    box: 'bg-badge-background-warning-subtle text-badge-text-warning',
+    icon: 'text-badge-icon-warning',
+  },
+  // `danger` es el nombre de la variante; su color es el de `error`.
+  danger: {
+    box: 'bg-badge-background-error-subtle text-badge-text-error',
+    icon: 'text-badge-icon-error',
+  },
 }
 
 const sizes: Record<BadgeSize, { box: string; icon: number }> = {
-  sm: { box: 'gap-1 px-2 py-0.5 text-xs', icon: 12 },
-  md: { box: 'gap-1.5 px-2.5 py-1 text-sm', icon: 16 },
+  sm: {
+    box: 'gap-badge-gap-sm px-badge-padding-x-sm py-badge-padding-y-sm text-badge-label-sm',
+    icon: 12,
+  },
+  md: {
+    box: 'gap-badge-gap-md px-badge-padding-x-md py-badge-padding-y-md text-badge-label-md',
+    icon: 16,
+  },
 }
 
 export function Badge({
@@ -37,14 +62,16 @@ export function Badge({
   return (
     <span
       className={[
-        'inline-flex items-center rounded-full font-medium',
-        variants[variant],
+        'inline-flex items-center rounded-badge-radius',
+        variants[variant].box,
         sizes[size].box,
         className,
       ].join(' ')}
       {...props}
     >
-      {IconComponent && <IconComponent size={sizes[size].icon} aria-hidden="true" />}
+      {IconComponent && (
+        <IconComponent size={sizes[size].icon} aria-hidden="true" className={variants[variant].icon} />
+      )}
       {children}
     </span>
   )

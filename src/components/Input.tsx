@@ -16,10 +16,23 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   size?: InputSize
 }
 
-const sizes: Record<InputSize, { box: string; icon: number; withIcon: string }> = {
-  sm: { box: 'h-8 px-3 text-sm', icon: 16, withIcon: 'pl-9' },
-  md: { box: 'h-10 px-3 text-base', icon: 20, withIcon: 'pl-10' },
-  lg: { box: 'h-12 px-4 text-lg', icon: 24, withIcon: 'pl-12' },
+// Las alturas usan la escala de Tailwind y el tamaño del icono lo fija cada talla (ADR-003).
+const sizes: Record<InputSize, { box: string; icon: number; iconPosition: string }> = {
+  sm: {
+    box: 'h-8 px-input-padding-x-sm text-input-field-sm',
+    icon: 16,
+    iconPosition: 'left-input-padding-x-sm',
+  },
+  md: {
+    box: 'h-10 px-input-padding-x-md text-input-field-md',
+    icon: 20,
+    iconPosition: 'left-input-padding-x-md',
+  },
+  lg: {
+    box: 'h-12 px-input-padding-x-lg text-input-field-lg',
+    icon: 24,
+    iconPosition: 'left-input-padding-x-lg',
+  },
 }
 
 export function Input({
@@ -30,17 +43,24 @@ export function Input({
   size = 'md',
   id,
   className = '',
+  style,
   ...props
 }: InputProps) {
   const generatedId = useId()
   const inputId = id ?? generatedId
   const messageId = `${inputId}-mensaje`
   const message = error ?? hint
+  // Con icono, el texto empieza después del relleno, el icono y la separación entre ambos.
+  const iconIndent = IconComponent
+    ? {
+        paddingLeft: `calc(var(--component-input-padding-x-${size}) + ${sizes[size].icon}px + var(--component-input-gap-icon))`,
+      }
+    : undefined
 
   return (
-    <div className={['flex flex-col gap-1.5', className].join(' ')}>
+    <div className={['flex flex-col gap-input-gap-stack', className].join(' ')}>
       {label && (
-        <label htmlFor={inputId} className="text-sm font-medium text-gray-800">
+        <label htmlFor={inputId} className="text-input-label text-input-label-text-neutral">
           {label}
         </label>
       )}
@@ -49,7 +69,11 @@ export function Input({
           <IconComponent
             size={sizes[size].icon}
             aria-hidden="true"
-            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+            className={[
+              'pointer-events-none absolute top-1/2 -translate-y-1/2',
+              sizes[size].iconPosition,
+              props.disabled ? 'text-input-icon-neutral-disabled' : 'text-input-icon-neutral-subtle',
+            ].join(' ')}
           />
         )}
         <input
@@ -57,20 +81,25 @@ export function Input({
           aria-invalid={error ? true : undefined}
           aria-describedby={message ? messageId : undefined}
           className={[
-            'w-full rounded-lg border bg-white text-gray-900 placeholder:text-gray-400',
-            'focus:outline-2 focus:outline-offset-0',
-            'disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-500',
-            error
-              ? 'border-red-500 focus:outline-red-500'
-              : 'border-gray-300 focus:border-rose-500 focus:outline-rose-500',
+            'w-full rounded-input-radius border-input-border-width-default bg-input-background-neutral',
+            'text-input-field-text-neutral placeholder:text-input-placeholder-text-neutral-subtle',
+            'focus:outline-input-border-width-focus focus:outline-offset-input-focus-offset focus:outline-input-border-focus',
+            'disabled:cursor-not-allowed disabled:bg-input-background-neutral-disabled disabled:text-input-field-text-neutral-disabled',
+            error ? 'border-input-border-error' : 'border-input-border-neutral-strong',
             sizes[size].box,
-            IconComponent ? sizes[size].withIcon : '',
           ].join(' ')}
+          style={{ ...iconIndent, ...style }}
           {...props}
         />
       </div>
       {message && (
-        <p id={messageId} className={['text-sm', error ? 'text-red-600' : 'text-gray-500'].join(' ')}>
+        <p
+          id={messageId}
+          className={[
+            'text-input-message',
+            error ? 'text-input-message-text-error' : 'text-input-message-text-neutral-subtle',
+          ].join(' ')}
+        >
           {message}
         </p>
       )}
