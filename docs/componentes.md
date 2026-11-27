@@ -32,4 +32,5 @@ componentes anteriores a esa regla no lo necesitan.
 
 **Contrato** significa que el componente tiene su ficha en
 [`contracts/`](https://github.com/RileyBlue/Lumine-DS/tree/main/contracts), que cumple el esquema y que
-todos los tokens que nombra existen. Sus apartados de guías de uso y de textos están por escribir.
+todos los tokens que nombra existen. Sus reglas de uso (`guidelines`)
+y de textos (`content`) están en cada ficha.

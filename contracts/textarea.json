@@ -221,6 +221,29 @@
       "Cambiar el anillo de foco o la forma de dar nombre al campo."
     ]
   },
-  "guidelines": {},
-  "content": []
+  "guidelines": {
+    "do": [
+      "Pon un `label` a la vista; deja `aria-label` para cuando no deba verse texto.",
+      "Lo que haga falta saber para rellenarlo va en `hint`, no en `placeholder`, que desaparece al escribir.",
+      "Da a `rows` las líneas que se esperan de la respuesta."
+    ],
+    "combinations": [
+      {
+        "with": "Button",
+        "guidance": "El formulario se envía con un solo botón `primary`."
+      }
+    ]
+  },
+  "content": [
+    {
+      "rule": "El `label` nombra el dato que se pide.",
+      "correct": "Observaciones de la clase",
+      "incorrect": "Texto"
+    },
+    {
+      "rule": "El `errorMessage` dice cómo corregirlo.",
+      "correct": "Escribe al menos una frase completa.",
+      "incorrect": "No válido"
+    }
+  ]
 }

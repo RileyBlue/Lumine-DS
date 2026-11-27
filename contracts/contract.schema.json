@@ -16,7 +16,9 @@
     "tokens",
     "a11y",
     "usage",
-    "governance"
+    "governance",
+    "guidelines",
+    "content"
   ],
   "properties": {
     "$schema": {
@@ -401,7 +403,9 @@
       "type": "object",
       "description": "Cómo se usa bien y cómo se combina con otros.",
       "additionalProperties": false,
-      "required": [],
+      "required": [
+        "do"
+      ],
       "properties": {
         "do": {
           "type": "array",
@@ -446,6 +450,7 @@
     "content": {
       "type": "array",
       "description": "Cómo se escribe su texto.",
+      "minItems": 1,
       "items": {
         "type": "object",
         "description": "Una regla de redacción.",

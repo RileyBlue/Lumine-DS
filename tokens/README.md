@@ -258,6 +258,20 @@ La clase es la utilidad de Tailwind seguida del nombre del token, sin el nivel, 
 
 GitHub ejecuta `npm run contrast -- --check` en cada PR: falla si una pareja no pasa, si un color queda sin regla o si el informe está desactualizado.
 
+## Reglas de uso
+
+Lo que un script no puede comprobar del todo.
+
+- Se elige el token por lo que significa, no por su color.
+- El texto secundario (`text.neutral.subtle`) nunca es el texto principal, que usa `text.neutral.default`.
+- El texto y los iconos `inverted` van solo sobre fondos fuertes.
+- `border.neutral.default` es solo para divisores; lo que delimita un control usa `border.neutral.strong`.
+- Los colores `disabled` son solo para lo que está desactivado.
+- `border.focus` y `border.focus-outer` son solo para el anillo de foco.
+- `background.neutral.overlay` es solo para lo que queda detrás de una ventana, sin texto ni controles encima.
+- Cada componente usa sus propios tokens: no se toman los de otro para imitarlo.
+- Las pantallas no ponen colores, letras ni radios: los traen los componentes ([ADR-001](../docs/adr/001-alcance.md), principio 3).
+
 ## Antes de abrir la PR
 
 - [ ] El issue que pide el token está aprobado y su enlace está en el `$extensions` del propio token (o en el del grupo, si ese issue aprobó el grupo).

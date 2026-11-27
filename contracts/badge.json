@@ -1,4 +1,5 @@
 { "$schema": "./contract.schema.json",
+  "$schema": "./contract.schema.json",
   "name": "Badge",
   "file": "src/components/Badge.tsx",
   "import": "import { Badge } from '@/components'",
@@ -133,6 +134,18 @@
       "Hacer que la etiqueta se pueda pulsar o cerrar."
     ]
   },
-  "guidelines": {},
-  "content": []
+  "guidelines": {
+    "do": [
+      "Elige `variant` por lo que significa, no por su color.",
+      "Un mismo estado usa la misma variante en toda la plataforma.",
+      "`error` marca algo que salió mal o venció, como un pago vencido."
+    ]
+  },
+  "content": [
+    {
+      "rule": "Una o pocas palabras que digan el estado.",
+      "correct": "Vencido",
+      "incorrect": "El pago de este mes ya venció"
+    }
+  ]
 }
