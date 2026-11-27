@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, type DialogHTMLAttributes, type ReactNode } from 'react'
 import { IconX } from '@tabler/icons-react'
-import { Button } from './Button'
+import { Button } from '@/components/Button'
 
 export interface DialogProps
   extends Omit<DialogHTMLAttributes<HTMLDialogElement>, 'open' | 'onClose' | 'title' | 'children'> {

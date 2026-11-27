@@ -7,7 +7,7 @@ import {
   IconX,
   type Icon,
 } from '@tabler/icons-react'
-import { Button } from './Button'
+import { Button } from '@/components/Button'
 
 export type ToastVariant = 'info' | 'success' | 'warning' | 'error'
 

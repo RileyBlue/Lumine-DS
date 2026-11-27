@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { userEvent } from 'storybook/test'
 import { expectFocusRing, expectRingInside, resetFocus } from '../stories/keyboard'
-import { Button } from './Button'
-import { Card } from './Card'
+import { Button, Card } from '@/components'
 
 const meta = {
   title: 'Componentes/Card',

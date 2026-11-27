@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, userEvent } from 'storybook/test'
 import { expectFocusRing, resetFocus } from '../stories/keyboard'
-import { Textarea } from './Textarea'
+import { Textarea } from '@/components'
 
 const meta = {
   title: 'Componentes/Textarea',

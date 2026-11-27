@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, fn, userEvent } from 'storybook/test'
 import { expectFocusRing, resetFocus } from '../stories/keyboard'
-import { Toast } from './Toast'
+import { Toast } from '@/components'
 
 const meta = {
   title: 'Componentes/Toast',

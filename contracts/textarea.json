@@ -2,7 +2,7 @@
   "$schema": "./contract.schema.json",
   "name": "Textarea",
   "file": "src/components/Textarea.tsx",
-  "import": "import { Textarea } from '../components'",
+  "import": "import { Textarea } from '@/components'",
   "purpose": "Pedir un texto de varias líneas, con su nombre, una ayuda y un mensaje de error.",
   "neverUseFor": [
     "Datos que caben en una línea, como un nombre o un correo: para eso está Input.",
