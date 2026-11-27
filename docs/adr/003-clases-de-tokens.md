@@ -1,6 +1,6 @@
 # ADR-003 · Clases de tokens en los componentes
 
-- **Estado:** Propuesto
+- **Estado:** Aceptado
 - **Fecha:** 2026-11-26
 - **Creado por:** Riley Sainz (RileyBlue)
 
