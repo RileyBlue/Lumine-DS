@@ -1,0 +1,96 @@
+{
+  "description": "Reglas de contraste por grupos (ADR-005). Los nombres son tokens de la capa semantic. Un token de texto, icono o borde entra en su regla por su nombre; un fondo nuevo se añade a su grupo.",
+  "backgrounds": {
+    "light": {
+      "description": "Fondos claros: llevan texto normal.",
+      "tokens": [
+        "color.background.neutral.default",
+        "color.background.neutral.subtle.default",
+        "color.background.neutral.strong.default",
+        "color.background.neutral.hover",
+        "color.background.neutral.pressed",
+        "color.background.neutral.disabled",
+        "color.background.brand.subtle.default",
+        "color.background.brand.subtle.hover",
+        "color.background.brand.subtle.pressed",
+        "color.background.info.subtle.default",
+        "color.background.success.subtle.default",
+        "color.background.warning.subtle.default",
+        "color.background.error.subtle.default"
+      ]
+    },
+    "strong": {
+      "description": "Fondos fuertes: llevan texto inverted encima.",
+      "tokens": [
+        "color.background.neutral.inverted.default",
+        "color.background.brand.default",
+        "color.background.brand.hover",
+        "color.background.brand.pressed",
+        "color.background.info.default",
+        "color.background.success.default",
+        "color.background.warning.default",
+        "color.background.error.default",
+        "color.background.error.hover",
+        "color.background.error.pressed"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "id": "text",
+      "description": "Texto que no es inverted, sobre los fondos claros.",
+      "kind": "text",
+      "minimum": 4.5,
+      "pairs": [
+        {
+          "foreground": "color.text",
+          "inverted": false,
+          "backgrounds": "light"
+        }
+      ]
+    },
+    {
+      "id": "text-inverted",
+      "description": "Texto inverted, sobre los fondos fuertes.",
+      "kind": "text",
+      "minimum": 4.5,
+      "pairs": [
+        {
+          "foreground": "color.text",
+          "inverted": true,
+          "backgrounds": "strong"
+        }
+      ]
+    },
+    {
+      "id": "border",
+      "description": "Bordes, sobre los fondos claros.",
+      "kind": "ui",
+      "minimum": 3,
+      "pairs": [
+        {
+          "foreground": "color.border",
+          "backgrounds": "light"
+        }
+      ]
+    },
+    {
+      "id": "icon",
+      "description": "Iconos como el texto: los que no son inverted sobre los fondos claros y los inverted sobre los fuertes.",
+      "kind": "ui",
+      "minimum": 3,
+      "pairs": [
+        {
+          "foreground": "color.icon",
+          "inverted": false,
+          "backgrounds": "light"
+        },
+        {
+          "foreground": "color.icon",
+          "inverted": true,
+          "backgrounds": "strong"
+        }
+      ]
+    }
+  ]
+}
