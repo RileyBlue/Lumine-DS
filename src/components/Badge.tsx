@@ -10,9 +10,10 @@ type PointerEvents = 'onClick' | 'onDoubleClick' | 'onMouseDown' | 'onMouseUp' |
 export interface BadgeProps extends Omit<HTMLAttributes<HTMLSpanElement>, PointerEvents> {
   variant?: BadgeVariant
   size?: BadgeSize
-  /** Icono de Tabler junto al texto. */
+  /** Icono de Tabler junto al texto. Es decorativo: el significado lo da el texto. */
   icon?: Icon
-  children?: ReactNode
+  /** Texto de la etiqueta. Es obligatorio: sin él, un lector de pantalla no leería nada. */
+  children: Exclude<ReactNode, boolean | null | undefined>
 }
 
 const variants: Record<BadgeVariant, { box: string; icon: string }> = {

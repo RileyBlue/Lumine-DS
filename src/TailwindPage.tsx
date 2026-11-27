@@ -58,7 +58,8 @@ export default function TailwindPage() {
 
       <Section title="Paleta de color">
         <div className="space-y-2">
-          <div className="flex items-end gap-2">
+          {/* Cada muestra dice su nombre, así que esta fila de números no se lee. */}
+          <div className="flex items-end gap-2" aria-hidden="true">
             <span className="w-24 shrink-0" />
             {shades.map((shade) => (
               <span key={shade} className="flex-1 text-center text-xs text-gray-500">
@@ -73,6 +74,8 @@ export default function TailwindPage() {
                 <div
                   key={shade}
                   title={`${color}-${shade}`}
+                  role="img"
+                  aria-label={`${color}-${shade}`}
                   className="h-10 flex-1 rounded"
                   style={{ backgroundColor: `var(--color-${color}-${shade})` }}
                 />
@@ -131,7 +134,7 @@ export default function TailwindPage() {
         <div className="flex flex-wrap gap-6">
           {icons.map(({ name, Icon }) => (
             <div key={name} className="flex w-36 flex-col items-center gap-2 text-center">
-              <Icon size={32} stroke={1.5} />
+              <Icon size={32} stroke={1.5} aria-hidden="true" />
               <span className="font-mono text-xs">{name}</span>
             </div>
           ))}

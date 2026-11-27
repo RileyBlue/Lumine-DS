@@ -23,6 +23,8 @@ const variants: Record<CardVariant, string> = {
   elevated: 'bg-card-background-neutral shadow-card-elevation',
 }
 
+// La cabecera y la zona inferior son `div`: un `header` o un `footer` fuera de `main` o `section`
+// los anuncia el lector de pantalla como cabecera y pie de toda la página.
 export function Card({
   title,
   headingLevel = 3,
@@ -42,17 +44,17 @@ export function Card({
     >
       <div className="flex flex-col gap-card-gap-sections p-card-padding">
         {(title || description) && (
-          <header className="flex flex-col gap-card-gap-header">
+          <div className="flex flex-col gap-card-gap-header">
             {title && <Heading className="text-card-title text-card-title-text-neutral">{title}</Heading>}
             {description && <p className="text-card-description text-card-description-text-neutral-subtle">{description}</p>}
-          </header>
+          </div>
         )}
         {children && <div className="text-card-content text-card-content-text-neutral">{children}</div>}
       </div>
       {footer && (
-        <footer className="flex items-center justify-end gap-card-footer-gap border-t-card-footer-border-width-default border-card-footer-border-neutral bg-card-footer-background-neutral-subtle px-card-footer-padding-x py-card-footer-padding-y">
+        <div className="flex items-center justify-end gap-card-footer-gap border-t-card-footer-border-width-default border-card-footer-border-neutral bg-card-footer-background-neutral-subtle px-card-footer-padding-x py-card-footer-padding-y">
           {footer}
-        </footer>
+        </div>
       )}
     </div>
   )
