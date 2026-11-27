@@ -2,7 +2,7 @@
 
 # Contraste
 
-445 parejas: 393 pasan, 0 no pasan y 52 están exentas.
+446 parejas: 394 pasan, 0 no pasan y 52 están exentas.
 
 | Regla | Tipo | Mínimo | Parejas | Pasan | No pasan | Exentas |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -10,6 +10,7 @@
 | Texto inverted, sobre los fondos fuertes. | text | 4.5:1 | 60 | 60 | 0 | 0 |
 | Bordes, sobre los fondos claros. | ui | 3:1 | 117 | 91 | 0 | 26 |
 | Iconos como el texto: los que no son inverted sobre los fondos claros y los inverted sobre los fuertes. | ui | 3:1 | 164 | 151 | 0 | 13 |
+| Los dos colores del anillo de foco, entre sí. | ui | 9:1 | 1 | 1 | 0 | 0 |
 
 Los valores se truncan a dos decimales. Los colores fuera de sRGB se recortan antes de calcular.
 
@@ -75,7 +76,7 @@ Es la línea de los divisores: es decorativa y no delimita un control. Para los 
 
 ### color.border.focus-outer
 
-Es el anillo blanco exterior del foco. El foco cumple junto con color.border.focus, que tiene al menos 9:1 con él (ADR-005); una pareja suelta no lo puede medir.
+Es el anillo blanco exterior del foco. El foco cumple junto con color.border.focus (ADR-005): sus 9:1 entre ambos los exige la regla focus-ring.
 
 <details>
 <summary>Contraste en sus 13 parejas</summary>
@@ -547,5 +548,14 @@ Los controles desactivados quedan fuera de los mínimos de contraste (docs/acces
 | `color.icon.error.inverted.default` | `color.background.error.default` | 6.42:1 | 3:1 | Pasa |
 | `color.icon.error.inverted.default` | `color.background.error.hover` | 8.37:1 | 3:1 | Pasa |
 | `color.icon.error.inverted.default` | `color.background.error.pressed` | 10.05:1 | 3:1 | Pasa |
+
+</details>
+
+<details>
+<summary>Los dos colores del anillo de foco, entre sí. (1)</summary>
+
+| Delante | Fondo | Contraste | Mínimo | Resultado |
+| --- | --- | --- | --- | --- |
+| `color.border.focus` | `color.border.focus-outer` | 10.75:1 | 9:1 | Pasa |
 
 </details>

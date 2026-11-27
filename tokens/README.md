@@ -251,6 +251,12 @@ No se editan a mano. `npm run tokens -- --check` avisa si están desactualizados
 
 La clase es la utilidad de Tailwind seguida del nombre del token, sin el nivel, sin `color` y sin el `default` del color: `component.button.background.brand.default` es `bg-button-background-brand`. La regla completa está en [`scripts/token-classes.mjs`](../scripts/token-classes.mjs).
 
+## Contraste
+
+[`contrast-pairs.json`](contrast-pairs.json) dice qué colores se comprueban entre sí, y `npm run contrast` escribe el resultado en [`docs/contraste.md`](../docs/contraste.md). Un texto, icono o borde nuevo entra en su regla por su nombre. Una excepción lleva siempre su motivo.
+
+GitHub ejecuta `npm run contrast -- --check` en cada PR: falla si una pareja no pasa, si un color queda sin regla o si el informe está desactualizado.
+
 ## Antes de abrir la PR
 
 - [ ] El issue que pide el token está aprobado y su enlace está en el `$extensions` del propio token (o en el del grupo, si ese issue aprobó el grupo).
@@ -259,4 +265,5 @@ La clase es la utilidad de Tailwind seguida del nombre del token, sin el nivel, 
 - [ ] El nombre sigue las reglas de este manual.
 - [ ] Tiene `$value` y `$description`. El `$type` está en su grupo o, si el grupo mezcla tipos, en el propio token.
 - [ ] El alias apunta a un token que existe.
-- [ ] Las parejas de color cumplen el contraste de WCAG 2.2 AA: 4,5:1 para texto y 3:1 para elementos de interfaz.
+- [ ] Las parejas de color cumplen el contraste de WCAG 2.2 AA: 4,5:1 para texto y 3:1 para elementos de interfaz. Se ejecutó `npm run contrast` y no queda ninguna sin pasar.
+- [ ] Si es un fondo semántico nuevo, está en su grupo de [`contrast-pairs.json`](contrast-pairs.json).
