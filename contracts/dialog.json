@@ -1,0 +1,179 @@
+{ "$schema": "./contract.schema.json",
+  "$schema": "./contract.schema.json",
+  "name": "Dialog",
+  "file": "src/components/Dialog.tsx",
+  "import": "import { Dialog } from '../components'",
+  "purpose": "Pedir atención en una ventana sobre la pantalla, para confirmar una acción o completar un paso corto antes de seguir.",
+  "neverUseFor": [
+    "Avisar de algo que ya pasó: para eso está Toast.",
+    "Mostrar una pantalla entera o un recorrido de varios pasos."
+  ],
+  "props": [
+    {
+      "name": "open",
+      "type": "boolean",
+      "default": null,
+      "required": true,
+      "description": "Si la ventana está abierta.",
+      "inherited": false
+    },
+    {
+      "name": "onClose",
+      "type": "() => void",
+      "default": null,
+      "required": true,
+      "description": "Avisa de que la ventana se cerró, con Esc, con «Cerrar» o porque `open` pasó a falso. Quien lo usa pone `open` en falso.",
+      "inherited": false
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "default": null,
+      "required": true,
+      "description": "Título visible y nombre de la ventana (excepción del ADR-007).",
+      "inherited": false
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": null,
+      "required": true,
+      "description": "Contenido.",
+      "inherited": false
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "default": null,
+      "required": false,
+      "description": "Zona de abajo, para los botones.",
+      "inherited": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "",
+      "required": false,
+      "description": "Clases que se añaden a la ventana.",
+      "inherited": true
+    }
+  ],
+  "states": {
+    "intrinsic": [],
+    "authored": [
+      {
+        "name": "open",
+        "description": "`open` es verdadero: la ventana se ve sobre la pantalla y lo de detrás no se puede usar."
+      }
+    ]
+  },
+  "anatomy": [
+    {
+      "part": "root",
+      "element": "dialog",
+      "optional": false,
+      "description": "La ventana. El resto de atributos de `<dialog>` pasa a este elemento."
+    },
+    {
+      "part": "backdrop",
+      "element": "::backdrop de dialog",
+      "optional": false,
+      "description": "Fondo que oscurece lo de detrás."
+    },
+    {
+      "part": "title",
+      "element": "h2",
+      "optional": false,
+      "description": "Título."
+    },
+    {
+      "part": "close",
+      "element": "Button",
+      "optional": false,
+      "description": "Botón de solo icono «Cerrar»."
+    },
+    {
+      "part": "content",
+      "element": "div",
+      "optional": false,
+      "description": "Contenido."
+    },
+    {
+      "part": "footer",
+      "element": "div",
+      "optional": true,
+      "description": "Botones de abajo."
+    }
+  ],
+  "tokens": [
+    "component.dialog.background.neutral.default",
+    "component.dialog.backdrop.background.neutral.overlay.default",
+    "component.dialog.title.text.neutral.default",
+    "component.dialog.title.font-size",
+    "component.dialog.title.line-height",
+    "component.dialog.title.font-weight",
+    "component.dialog.content.text.neutral.default",
+    "component.dialog.content.font-size",
+    "component.dialog.content.line-height",
+    "component.dialog.content.font-weight",
+    "component.dialog.footer.gap",
+    "component.dialog.radius",
+    "component.dialog.elevation",
+    "component.dialog.padding",
+    "component.dialog.gap.header",
+    "component.dialog.gap.sections"
+  ],
+  "a11y": {
+    "role": "dialog",
+    "keyboard": [
+      {
+        "key": "Tab",
+        "action": "Recorre los controles de la ventana."
+      },
+      {
+        "key": "Shift+Tab",
+        "action": "Vuelve al control anterior."
+      },
+      {
+        "key": "Enter",
+        "action": "Activa el botón que tiene el foco."
+      },
+      {
+        "key": "Space",
+        "action": "Activa el botón que tiene el foco."
+      },
+      {
+        "key": "Escape",
+        "action": "Cierra la ventana."
+      }
+    ],
+    "notes": [
+      "Se abre con `showModal()` de `<dialog>`: el foco pasa dentro, lo de detrás queda inactivo y Esc la cierra.",
+      "El nombre sale de `title`, con `aria-labelledby`.",
+      "Se cierra poniendo `open` en falso, sin quitar el componente de la pantalla: así el foco vuelve a donde estaba.",
+      "Pulsar el fondo oscuro no la cierra.",
+      "Zona táctil: «Cerrar» mide 32 por 32 píxeles.",
+      "Contraste (docs/contraste.md): título y contenido, 17,74:1. El fondo oscuro no lleva texto ni controles; los botones siguen el contrato de Button.",
+      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 4 historias. Prueba Keyboard: pasa. Esc, que Tab no salga de la ventana y que pulsar el fondo no la cierre se comprobaron con teclas y ratón en el navegador. Todavía no se ha escuchado con VoiceOver."
+    ]
+  },
+  "usage": {
+    "scope": "general"
+  },
+  "governance": {
+    "mayExtendLocally": [
+      "Poner cualquier contenido en `children` y en `footer`.",
+      "Cambiar el ancho con una clase de disposición."
+    ],
+    "mustEscalateToDS": [
+      "Un color, una medida o un token que no exista.",
+      "Otra forma de cerrarla o quitar el botón «Cerrar».",
+      "Tallas o variantes."
+    ]
+  },
+  "composedOf": [
+    "Button"
+  ],
+  "guidelines": {},
+  "content": []
+}

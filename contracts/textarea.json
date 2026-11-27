@@ -1,0 +1,226 @@
+{ "$schema": "./contract.schema.json",
+  "$schema": "./contract.schema.json",
+  "name": "Textarea",
+  "file": "src/components/Textarea.tsx",
+  "import": "import { Textarea } from '../components'",
+  "purpose": "Pedir un texto de varias líneas, con su nombre, una ayuda y un mensaje de error.",
+  "neverUseFor": [
+    "Datos que caben en una línea, como un nombre o un correo: para eso está Input.",
+    "Mostrar un texto que no se puede editar."
+  ],
+  "props": [
+    {
+      "name": "label",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Texto encima del campo y su nombre. Obligatorio si no hay `aria-label`.",
+      "inherited": false
+    },
+    {
+      "name": "aria-label",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Nombre del campo cuando no hay texto a la vista. Obligatorio si no hay `label`.",
+      "inherited": true
+    },
+    {
+      "name": "hint",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Ayuda debajo del campo.",
+      "inherited": false
+    },
+    {
+      "name": "invalid",
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "description": "El valor no es válido: marca el campo y permite mostrar `errorMessage`.",
+      "inherited": false
+    },
+    {
+      "name": "errorMessage",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Texto que explica el error. Reemplaza la ayuda cuando `invalid` es verdadero.",
+      "inherited": false
+    },
+    {
+      "name": "size",
+      "type": "'sm' | 'md' | 'lg'",
+      "default": "md",
+      "required": false,
+      "description": "Tamaño de la letra y del relleno.",
+      "inherited": false
+    },
+    {
+      "name": "rows",
+      "type": "number",
+      "default": 3,
+      "required": false,
+      "description": "Líneas visibles al principio. La usuaria puede cambiar la altura.",
+      "inherited": true
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Identificador del campo. Si no se indica, se genera uno.",
+      "inherited": true
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "description": "Desactiva el campo.",
+      "inherited": true
+    },
+    {
+      "name": "aria-describedby",
+      "type": "string",
+      "default": null,
+      "required": false,
+      "description": "Identificadores de otros textos que describen el campo. Se suman a la ayuda o al error.",
+      "inherited": true
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "",
+      "required": false,
+      "description": "Clases que se añaden al contenedor, no al campo.",
+      "inherited": true
+    }
+  ],
+  "states": {
+    "intrinsic": [
+      "focus",
+      "disabled"
+    ],
+    "authored": [
+      {
+        "name": "invalid",
+        "description": "`invalid` es verdadero: el borde cambia de color y el campo se marca como no válido. Si hay `errorMessage`, reemplaza la ayuda."
+      }
+    ]
+  },
+  "anatomy": [
+    {
+      "part": "root",
+      "element": "div",
+      "optional": false,
+      "description": "Contenedor del campo y sus textos. Recibe `className`."
+    },
+    {
+      "part": "label",
+      "element": "label",
+      "optional": true,
+      "description": "Nombre visible, unido al campo."
+    },
+    {
+      "part": "field",
+      "element": "textarea",
+      "optional": false,
+      "description": "El campo. El resto de atributos de `<textarea>` pasa a este elemento."
+    },
+    {
+      "part": "placeholder",
+      "element": "atributo placeholder de textarea",
+      "optional": true,
+      "description": "Texto de ejemplo mientras el campo está vacío."
+    },
+    {
+      "part": "message",
+      "element": "p",
+      "optional": true,
+      "description": "Ayuda o mensaje de error."
+    }
+  ],
+  "tokens": [
+    "component.textarea.background.neutral.default",
+    "component.textarea.background.neutral.disabled",
+    "component.textarea.border.neutral.strong.default",
+    "component.textarea.border.error.default",
+    "component.textarea.border.focus",
+    "component.textarea.border.focus-outer",
+    "component.textarea.label.text.neutral.default",
+    "component.textarea.label.font-size",
+    "component.textarea.label.line-height",
+    "component.textarea.label.font-weight",
+    "component.textarea.field.text.neutral.default",
+    "component.textarea.field.text.neutral.disabled",
+    "component.textarea.field.font-size.sm",
+    "component.textarea.field.font-size.md",
+    "component.textarea.field.font-size.lg",
+    "component.textarea.field.line-height.sm",
+    "component.textarea.field.line-height.md",
+    "component.textarea.field.line-height.lg",
+    "component.textarea.field.font-weight",
+    "component.textarea.placeholder.text.neutral.subtle.default",
+    "component.textarea.message.text.neutral.subtle.default",
+    "component.textarea.message.text.error.default",
+    "component.textarea.message.font-size",
+    "component.textarea.message.line-height",
+    "component.textarea.message.font-weight",
+    "component.textarea.border-width.default",
+    "component.textarea.border-width.focus",
+    "component.textarea.focus-offset",
+    "component.textarea.radius",
+    "component.textarea.padding-x.sm",
+    "component.textarea.padding-x.md",
+    "component.textarea.padding-x.lg",
+    "component.textarea.gap.stack",
+    "component.textarea.padding-y.sm",
+    "component.textarea.padding-y.md",
+    "component.textarea.padding-y.lg"
+  ],
+  "a11y": {
+    "role": "textbox",
+    "keyboard": [
+      {
+        "key": "Tab",
+        "action": "Lleva el foco al campo. Un campo desactivado se salta."
+      },
+      {
+        "key": "Shift+Tab",
+        "action": "Vuelve al control anterior."
+      },
+      {
+        "key": "Enter",
+        "action": "Empieza una línea nueva."
+      }
+    ],
+    "notes": [
+      "El nombre sale de `label` o de `aria-label`; sin ninguno, el código no compila.",
+      "La ayuda o el mensaje de error se unen al campo con `aria-describedby`; `invalid` lo marca con `aria-invalid`. Lo que se pase en esos dos atributos no borra lo del componente.",
+      "`errorMessage` sin `invalid` no se muestra ni se anuncia.",
+      "El mensaje de error no se anuncia solo cuando aparece.",
+      "Foco visible: anillo doble, con 10,75:1 entre sus dos colores.",
+      "Zona táctil: la talla más pequeña, con sus 3 líneas, mide 70 píxeles de alto.",
+      "Contraste (docs/contraste.md): texto, mínimo 7,56:1; bordes, mínimo 4,83:1. Los colores de desactivado están exentos (2,36:1).",
+      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 7 historias. Prueba Keyboard: pasa. Todavía no se ha escuchado con VoiceOver."
+    ]
+  },
+  "usage": {
+    "scope": "general"
+  },
+  "governance": {
+    "mayExtendLocally": [
+      "Añadir con `className` clases de disposición, como márgenes o anchos.",
+      "Usar los atributos propios de un campo, como `placeholder`, `rows` o `maxLength`."
+    ],
+    "mustEscalateToDS": [
+      "Un tamaño o un estado nuevo.",
+      "Un color, una medida o un token que no exista.",
+      "Cambiar el anillo de foco o la forma de dar nombre al campo."
+    ]
+  },
+  "guidelines": {},
+  "content": []
+}

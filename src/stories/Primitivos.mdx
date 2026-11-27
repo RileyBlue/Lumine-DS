@@ -97,6 +97,7 @@ export const Colors = () => (
                       <>
                         {$value.hex && <div>{$value.hex}</div>}
                         <div>oklch({$value.components.join(' ')})</div>
+                        {$value.alpha < 1 && <div>opacidad {$value.alpha * 100} %</div>}
                       </>
                     }
                   >

@@ -46,11 +46,12 @@ Describen el valor, no su uso. Se nombran por grupo y paso: `primitive.color.[fa
 | `category` | ¿Qué tipo de token es? | `color` | Sí |
 | `element` | ¿Qué se pinta? | `background`, `text`, `border`, `icon` | Sí |
 | `role` | ¿Qué significa? | `neutral`, `brand`, `info`, `success`, `warning`, `error` | Sí, salvo en `color.border.focus` |
-| `modifier` | ¿Con qué intensidad? | `subtle`, `strong`, `inverted` | No: se omite en la versión normal |
+| `modifier` | ¿Con qué intensidad? | `subtle`, `strong`, `inverted`, `overlay` | No: se omite en la versión normal |
 | `state` | ¿En qué estado está? | `default`, `hover`, `pressed`, `focus`, `disabled` | Sí |
 
 - El orden no cambia.
 - El nombre dice el significado, no el color: `error`, nunca `red`.
+- `overlay` es un velo semitransparente: oscurece lo que queda detrás de una ventana y no lleva texto ni controles encima.
 - Hay dos excepciones sin `role`: `color.border.focus` y `color.border.focus-outer`, los dos colores del anillo de foco, que son los mismos para todos los significados. `focus-outer` ocupa el lugar de `state` y solo se usa ahí.
 - En `semantic`, la fórmula va detrás del nivel: `semantic.color.text.brand.default`.
 - En `component`, el nombre del componente va delante y `category` no se escribe: `component.[componente].[element].[role].[modifier].[state]`. Desde `element`, la ruta es igual que la del token semántico al que apunta. Si el color es de una parte con nombre, la parte va antes de `element`.
