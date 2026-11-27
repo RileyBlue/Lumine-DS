@@ -2,7 +2,7 @@
 
 Cómo se llaman las props y los valores de variante de los componentes de Lumine-DS. Entre varios nombres posibles, se elige el que un agente usaría por defecto.
 
-> **Estado: propuesta.** Se aplica cuando se acepte el [ADR-006](adr/006-api.md). Hasta entonces, el código, los contratos y [`tokens/README.md`](../tokens/README.md) siguen como están.
+> **Estado: vigente.** Lo recoge el [ADR-006](adr/006-api.md).
 
 ## 1. Vocabulario
 
@@ -19,7 +19,7 @@ Cómo se llaman las props y los valores de variante de los componentes de Lumine
 | `onChange` | `onValueChange`, `onUpdate` | Al cambiar el valor de un campo. |
 | `label` | `labelText` | El nombre visible de un campo. |
 | `children` | `text`, `content` | El contenido de un componente, como el texto de un botón o lo que va dentro de una tarjeta. |
-| `iconStart` | `icon`, `iconPosition`, `leftIcon`, `startIcon`, `iconLeft` | El icono delante del texto. |
+| `iconStart` | `icon`, `iconPosition`, `leftIcon`, `startIcon`, `iconLeft` | El icono delante del texto. También es el icono de un botón de solo icono. |
 | `iconEnd` | `iconPosition`, `rightIcon`, `endIcon`, `iconRight` | El icono detrás del texto. |
 
 ## 2. Valores de `variant`
@@ -41,7 +41,12 @@ Los atributos de HTML no se renombran: se llaman como en HTML.
 
 `type`, `name`, `title`, `id`, `value`, `defaultValue`, `checked`, `placeholder`, `href`, `required`, `readOnly`, `autoComplete`, `className`, `style`, `aria-*` y `data-*`.
 
-La única diferencia es `size`: en los componentes es la talla (`sm`, `md`, `lg`) y no el atributo de HTML del mismo nombre, porque así lo fija el ADR-001.
+Hay dos excepciones:
+
+| Nombre | En Lumine-DS | Por qué |
+| --- | --- | --- |
+| `size` | La talla (`sm`, `md`, `lg`), no el atributo de HTML | Así lo fija el ADR-001 |
+| `title` en `Card` | El título visible de la tarjeta | Es el nombre que un agente usaría por defecto |
 
 ### Iconos en Figma
 

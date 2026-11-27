@@ -86,15 +86,15 @@ El texto de ejemplo de un campo (`placeholder`) no cuenta: desaparece al escribi
 
 ```tsx
 <Button>Guardar</Button>
-<Button iconOnly icon={IconTrash} aria-label="Eliminar clase" />
-<Input label="Buscar alumna" icon={IconSearch} />
+<Button iconOnly iconStart={IconTrash} aria-label="Eliminar clase" />
+<Input label="Buscar alumna" iconStart={IconSearch} />
 ```
 
 **Incorrecto:**
 
 ```tsx
 <button><IconTrash /></button>
-<Input placeholder="Buscar alumna" icon={IconSearch} />
+<Input placeholder="Buscar alumna" iconStart={IconSearch} />
 ```
 
 `Button` obliga a escribir su texto o, si usa `iconOnly`, un `aria-label`. `Input` obliga a escribir `label` o `aria-label`. Sin ellos, el código no compila.
@@ -157,7 +157,7 @@ Todo lo que se pulsa mide al menos **24 por 24 píxeles**, aunque su icono o su 
 **Correcto:** el botón más pequeño del design system mide 32 por 32 píxeles, aunque su icono mide menos.
 
 ```tsx
-<Button iconOnly size="sm" icon={IconX} aria-label="Cerrar" />
+<Button iconOnly size="sm" iconStart={IconX} aria-label="Cerrar" />
 ```
 
 **Incorrecto:** un botón del tamaño de su icono, de 16 por 16 píxeles.

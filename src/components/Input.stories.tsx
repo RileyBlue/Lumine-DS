@@ -16,16 +16,16 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
 export const WithoutVisibleLabel: Story = {
-  args: { label: undefined, 'aria-label': 'Buscar alumna', icon: IconSearch, placeholder: 'Buscar alumna' },
+  args: { label: undefined, 'aria-label': 'Buscar alumna', iconStart: IconSearch, placeholder: 'Buscar alumna' },
 }
 export const WithHint: Story = {
   args: { label: 'Correo', hint: 'Lo usaremos para enviar avisos.' },
 }
 export const WithError: Story = {
-  args: { label: 'Correo', defaultValue: 'maria@', error: 'Escribe un correo válido.' },
+  args: { label: 'Correo', defaultValue: 'maria@', invalid: true, errorMessage: 'Escribe un correo válido.' },
 }
 export const WithIcon: Story = {
-  args: { label: 'Buscar alumna', icon: IconSearch, placeholder: 'Nombre o grupo' },
+  args: { label: 'Buscar alumna', iconStart: IconSearch, placeholder: 'Nombre o grupo' },
 }
 export const Disabled: Story = { args: { label: 'Grupo', disabled: true, defaultValue: 'Nivel 2' } }
 
@@ -44,8 +44,8 @@ export const Keyboard: Story = {
   render: () => (
     <div className="flex flex-col gap-space-lg p-space-md">
       <Input label="Nombre" />
-      <Input label="Buscar alumna" icon={IconSearch} />
-      <Input label="Correo" error="Escribe un correo válido." />
+      <Input label="Buscar alumna" iconStart={IconSearch} />
+      <Input label="Correo" invalid errorMessage="Escribe un correo válido." />
       <Input label="Grupo" disabled />
       <Input aria-label="Mensaje" size="sm" />
     </div>

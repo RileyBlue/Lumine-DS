@@ -20,7 +20,7 @@ export const Brand: Story = { args: { variant: 'brand', children: 'Nueva' } }
 export const Info: Story = { args: { variant: 'info', children: 'Evento' } }
 export const Success: Story = { args: { variant: 'success', children: 'Pagado' } }
 export const Warning: Story = { args: { variant: 'warning', children: 'Pendiente' } }
-export const Danger: Story = { args: { variant: 'danger', children: 'Vencido' } }
+export const ErrorVariant: Story = { name: 'Error', args: { variant: 'error', children: 'Vencido' } }
 
 export const Sizes: Story = {
   render: (args) => (
@@ -34,8 +34,8 @@ export const Sizes: Story = {
 export const WithIcon: Story = {
   render: (args) => (
     <div className="flex items-center gap-3">
-      <Badge {...args} variant="success" icon={IconCheck}>Asistió</Badge>
-      <Badge {...args} variant="warning" icon={IconAlertTriangle}>Falta</Badge>
+      <Badge {...args} variant="success" iconStart={IconCheck}>Asistió</Badge>
+      <Badge {...args} variant="warning" iconStart={IconAlertTriangle}>Falta</Badge>
     </div>
   ),
 }
@@ -45,7 +45,7 @@ export const Keyboard: Story = {
   render: () => (
     <div className="flex items-center gap-space-md p-space-md">
       <Button size="sm">Antes</Button>
-      <Badge variant="success" icon={IconCheck}>Asistió</Badge>
+      <Badge variant="success" iconStart={IconCheck}>Asistió</Badge>
       <Button size="sm">Después</Button>
     </div>
   ),

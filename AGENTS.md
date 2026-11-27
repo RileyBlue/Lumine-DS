@@ -36,4 +36,4 @@ Lumine-DS es el design system de Lumine, la plataforma escolar interna de la aca
 | [ADR-003 · Clases de tokens en los componentes](docs/adr/003-clases-de-tokens.md) | Los componentes usan clases generadas desde los tokens | Aceptado |
 | [ADR-004 · Letra de la interfaz](docs/adr/004-letra-de-la-interfaz.md) | La interfaz web usa Inter | Aceptado |
 | [ADR-005 · Accesibilidad: cinco reglas](docs/adr/005-accesibilidad.md) | Las cinco reglas de accesibilidad que se comprueban | Aceptado |
-| [ADR-006 · Nombres de props y variantes](docs/adr/006-api.md) | Cómo se nombran props y variantes y quién decide un nombre nuevo | Propuesto |
+| [ADR-006 · Nombres de props y variantes](docs/adr/006-api.md) | Cómo se nombran props y variantes y quién decide un nombre nuevo | Aceptado |

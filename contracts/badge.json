@@ -19,7 +19,7 @@
     },
     {
       "name": "variant",
-      "type": "'neutral' | 'brand' | 'info' | 'success' | 'warning' | 'danger'",
+      "type": "'neutral' | 'brand' | 'info' | 'success' | 'warning' | 'error'",
       "default": "neutral",
       "required": false,
       "description": "Color según el significado.",
@@ -34,11 +34,11 @@
       "inherited": false
     },
     {
-      "name": "icon",
+      "name": "iconStart",
       "type": "Icon",
       "default": null,
       "required": false,
-      "description": "Icono de Tabler decorativo junto al texto.",
+      "description": "Icono de Tabler decorativo delante del texto.",
       "inherited": false
     },
     {

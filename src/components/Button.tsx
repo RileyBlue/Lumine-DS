@@ -1,15 +1,16 @@
 import type { Icon } from '@tabler/icons-react'
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger'
+export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'error'
 export type ButtonSize = 'sm' | 'md' | 'lg'
 
 interface ButtonBaseProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant
   size?: ButtonSize
-  /** Icono de Tabler que se muestra junto al texto. */
-  icon?: Icon
-  iconPosition?: 'left' | 'right'
+  /** Icono de Tabler delante del texto. En un botón de solo icono, es el icono que se ve. */
+  iconStart?: Icon
+  /** Icono de Tabler detrás del texto. */
+  iconEnd?: Icon
   /** Hace que el botón ocupe todo el ancho disponible. */
   fullWidth?: boolean
   children?: ReactNode
@@ -23,9 +24,10 @@ export type ButtonProps = ButtonBaseProps &
         children: Exclude<ReactNode, boolean | null | undefined>
       }
     | {
-        /** Botón cuadrado con solo el icono, sin texto. Exige `icon` y `aria-label`. */
+        /** Botón cuadrado con solo el icono, sin texto. Exige `iconStart` y `aria-label`. */
         iconOnly: true
-        icon: Icon
+        iconStart: Icon
+        iconEnd?: undefined
         /** Texto que leen los lectores de pantalla, porque el botón no tiene texto visible. */
         'aria-label': string
       }
@@ -49,7 +51,7 @@ const variants: Record<ButtonVariant, { box: string; icon: string }> = {
     box: 'text-button-text-neutral enabled:hover:bg-button-background-neutral-hover enabled:active:bg-button-background-neutral-pressed',
     icon: 'text-button-icon-neutral',
   },
-  danger: {
+  error: {
     box: 'bg-button-background-error text-button-text-error-inverted enabled:hover:bg-button-background-error-hover enabled:active:bg-button-background-error-pressed disabled:bg-button-background-neutral-disabled',
     icon: 'text-button-icon-error-inverted',
   },
@@ -80,8 +82,8 @@ const sizes: Record<ButtonSize, { box: string; label: string; square: string; ic
 export function Button({
   variant = 'primary',
   size = 'md',
-  icon: IconComponent,
-  iconPosition = 'left',
+  iconStart,
+  iconEnd,
   fullWidth = false,
   iconOnly = false,
   type = 'button',
@@ -89,13 +91,14 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const icon = IconComponent ? (
-    <IconComponent
-      size={sizes[size].icon}
-      aria-hidden="true"
-      className={`${variants[variant].icon} group-disabled:text-button-icon-neutral-disabled`}
-    />
-  ) : null
+  const renderIcon = (IconComponent: Icon | undefined) =>
+    IconComponent ? (
+      <IconComponent
+        size={sizes[size].icon}
+        aria-hidden="true"
+        className={`${variants[variant].icon} group-disabled:text-button-icon-neutral-disabled`}
+      />
+    ) : null
 
   return (
     <button
@@ -112,9 +115,9 @@ export function Button({
       ].join(' ')}
       {...props}
     >
-      {iconPosition === 'left' && icon}
+      {renderIcon(iconStart)}
       {!iconOnly && children}
-      {iconPosition === 'right' && icon}
+      {renderIcon(iconEnd)}
     </button>
   )
 }

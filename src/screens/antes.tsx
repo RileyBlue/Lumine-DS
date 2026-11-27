@@ -91,7 +91,7 @@ export default function Antes() {
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
         />
-        <Button type="submit" iconOnly icon={IconSend} aria-label="Enviar" disabled={!draft.trim()} />
+        <Button type="submit" iconOnly iconStart={IconSend} aria-label="Enviar" disabled={!draft.trim()} />
       </form>
     </section>
   )

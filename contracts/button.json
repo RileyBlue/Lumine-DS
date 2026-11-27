@@ -10,7 +10,7 @@
   "props": [
     {
       "name": "variant",
-      "type": "'primary' | 'secondary' | 'outline' | 'ghost' | 'danger'",
+      "type": "'primary' | 'secondary' | 'outline' | 'ghost' | 'error'",
       "default": "primary",
       "required": false,
       "description": "Estilo según la importancia o el riesgo de la acción.",
@@ -33,19 +33,19 @@
       "inherited": false
     },
     {
-      "name": "icon",
+      "name": "iconStart",
       "type": "Icon",
       "default": null,
       "required": false,
-      "description": "Icono de Tabler. Obligatorio con `iconOnly`.",
+      "description": "Icono de Tabler delante del texto. Obligatorio con `iconOnly`, donde es el icono que se ve.",
       "inherited": false
     },
     {
-      "name": "iconPosition",
-      "type": "'left' | 'right'",
-      "default": "left",
+      "name": "iconEnd",
+      "type": "Icon",
+      "default": null,
       "required": false,
-      "description": "Lado del texto en el que va el icono.",
+      "description": "Icono de Tabler detrás del texto. No se admite con `iconOnly`.",
       "inherited": false
     },
     {
@@ -53,7 +53,7 @@
       "type": "boolean",
       "default": false,
       "required": false,
-      "description": "Muestra solo el icono, en un botón cuadrado. Exige `icon` y `aria-label`.",
+      "description": "Muestra solo el icono, en un botón cuadrado. Exige `iconStart` y `aria-label`.",
       "inherited": false
     },
     {
@@ -117,7 +117,7 @@
       "part": "icon",
       "element": "Icono de Tabler (svg)",
       "optional": true,
-      "description": "Icono decorativo junto al texto, o solo con `iconOnly`."
+      "description": "Icono decorativo delante o detrás del texto, o solo con `iconOnly`."
     },
     {
       "part": "label",
@@ -194,7 +194,7 @@
     "notes": [
       "Nombre accesible: el texto del botón. Con `iconOnly` hace falta `aria-label`; sin texto ni `aria-label` el código no compila.",
       "En un botón con texto, un `aria-label` sustituye lo que se lee: debe incluir el texto visible.",
-      "El icono es decorativo y va oculto con `aria-hidden`.",
+      "Los iconos son decorativos y van ocultos con `aria-hidden`.",
       "Foco visible: anillo doble, con 10,75:1 entre sus dos colores.",
       "Zona táctil: la talla más pequeña mide 32 por 32 píxeles.",
       "Contraste (docs/contraste.md): pasan las parejas que se exigen; texto, mínimo 6,28:1; bordes, mínimo 3,91:1. Los colores de desactivado están exentos (entre 2,36:1 y 2,60:1).",

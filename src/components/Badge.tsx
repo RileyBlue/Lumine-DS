@@ -1,7 +1,7 @@
 import type { Icon } from '@tabler/icons-react'
 import type { HTMLAttributes, ReactNode } from 'react'
 
-export type BadgeVariant = 'neutral' | 'brand' | 'info' | 'success' | 'warning' | 'danger'
+export type BadgeVariant = 'neutral' | 'brand' | 'info' | 'success' | 'warning' | 'error'
 export type BadgeSize = 'sm' | 'md'
 
 /** La etiqueta no se puede pulsar: lo que solo responde al ratón deja fuera al teclado. */
@@ -10,8 +10,8 @@ type PointerEvents = 'onClick' | 'onDoubleClick' | 'onMouseDown' | 'onMouseUp' |
 export interface BadgeProps extends Omit<HTMLAttributes<HTMLSpanElement>, PointerEvents> {
   variant?: BadgeVariant
   size?: BadgeSize
-  /** Icono de Tabler junto al texto. Es decorativo: el significado lo da el texto. */
-  icon?: Icon
+  /** Icono de Tabler delante del texto. Es decorativo: el significado lo da el texto. */
+  iconStart?: Icon
   /** Texto de la etiqueta. Es obligatorio: sin él, un lector de pantalla no leería nada. */
   children: Exclude<ReactNode, boolean | null | undefined>
 }
@@ -37,8 +37,7 @@ const variants: Record<BadgeVariant, { box: string; icon: string }> = {
     box: 'bg-badge-background-warning-subtle text-badge-text-warning',
     icon: 'text-badge-icon-warning',
   },
-  // `danger` es el nombre de la variante; su color es el de `error`.
-  danger: {
+  error: {
     box: 'bg-badge-background-error-subtle text-badge-text-error',
     icon: 'text-badge-icon-error',
   },
@@ -58,7 +57,7 @@ const sizes: Record<BadgeSize, { box: string; icon: number }> = {
 export function Badge({
   variant = 'neutral',
   size = 'md',
-  icon: IconComponent,
+  iconStart: IconStart,
   className = '',
   children,
   ...props
@@ -73,8 +72,8 @@ export function Badge({
       ].join(' ')}
       {...props}
     >
-      {IconComponent && (
-        <IconComponent size={sizes[size].icon} aria-hidden="true" className={variants[variant].icon} />
+      {IconStart && (
+        <IconStart size={sizes[size].icon} aria-hidden="true" className={variants[variant].icon} />
       )}
       {children}
     </span>
