@@ -17,7 +17,11 @@ interface ButtonBaseProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export type ButtonProps = ButtonBaseProps &
   (
-    | { iconOnly?: false }
+    | {
+        iconOnly?: false
+        /** Texto del botón, que es su nombre. Un botón con solo icono usa `iconOnly`. */
+        children: Exclude<ReactNode, boolean | null | undefined>
+      }
     | {
         /** Botón cuadrado con solo el icono, sin texto. Exige `icon` y `aria-label`. */
         iconOnly: true
