@@ -43,6 +43,9 @@ function semanticUtilities([group, ...rest], type) {
     const color = colorUtility(rest[0], last === 'focus', withoutDefault(rest).join('-'))
     return color && [color]
   }
+  if (group === 'font-family') {
+    return [{ key: `--font-family-${last}`, classes: [`font-family-${last}`] }]
+  }
   if (group === 'space') {
     return [{ key: `--spacing-space-${last}`, classes: [`p-space-${last}`, `m-space-${last}`, `gap-space-${last}`] }]
   }

@@ -13,6 +13,7 @@ export const isAlias = (value) => typeof value === 'string' && value.startsWith(
 
 export const resolve = (value) => {
   if (isAlias(value)) return resolve(find(value.slice(1, -1)).$value)
+  if (Array.isArray(value)) return value
   if (typeof value === 'object' && value !== null && !('unit' in value) && !('colorSpace' in value)) {
     return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, resolve(item)]))
   }
@@ -201,6 +202,22 @@ export const examples = {
   label: 'Nombre de la alumna',
   caption: 'Actualizado hace dos días',
 }
+
+export const FontFamily = () => (
+  <Unstyled>
+    {flatten(semantic['font-family'], 'semantic.font-family').map(({ name, alias, value }) => (
+      <div key={name} style={{ padding: '1rem 0', borderBottom: line }}>
+        <div style={{ fontFamily: sans, fontSize: '1.5rem', marginBottom: '0.5rem' }}>
+          Clase de ballet · Ñandú 0123456789
+        </div>
+        <Label name={name}>
+          <Arrow alias={alias} />
+          <div>{value.join(', ')}</div>
+        </Label>
+      </div>
+    ))}
+  </Unstyled>
+)
 
 export const TextStyles = () => (
   <Unstyled>
@@ -418,10 +435,13 @@ Cada fondo se muestra con el color de texto que le corresponde.
 
 <Borders />
 
-## Estilos de texto
+## Familia de letra
 
-Los ejemplos usan `font-family.sans`. Si el equipo no tiene instalada la letra Inter, se ve la
-siguiente de la lista.
+La interfaz usa Inter. Se aplica una vez, a toda la página.
+
+<FontFamily />
+
+## Estilos de texto
 
 <TextStyles />
 

@@ -196,6 +196,7 @@
   --semantic-color-border-warning-default: var(--primitive-color-orange-700);
   --semantic-color-border-error-default: var(--primitive-color-red-700);
   --semantic-color-border-focus: var(--primitive-color-brand-600);
+  --semantic-font-family-default: var(--primitive-font-family-sans);
   --semantic-typography-display-font-size: var(--primitive-font-size-5xl);
   --semantic-typography-display-line-height: var(--primitive-line-height-1200);
   --semantic-typography-display-font-weight: var(--primitive-font-weight-700);
