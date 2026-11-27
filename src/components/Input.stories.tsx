@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { IconSearch } from '@tabler/icons-react'
+import { expect } from 'storybook/test'
+import { expectFocusRing, resetFocus } from '../stories/keyboard'
 import { Input } from './Input'
 
 const meta = {
@@ -35,4 +37,39 @@ export const Sizes: Story = {
       <Input {...args} size="lg" label="Campo grande" />
     </div>
   ),
+}
+
+/** Recorre los campos con el teclado. El resultado se ve en el panel Interactions. */
+export const Keyboard: Story = {
+  render: () => (
+    <div className="flex flex-col gap-space-lg p-space-md">
+      <Input label="Nombre" />
+      <Input label="Buscar alumna" icon={IconSearch} />
+      <Input label="Correo" error="Escribe un correo válido." />
+      <Input label="Grupo" disabled />
+      <Input aria-label="Mensaje" size="sm" />
+    </div>
+  ),
+  play: async ({ canvas, step, userEvent }) => {
+    const fields = canvas.getAllByRole<HTMLInputElement>('textbox')
+    const enabled = fields.filter((field) => !field.disabled)
+    resetFocus()
+
+    await step('Tab recorre los campos activos, con foco visible, y se puede escribir', async () => {
+      for (const field of enabled) {
+        await userEvent.tab()
+        await expectFocusRing(field, 'input')
+        await userEvent.keyboard('Ana')
+        await expect(field).toHaveValue('Ana')
+      }
+    })
+
+    await step('Mayús + Tab vuelve al anterior y del último se puede salir', async () => {
+      await userEvent.tab({ shift: true })
+      await expectFocusRing(enabled[enabled.length - 2], 'input')
+      await userEvent.tab()
+      await userEvent.tab()
+      await expect(enabled[enabled.length - 1]).not.toHaveFocus()
+    })
+  },
 }

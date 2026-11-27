@@ -4,7 +4,10 @@ import type { HTMLAttributes, ReactNode } from 'react'
 export type BadgeVariant = 'neutral' | 'brand' | 'info' | 'success' | 'warning' | 'danger'
 export type BadgeSize = 'sm' | 'md'
 
-export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
+/** La etiqueta no se puede pulsar: lo que solo responde al ratón deja fuera al teclado. */
+type PointerEvents = 'onClick' | 'onDoubleClick' | 'onMouseDown' | 'onMouseUp' | 'onPointerDown' | 'onPointerUp'
+
+export interface BadgeProps extends Omit<HTMLAttributes<HTMLSpanElement>, PointerEvents> {
   variant?: BadgeVariant
   size?: BadgeSize
   /** Icono de Tabler junto al texto. */

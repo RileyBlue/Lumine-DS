@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { IconAlertTriangle, IconCheck } from '@tabler/icons-react'
+import { expect } from 'storybook/test'
+import { resetFocus } from '../stories/keyboard'
 import { Badge } from './Badge'
+import { Button } from './Button'
 
 const meta = {
   title: 'Componentes/Badge',
@@ -35,4 +38,23 @@ export const WithIcon: Story = {
       <Badge {...args} variant="warning" icon={IconAlertTriangle}>Falta</Badge>
     </div>
   ),
+}
+
+/** La etiqueta solo informa: Tab no se detiene en ella. */
+export const Keyboard: Story = {
+  render: () => (
+    <div className="flex items-center gap-space-md p-space-md">
+      <Button size="sm">Antes</Button>
+      <Badge variant="success" icon={IconCheck}>Asistió</Badge>
+      <Button size="sm">Después</Button>
+    </div>
+  ),
+  play: async ({ canvas, userEvent }) => {
+    resetFocus()
+    await userEvent.tab()
+    await expect(canvas.getByRole('button', { name: 'Antes' })).toHaveFocus()
+    await userEvent.tab()
+    await expect(canvas.getByRole('button', { name: 'Después' })).toHaveFocus()
+    await expect(canvas.getByText('Asistió').tabIndex).toBe(-1)
+  },
 }

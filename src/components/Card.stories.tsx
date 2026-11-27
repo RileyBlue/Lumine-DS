@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import { expectFocusRing, expectRingInside, resetFocus } from '../stories/keyboard'
 import { Button } from './Button'
 import { Card } from './Card'
 
@@ -31,3 +32,27 @@ export const WithFooter: Story = {
 }
 export const HeadingLevel: Story = { args: { headingLevel: 2 } }
 export const OnlyContent: Story = { args: { title: undefined, description: undefined } }
+
+/** Recorre los botones de dentro de la tarjeta. El resultado se ve en el panel Interactions. */
+export const Keyboard: Story = {
+  args: {
+    children: <Button variant="outline" fullWidth>Ver horario</Button>,
+    footer: (
+      <>
+        <Button variant="ghost" size="sm">Cancelar</Button>
+        <Button size="sm">Ver grupo</Button>
+      </>
+    ),
+  },
+  play: async ({ canvas, userEvent }) => {
+    const card = canvas.getByRole('heading').closest('.overflow-hidden')!
+    resetFocus()
+    // Primero el contenido y después la zona inferior, como se leen.
+    for (const name of ['Ver horario', 'Cancelar', 'Ver grupo']) {
+      const button = canvas.getByRole('button', { name })
+      await userEvent.tab()
+      await expectFocusRing(button, 'button')
+      await expectRingInside(button, card, 'button')
+    }
+  },
+}

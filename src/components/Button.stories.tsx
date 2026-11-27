@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { IconArrowRight, IconPlus, IconSettings, IconTrash } from '@tabler/icons-react'
+import { expect, fn } from 'storybook/test'
+import { expectFocusRing, resetFocus } from '../stories/keyboard'
 import { Button } from './Button'
 
 const meta = {
@@ -61,4 +63,45 @@ export const IconOnlySizes: Story = {
       <Button {...args} size="lg" />
     </div>
   ),
+}
+
+/** Recorre los botones con el teclado. El resultado se ve en el panel Interactions. */
+export const Keyboard: Story = {
+  args: { onClick: fn() },
+  render: ({ onClick }) => (
+    <div className="flex flex-wrap items-center gap-space-md p-space-md">
+      <Button onClick={onClick} variant="primary">Principal</Button>
+      <Button onClick={onClick} variant="secondary">Secundario</Button>
+      <Button onClick={onClick} variant="outline">Contorno</Button>
+      <Button onClick={onClick} variant="ghost">Sin fondo</Button>
+      <Button onClick={onClick} variant="danger">Eliminar</Button>
+      <Button onClick={onClick} disabled>Desactivado</Button>
+      <Button onClick={onClick} iconOnly icon={IconSettings} aria-label="Ajustes" />
+    </div>
+  ),
+  play: async ({ args, canvas, step, userEvent }) => {
+    const buttons = canvas.getAllByRole<HTMLButtonElement>('button')
+    const enabled = buttons.filter((button) => !button.disabled)
+    resetFocus()
+
+    await step('Tab recorre los botones activos, con foco visible, y Enter y Espacio los activan', async () => {
+      let clicks = 0
+      for (const button of enabled) {
+        await userEvent.tab()
+        await expectFocusRing(button, 'button')
+        await userEvent.keyboard('{Enter}')
+        await expect(args.onClick).toHaveBeenCalledTimes(++clicks)
+        await userEvent.keyboard(' ')
+        await expect(args.onClick).toHaveBeenCalledTimes(++clicks)
+      }
+    })
+
+    await step('Mayús + Tab vuelve al anterior y del último se puede salir', async () => {
+      await userEvent.tab({ shift: true })
+      await expectFocusRing(enabled[enabled.length - 2], 'button')
+      await userEvent.tab()
+      await userEvent.tab()
+      await expect(enabled[enabled.length - 1]).not.toHaveFocus()
+    })
+  },
 }

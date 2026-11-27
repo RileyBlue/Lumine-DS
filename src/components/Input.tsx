@@ -95,7 +95,7 @@ export function Input({
           className={[
             'w-full rounded-input-radius border-input-border-width-default bg-input-background-neutral',
             'text-input-field-text-neutral placeholder:text-input-placeholder-text-neutral-subtle',
-            'focus:outline-input-border-width-focus focus:outline-offset-input-focus-offset focus:outline-input-border-focus focus:ring-input-focus-outer focus:ring-input-border-focus-outer',
+            'focus-visible:outline-input-border-width-focus focus-visible:outline-offset-input-focus-offset focus-visible:outline-input-border-focus focus-visible:ring-input-focus-outer focus-visible:ring-input-border-focus-outer',
             'disabled:cursor-not-allowed disabled:bg-input-background-neutral-disabled disabled:text-input-field-text-neutral-disabled',
             error ? 'border-input-border-error' : 'border-input-border-neutral-strong',
             sizes[size].box,

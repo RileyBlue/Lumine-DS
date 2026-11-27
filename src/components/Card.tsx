@@ -2,7 +2,10 @@ import type { HTMLAttributes, ReactNode } from 'react'
 
 export type CardVariant = 'outlined' | 'elevated'
 
-export interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
+/** La tarjeta no se puede pulsar: lo que solo responde al ratón deja fuera al teclado. */
+type PointerEvents = 'onClick' | 'onDoubleClick' | 'onMouseDown' | 'onMouseUp' | 'onPointerDown' | 'onPointerUp'
+
+export interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title' | PointerEvents> {
   /** Título de la tarjeta. */
   title?: ReactNode
   /** Nivel del encabezado del título, para que los encabezados de la pantalla vayan en orden. */
