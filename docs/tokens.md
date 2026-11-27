@@ -23,6 +23,7 @@ componentes no los usan directamente.
 | `semantic.color.background.neutral.hover` | `bg-background-neutral-hover` |
 | `semantic.color.background.neutral.pressed` | `bg-background-neutral-pressed` |
 | `semantic.color.background.neutral.disabled` | `bg-background-neutral-disabled` |
+| `semantic.color.background.neutral.overlay.default` | `bg-background-neutral-overlay` |
 | `semantic.color.background.brand.default` | `bg-background-brand` |
 | `semantic.color.background.brand.subtle.default` | `bg-background-brand-subtle` |
 | `semantic.color.background.brand.subtle.hover` | `bg-background-brand-subtle-hover` |
@@ -304,3 +305,88 @@ componentes no los usan directamente.
 | `component.badge.label.line-height.sm` | `text-badge-label-sm` |
 | `component.badge.label.line-height.md` | `text-badge-label-md` |
 | `component.badge.label.font-weight` | `text-badge-label-sm`, `text-badge-label-md` |
+
+### textarea
+
+| Token | Clase de Tailwind |
+| --- | --- |
+| `component.textarea.background.neutral.default` | `bg-textarea-background-neutral` |
+| `component.textarea.background.neutral.disabled` | `bg-textarea-background-neutral-disabled` |
+| `component.textarea.border.neutral.strong.default` | `border-textarea-border-neutral-strong` |
+| `component.textarea.border.error.default` | `border-textarea-border-error` |
+| `component.textarea.border.focus` | `outline-textarea-border-focus` |
+| `component.textarea.border.focus-outer` | `ring-textarea-border-focus-outer`, `ring-textarea-focus-outer` |
+| `component.textarea.label.text.neutral.default` | `text-textarea-label-text-neutral` |
+| `component.textarea.label.font-size` | `text-textarea-label` |
+| `component.textarea.label.line-height` | `text-textarea-label` |
+| `component.textarea.label.font-weight` | `text-textarea-label` |
+| `component.textarea.field.text.neutral.default` | `text-textarea-field-text-neutral` |
+| `component.textarea.field.text.neutral.disabled` | `text-textarea-field-text-neutral-disabled` |
+| `component.textarea.field.font-size.sm` | `text-textarea-field-sm` |
+| `component.textarea.field.font-size.md` | `text-textarea-field-md` |
+| `component.textarea.field.font-size.lg` | `text-textarea-field-lg` |
+| `component.textarea.field.line-height.sm` | `text-textarea-field-sm` |
+| `component.textarea.field.line-height.md` | `text-textarea-field-md` |
+| `component.textarea.field.line-height.lg` | `text-textarea-field-lg` |
+| `component.textarea.field.font-weight` | `text-textarea-field-sm`, `text-textarea-field-md`, `text-textarea-field-lg` |
+| `component.textarea.placeholder.text.neutral.subtle.default` | `text-textarea-placeholder-text-neutral-subtle` |
+| `component.textarea.message.text.neutral.subtle.default` | `text-textarea-message-text-neutral-subtle` |
+| `component.textarea.message.text.error.default` | `text-textarea-message-text-error` |
+| `component.textarea.message.font-size` | `text-textarea-message` |
+| `component.textarea.message.line-height` | `text-textarea-message` |
+| `component.textarea.message.font-weight` | `text-textarea-message` |
+| `component.textarea.border-width.default` | `border-textarea-border-width-default` |
+| `component.textarea.border-width.focus` | `outline-textarea-border-width-focus` |
+| `component.textarea.focus-offset` | `outline-offset-textarea-focus-offset` |
+| `component.textarea.radius` | `rounded-textarea-radius` |
+| `component.textarea.padding-x.sm` | `px-textarea-padding-x-sm` |
+| `component.textarea.padding-x.md` | `px-textarea-padding-x-md` |
+| `component.textarea.padding-x.lg` | `px-textarea-padding-x-lg` |
+| `component.textarea.padding-y.sm` | `py-textarea-padding-y-sm` |
+| `component.textarea.padding-y.md` | `py-textarea-padding-y-md` |
+| `component.textarea.padding-y.lg` | `py-textarea-padding-y-lg` |
+| `component.textarea.gap.stack` | `gap-textarea-gap-stack` |
+
+### dialog
+
+| Token | Clase de Tailwind |
+| --- | --- |
+| `component.dialog.background.neutral.default` | `bg-dialog-background-neutral` |
+| `component.dialog.backdrop.background.neutral.overlay.default` | `bg-dialog-backdrop-background-neutral-overlay` |
+| `component.dialog.title.text.neutral.default` | `text-dialog-title-text-neutral` |
+| `component.dialog.title.font-size` | `text-dialog-title` |
+| `component.dialog.title.line-height` | `text-dialog-title` |
+| `component.dialog.title.font-weight` | `text-dialog-title` |
+| `component.dialog.content.text.neutral.default` | `text-dialog-content-text-neutral` |
+| `component.dialog.content.font-size` | `text-dialog-content` |
+| `component.dialog.content.line-height` | `text-dialog-content` |
+| `component.dialog.content.font-weight` | `text-dialog-content` |
+| `component.dialog.footer.gap` | `gap-dialog-footer-gap` |
+| `component.dialog.radius` | `rounded-dialog-radius` |
+| `component.dialog.elevation` | `shadow-dialog-elevation` |
+| `component.dialog.padding` | `p-dialog-padding` |
+| `component.dialog.gap.header` | `gap-dialog-gap-header` |
+| `component.dialog.gap.sections` | `gap-dialog-gap-sections` |
+
+### toast
+
+| Token | Clase de Tailwind |
+| --- | --- |
+| `component.toast.background.neutral.default` | `bg-toast-background-neutral` |
+| `component.toast.border.info.default` | `border-toast-border-info` |
+| `component.toast.border.success.default` | `border-toast-border-success` |
+| `component.toast.border.warning.default` | `border-toast-border-warning` |
+| `component.toast.border.error.default` | `border-toast-border-error` |
+| `component.toast.icon.info.default` | `text-toast-icon-info` |
+| `component.toast.icon.success.default` | `text-toast-icon-success` |
+| `component.toast.icon.warning.default` | `text-toast-icon-warning` |
+| `component.toast.icon.error.default` | `text-toast-icon-error` |
+| `component.toast.text.neutral.default` | `text-toast-text-neutral` |
+| `component.toast.font-size` | `text-toast` |
+| `component.toast.line-height` | `text-toast` |
+| `component.toast.font-weight` | `text-toast` |
+| `component.toast.border-width.default` | `border-toast-border-width-default` |
+| `component.toast.radius` | `rounded-toast-radius` |
+| `component.toast.elevation` | `shadow-toast-elevation` |
+| `component.toast.padding` | `p-toast-padding` |
+| `component.toast.gap.icon` | `gap-toast-gap-icon` |

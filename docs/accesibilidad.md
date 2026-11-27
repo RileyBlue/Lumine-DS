@@ -48,9 +48,11 @@ El orden al pulsar Tab es lógico: el mismo en que se lee la pantalla.
 
 El control que tiene el foco se ve siempre, con un **anillo doble**: uno de color y, por fuera, otro blanco. Entre los dos colores hay al menos **9:1**. Así, sobre cualquier fondo liso, al menos uno de los dos llega a 3:1 ([técnica C40 de WCAG](https://www.w3.org/WAI/WCAG22/Techniques/css/C40)). Cada anillo mide al menos 2px.
 
-`Button` e `Input` ya lo tienen: una separación blanca, el anillo de color (`brand.900`, 10,75:1 con el blanco) y el anillo blanco exterior.
+`Button`, `Input` y `Textarea` ya lo tienen: una separación blanca, el anillo de color (`brand.900`, 10,75:1 con el blanco) y el anillo blanco exterior.
 
 Cada componente tiene en Storybook una historia `Keyboard` que recorre sus partes con Tab y comprueba que el foco se ve. Se ejecuta al abrirla y el resultado aparece en el panel Interactions. `Card` y `Badge` no se pueden pulsar, así que no aceptan eventos de ratón como `onClick`.
+
+`Dialog` y `Toast` usan `Button` para cerrarse. En `Dialog`, la tecla Esc y que Tab no salga de la ventana las resuelve el navegador y su historia `Keyboard` no puede imitarlas: se comprueban a mano.
 
 **Correcto:** un botón de verdad. Se llega con Tab y se activa con Enter y con Espacio.
 
@@ -97,7 +99,7 @@ El texto de ejemplo de un campo (`placeholder`) no cuenta: desaparece al escribi
 <Input placeholder="Buscar alumna" iconStart={IconSearch} />
 ```
 
-`Button` obliga a escribir su texto o, si usa `iconOnly`, un `aria-label`. `Input` obliga a escribir `label` o `aria-label`. Sin ellos, el código no compila.
+`Button` obliga a escribir su texto o, si usa `iconOnly`, un `aria-label`. `Input` y `Textarea` obligan a escribir `label` o `aria-label`, y `Dialog`, un `title`, que es su nombre. Sin ellos, el código no compila.
 
 Cada historia de Storybook muestra en el panel **Accessibility** los fallos que detecta una revisión automática (axe), como un control sin nombre o un campo que solo tiene texto de ejemplo. La revisión ocurre al abrir la historia y no juzga si el nombre se entiende: eso se revisa a mano.
 
@@ -141,7 +143,7 @@ Quien usa un lector de pantalla recorre la página por sus encabezados y escucha
 
 El título de `Card` es un `h3`. Si la tarjeta va justo debajo del `h1`, usa `headingLevel={2}`.
 
-Los iconos de `Button`, `Input` y `Badge` son decorativos y van ocultos: el nombre o el significado lo da el texto, que `Badge` exige. El panel **Accessibility** no detecta un icono o una muestra sin texto alternativo en todos los casos, así que esto también se revisa a mano.
+Los iconos de `Button`, `Input` y `Badge` son decorativos y van ocultos: el nombre o el significado lo da el texto, que `Badge` exige. El de `Toast` sí significa algo, el tipo de aviso, y por eso tiene nombre. El panel **Accessibility** no detecta un icono o una muestra sin texto alternativo en todos los casos, así que esto también se revisa a mano.
 
 ### Checklist
 

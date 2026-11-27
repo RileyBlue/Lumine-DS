@@ -128,17 +128,21 @@ export const backgroundFor = (name) => {
 export const Backgrounds = () => (
   <Unstyled>
     <Grid>
-      {colorTokens('background').map(({ name, alias }) => (
-        <div key={name}>
-          <Box background={short(name)} style={{ color: paint(textOn(short(name))) }}>
-            Clase de ballet
-          </Box>
-          <Label name={name}>
-            <Arrow alias={alias} />
-            <div>con {textOn(short(name))}</div>
-          </Label>
-        </div>
-      ))}
+      {colorTokens('background').map(({ name, alias }) => {
+        // Un velo no lleva texto encima.
+        const veil = name.includes('.overlay.')
+        return (
+          <div key={name}>
+            <Box background={short(name)} style={{ color: paint(textOn(short(name))) }}>
+              {veil ? null : 'Clase de ballet'}
+            </Box>
+            <Label name={name}>
+              <Arrow alias={alias} />
+              <div>{veil ? 'sin texto encima' : `con ${textOn(short(name))}`}</div>
+            </Label>
+          </div>
+        )
+      })}
     </Grid>
   </Unstyled>
 )
@@ -343,7 +347,15 @@ export const Elevations = () => (
   </Unstyled>
 )
 
-export const componentNames = { button: 'Button', input: 'Input', card: 'Card', badge: 'Badge' }
+export const componentNames = {
+  button: 'Button',
+  input: 'Input',
+  card: 'Card',
+  badge: 'Badge',
+  textarea: 'Textarea',
+  dialog: 'Dialog',
+  toast: 'Toast',
+}
 
 export const Preview = ({ name, value }) => {
   const frame = { background: paint('background.neutral.default'), border: line }
@@ -430,7 +442,7 @@ En un estilo de texto, el tamaño, el interlineado y el peso comparten una sola 
 
 ## Color de fondo
 
-Cada fondo se muestra con el color de texto que le corresponde.
+Cada fondo se muestra con el color de texto que le corresponde. Los velos no llevan texto.
 
 <Backgrounds />
 

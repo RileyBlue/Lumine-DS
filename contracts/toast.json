@@ -1,0 +1,152 @@
+{ "$schema": "./contract.schema.json",
+  "$schema": "./contract.schema.json",
+  "name": "Toast",
+  "file": "src/components/Toast.tsx",
+  "import": "import { Toast } from '../components'",
+  "purpose": "Avisar en pocas palabras de algo que acaba de pasar, como que se guardó o que falló.",
+  "neverUseFor": [
+    "Pedir una decisión o un dato: para eso está Dialog.",
+    "Explicar el error de un campo: para eso están `invalid` y `errorMessage`."
+  ],
+  "props": [
+    {
+      "name": "variant",
+      "type": "'info' | 'success' | 'warning' | 'error'",
+      "default": "info",
+      "required": false,
+      "description": "Tipo de aviso: color, icono y forma de anunciarse.",
+      "inherited": false
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": null,
+      "required": true,
+      "description": "El mensaje.",
+      "inherited": false
+    },
+    {
+      "name": "onClose",
+      "type": "() => void",
+      "default": null,
+      "required": true,
+      "description": "Avisa de que se pulsó «Cerrar». Quien lo usa quita el aviso.",
+      "inherited": false
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "",
+      "required": false,
+      "description": "Clases que se añaden al aviso.",
+      "inherited": true
+    }
+  ],
+  "states": {
+    "intrinsic": [],
+    "authored": []
+  },
+  "anatomy": [
+    {
+      "part": "root",
+      "element": "div",
+      "optional": false,
+      "description": "El aviso. El resto de atributos de `<div>` pasa a este elemento."
+    },
+    {
+      "part": "message",
+      "element": "div con role status o alert",
+      "optional": false,
+      "description": "Zona que se anuncia: el icono y el texto."
+    },
+    {
+      "part": "icon",
+      "element": "Icono de Tabler (svg)",
+      "optional": false,
+      "description": "Dice el tipo de aviso y tiene nombre."
+    },
+    {
+      "part": "close",
+      "element": "Button",
+      "optional": false,
+      "description": "Botón de solo icono «Cerrar»."
+    }
+  ],
+  "tokens": [
+    "component.toast.background.neutral.default",
+    "component.toast.border.info.default",
+    "component.toast.border.success.default",
+    "component.toast.border.warning.default",
+    "component.toast.border.error.default",
+    "component.toast.icon.info.default",
+    "component.toast.icon.success.default",
+    "component.toast.icon.warning.default",
+    "component.toast.icon.error.default",
+    "component.toast.text.neutral.default",
+    "component.toast.font-size",
+    "component.toast.line-height",
+    "component.toast.font-weight",
+    "component.toast.border-width.default",
+    "component.toast.radius",
+    "component.toast.elevation",
+    "component.toast.padding",
+    "component.toast.gap.icon"
+  ],
+  "a11y": {
+    "role": "status (alert con variant=\"error\")",
+    "keyboard": [
+      {
+        "key": "Tab",
+        "action": "Lleva el foco al botón «Cerrar»."
+      },
+      {
+        "key": "Shift+Tab",
+        "action": "Vuelve al control anterior."
+      },
+      {
+        "key": "Enter",
+        "action": "Con el foco en «Cerrar», cierra el aviso."
+      },
+      {
+        "key": "Space",
+        "action": "Con el foco en «Cerrar», cierra el aviso."
+      }
+    ],
+    "notes": [
+      "No roba el foco ni desaparece solo.",
+      "`error` usa `role=\"alert\"` y se anuncia de inmediato; los demás usan `role=\"status\"`.",
+      "El texto aparece una décima de segundo después que la zona que se anuncia, para que el lector de pantalla lo note.",
+      "El icono se anuncia como «Información», «Correcto», «Advertencia» o «Error»: el tipo no depende solo del color.",
+      "Quien lo usa decide dónde se coloca y a dónde va el foco después de cerrarlo.",
+      "Zona táctil: «Cerrar» mide 32 por 32 píxeles.",
+      "Contraste (docs/contraste.md): texto, 17,74:1; iconos y bordes, mínimo 4,94:1.",
+      "Revisión automática con la configuración del panel Accessibility (27-11-2026): sin fallos en sus 6 historias. Prueba Keyboard: pasa. Todavía no se ha escuchado con VoiceOver: falta confirmar que el aviso se anuncia al aparecer."
+    ]
+  },
+  "usage": {
+    "scope": "general"
+  },
+  "governance": {
+    "mayExtendLocally": [
+      "Colocarlo con `className` de disposición.",
+      "Poner el texto del mensaje."
+    ],
+    "mustEscalateToDS": [
+      "Un tipo de aviso nuevo.",
+      "Un color, una medida o un token que no exista.",
+      "Que desaparezca solo."
+    ]
+  },
+  "composedOf": [
+    "Button"
+  ],
+  "exceptions": [
+    {
+      "rule": "ADR-003: el tamaño de los iconos lo fija cada talla del componente.",
+      "reason": "Toast no tiene tallas: su icono mide 20 px, como en la talla md.",
+      "link": "https://github.com/RileyBlue/Lumine-DS/issues/52"
+    }
+  ],
+  "guidelines": {},
+  "content": []
+}

@@ -2,7 +2,7 @@
 
 Cómo se llaman las props y los valores de variante de los componentes de Lumine-DS. Entre varios nombres posibles, se elige el que un agente usaría por defecto.
 
-> **Estado: vigente.** Lo recoge el [ADR-006](adr/006-api.md).
+> **Estado: vigente.** Lo recogen el [ADR-006](adr/006-api.md) y el [ADR-007](adr/007-titulo-en-dialog.md).
 
 ## 1. Vocabulario
 
@@ -17,6 +17,10 @@ Cómo se llaman las props y los valores de variante de los componentes de Lumine
 | `onClick` | `onPress`, `handleClick` | Al pulsar. |
 | `onSubmit` | `onSend` | Al enviar un formulario. Va en el formulario; un botón lo envía con `type="submit"`. |
 | `onChange` | `onValueChange`, `onUpdate` | Al cambiar el valor de un campo. |
+| `hint` | — | La ayuda debajo de un campo. |
+| `open` | — | Si una ventana está abierta. Es el nombre de HTML. |
+| `onClose` | — | Al cerrar. En `Dialog` es el evento de HTML; en `Toast`, al pulsar «Cerrar». |
+| `footer` | — | La zona de abajo de `Card` y `Dialog`. |
 | `label` | `labelText` | El nombre visible de un campo. |
 | `children` | `text`, `content` | El contenido de un componente, como el texto de un botón o lo que va dentro de una tarjeta. |
 | `iconStart` | `icon`, `iconPosition`, `leftIcon`, `startIcon`, `iconLeft` | El icono delante del texto. También es el icono de un botón de solo icono. |
@@ -30,8 +34,11 @@ Cómo se llaman las props y los valores de variante de los componentes de Lumine
 | `secondary` | — | Usa los tokens del rol `brand` en su versión suave, `brand.subtle`. |
 | `ghost` | — | Usa los tokens del rol `neutral`. No tiene fondo en reposo: solo bajo el puntero y al pulsar. |
 | `error` | `danger` | Usa los tokens del rol `error`. |
+| `info` | — | Usa los tokens del rol `info`. |
+| `success` | — | Usa los tokens del rol `success`. |
+| `warning` | — | Usa los tokens del rol `warning`. |
 
-Todavía no tienen sitio en esta tabla, así que no están ni permitidos ni prohibidos: `outline` de `Button`; `outlined` y `elevated` de `Card`; y `neutral`, `brand`, `info`, `success` y `warning` de `Badge`.
+Todavía no tienen sitio en esta tabla, así que no están ni permitidos ni prohibidos: `outline` de `Button`; `outlined` y `elevated` de `Card`; y `neutral` y `brand` de `Badge`.
 
 ## 3. Excepciones
 
@@ -46,7 +53,7 @@ Hay dos excepciones:
 | Nombre | En Lumine-DS | Por qué |
 | --- | --- | --- |
 | `size` | La talla (`sm`, `md`, `lg`), no el atributo de HTML | Así lo fija el ADR-001 |
-| `title` en `Card` | El título visible de la tarjeta | Es el nombre que un agente usaría por defecto |
+| `title` en `Card` y `Dialog` | El título visible de la tarjeta o de la ventana | Es el nombre que un agente usaría por defecto ([ADR-006](adr/006-api.md), [ADR-007](adr/007-titulo-en-dialog.md)) |
 
 ### Iconos en Figma
 

@@ -33,6 +33,12 @@
         "color.background.error.hover",
         "color.background.error.pressed"
       ]
+    },
+    "overlay": {
+      "description": "Velos semitransparentes: no llevan texto ni controles encima, así que ninguna regla los revisa.",
+      "tokens": [
+        "color.background.neutral.overlay.default"
+      ]
     }
   },
   "rules": [

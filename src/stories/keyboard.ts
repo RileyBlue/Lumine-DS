@@ -3,7 +3,7 @@
 // cuando la página se abre sin https.
 import { expect } from 'storybook/test'
 
-type FocusableComponent = 'button' | 'input'
+type FocusableComponent = 'button' | 'input' | 'textarea'
 
 /** Valor que calcula el navegador para un token, aplicándolo a un elemento de prueba. */
 function tokenValue(property: 'color' | 'width', variable: string) {
