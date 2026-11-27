@@ -1,6 +1,6 @@
 # Accesibilidad
 
-La accesibilidad engloba muchos criterios; este design system cubre estos cuatro: contraste, navegación por teclado, nombre accesible y lectura con lector de pantalla.
+La accesibilidad engloba muchos criterios; este design system cubre estos cinco: contraste, navegación por teclado, nombre accesible, lectura con lector de pantalla y zona táctil.
 
 La decisión está en el [ADR-005](adr/005-accesibilidad.md). Al final hay una [tabla con lo que no se cubre](#lo-que-no-se-cubre).
 
@@ -146,13 +146,35 @@ Quien usa un lector de pantalla recorre la página por sus encabezados y escucha
 - [ ] Los iconos e imágenes decorativos están ocultos.
 - [ ] Recorrí la pantalla con un lector de pantalla (en Mac, VoiceOver) y se entiende.
 
+## 5. Zona táctil
+
+Todo lo que se pulsa mide al menos **24 por 24 píxeles**, aunque su icono o su texto sean más pequeños. Así se acierta con el dedo en un móvil y no se pulsa lo de al lado.
+
+**Correcto:** el botón más pequeño del design system mide 32 por 32 píxeles, aunque su icono mide menos.
+
+```tsx
+<Button iconOnly size="sm" icon={IconX} aria-label="Cerrar" />
+```
+
+**Incorrecto:** un botón del tamaño de su icono, de 16 por 16 píxeles.
+
+```tsx
+<button className="size-4" aria-label="Cerrar">
+  <IconX size={16} aria-hidden="true" />
+</button>
+```
+
+### Checklist
+
+- [ ] Los elementos pulsables miden al menos 24 por 24 píxeles.
+- [ ] Lo medí en el tamaño más pequeño de cada componente.
+
 ## Lo que no se cubre
 
 Estos criterios importan, pero este design system todavía no los comprueba.
 
 | Criterio | Qué es |
 | --- | --- |
-| Zona táctil mínima | Que lo que se pulsa sea lo bastante grande para acertar con el dedo |
 | No depender solo del color | Que ningún dato se entienda únicamente por su color: un error lleva también texto o icono |
 | Texto ampliable al 200 % | Que al doblar el tamaño del texto todo se siga leyendo y usando |
 | Pantallas estrechas sin scroll horizontal | Que en un móvil el contenido se reacomode sin tener que desplazarse hacia los lados |

@@ -33,6 +33,7 @@ En cada historia de Storybook de los componentes cambiados, según [la guía](ht
 - [ ] Todo se maneja con el teclado, en un orden lógico, y el foco se ve.
 - [ ] Cada control tiene un nombre accesible.
 - [ ] Los encabezados van en orden, los iconos e imágenes con significado tienen texto alternativo y los decorativos están ocultos.
+- [ ] Los elementos pulsables miden al menos 24 por 24 píxeles.
 
 ### 5. Un solo vocabulario de nombres
 
