@@ -1,5 +1,5 @@
 {
-  "description": "Reglas de contraste por grupos (ADR-005). Los nombres son tokens de la capa semantic. Un token de texto, icono o borde entra en su regla por su nombre; un fondo nuevo se añade a su grupo.",
+  "description": "Reglas de contraste por grupos (ADR-005). Los nombres son tokens de la capa semantic. Un token de texto, icono o borde entra en su regla por su nombre; un fondo nuevo se añade a su grupo. Una pareja suelta se escribe con token y against.",
   "backgrounds": {
     "light": {
       "description": "Fondos claros: llevan texto normal.",
@@ -86,7 +86,7 @@
         },
         {
           "token": "color.border.focus-outer",
-          "reason": "Es el anillo blanco exterior del foco. El foco cumple junto con color.border.focus, que tiene al menos 9:1 con él (ADR-005); una pareja suelta no lo puede medir."
+          "reason": "Es el anillo blanco exterior del foco. El foco cumple junto con color.border.focus (ADR-005): sus 9:1 entre ambos los exige la regla focus-ring."
         }
       ]
     },
@@ -111,6 +111,18 @@
         {
           "token": "color.icon.neutral.disabled",
           "reason": "Los controles desactivados quedan fuera de los mínimos de contraste (docs/accesibilidad.md). Con más contraste parecerían activos."
+        }
+      ]
+    },
+    {
+      "id": "focus-ring",
+      "description": "Los dos colores del anillo de foco, entre sí.",
+      "kind": "ui",
+      "minimum": 9,
+      "pairs": [
+        {
+          "token": "color.border.focus",
+          "against": "color.border.focus-outer"
         }
       ]
     }

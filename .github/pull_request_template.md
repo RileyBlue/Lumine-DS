@@ -30,6 +30,7 @@ Reglas: [ADR-001](https://github.com/RileyBlue/Lumine-DS/blob/main/docs/adr/001-
 En cada historia de Storybook de los componentes cambiados, según [la guía](https://github.com/RileyBlue/Lumine-DS/blob/main/docs/accesibilidad.md):
 
 - [ ] El contraste es de al menos 4,5:1 en el texto y 3:1 en iconos, bordes de campos y anillo de foco.
+- [ ] Si cambiaron tokens o reglas de contraste, `npm run contrast -- --check` pasa.
 - [ ] Todo se maneja con el teclado, en un orden lógico, y el foco se ve.
 - [ ] Cada control tiene un nombre accesible.
 - [ ] Los encabezados van en orden, los iconos e imágenes con significado tienen texto alternativo y los decorativos están ocultos.

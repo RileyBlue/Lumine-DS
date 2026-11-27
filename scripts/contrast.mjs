@@ -1,10 +1,20 @@
 // Comprueba el contraste de las parejas que salen de tokens/contrast-pairs.json
 // y escribe el resultado en docs/contraste.md.
-//   npm run contrast
+//   npm run contrast              escribe el informe
+//   npm run contrast -- --check   no escribe; falla si alguna pareja no pasa
+//                                 o si el informe está desactualizado
 import { readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { listTokens } from './token-classes.mjs'
+
+const args = process.argv.slice(2)
+const unknown = args.filter((arg) => arg !== '--check')
+if (unknown.length) {
+  console.error(`Opción desconocida: ${unknown.join(' ')}. Solo existe --check.`)
+  process.exit(1)
+}
+const checkOnly = args.includes('--check')
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const readJson = (file) => JSON.parse(readFileSync(join(root, file), 'utf8'))
@@ -80,7 +90,18 @@ const rules = config.rules.map((rule) => {
     if (!reason?.trim()) fail(`la excepción ${token} de la regla ${rule.id} no tiene motivo`)
   }
   const used = new Set()
-  const pairs = rule.pairs.flatMap(({ foreground, inverted, backgrounds }) => {
+  const check = (foreground, background) => {
+    const ratio = contrast(foreground, background)
+    return { foreground, background, ratio, minimum: rule.minimum, passes: ratio >= rule.minimum }
+  }
+  const pairs = rule.pairs.flatMap(({ foreground, inverted, backgrounds, token, against }) => {
+    // Una pareja suelta entre dos tokens concretos.
+    if (token !== undefined || against !== undefined) {
+      for (const name of [token, against]) {
+        if (!colorNames.includes(name)) fail(`la regla ${rule.id} nombra un color semántico que no existe: ${name}`)
+      }
+      return [check(token, against)]
+    }
     if (!groups[backgrounds]) fail(`la regla ${rule.id} usa un grupo que no existe: ${backgrounds}`)
     const matches = colorNames.filter(
       (name) =>
@@ -91,10 +112,7 @@ const rules = config.rules.map((rule) => {
     return matches.flatMap((name) => {
       covered.add(name)
       if (exceptions.has(name)) used.add(name)
-      return groups[backgrounds].map((background) => {
-        const ratio = contrast(name, background)
-        return { foreground: name, background, ratio, minimum: rule.minimum, passes: ratio >= rule.minimum }
-      })
+      return groups[backgrounds].map((background) => check(name, background))
     })
   })
   // Una excepción que no coincide con nada suele ser un nombre mal escrito.
@@ -202,7 +220,30 @@ ${exemptSections || 'Ninguna.\n'}
 ${rules.map((rule) => `<details>\n<summary>${rule.description} (${rule.results.length})</summary>\n\n${table(rule.results)}\n\n</details>`).join('\n\n')}
 `
 
-writeFileSync(join(root, 'docs/contraste.md'), report)
 console.log(`${total} parejas: ${all.length - failing.length} pasan, ${failing.length} no pasan, ${exempt.length} exentas.`)
 if (uncovered.length) console.log(`Sin regla: ${uncovered.join(', ')}`)
-console.log('Escrito docs/contraste.md')
+
+const file = join(root, 'docs/contraste.md')
+
+if (!checkOnly) {
+  writeFileSync(file, report)
+  console.log('Escrito docs/contraste.md')
+} else {
+  const problems = failing.map(
+    (pair) => `No pasa: ${pair.foreground} sobre ${pair.background}: ${show(pair.ratio)}, mínimo ${pair.minimum}:1`,
+  )
+  // Un color que ninguna regla revisa tampoco puede pasar en silencio.
+  problems.push(...uncovered.map((name) => `Sin regla: ${name}`))
+  let current = null
+  try {
+    current = readFileSync(file, 'utf8')
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error
+  }
+  if (current !== report) problems.push('docs/contraste.md está desactualizado: ejecuta `npm run contrast`.')
+  if (problems.length) {
+    console.error(problems.join('\n'))
+    process.exit(1)
+  }
+  console.log('Todo el contraste exigido pasa y el informe está al día.')
+}
