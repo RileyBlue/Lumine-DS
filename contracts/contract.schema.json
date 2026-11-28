@@ -390,6 +390,11 @@
             "description": "Por qué no se cumple.",
             "minLength": 1
           },
+          "prop": {
+            "type": "string",
+            "description": "Prop a la que afecta, si la excepción es de una sola. npm run figma-map la usa.",
+            "minLength": 1
+          },
           "link": {
             "type": "string",
             "description": "Dirección del issue o la decisión que lo explica.",
