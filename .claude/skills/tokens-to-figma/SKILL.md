@@ -11,7 +11,7 @@ Archivo de destino: <https://www.figma.com/design/AnNYIBhMWsMimOzOKaTrEx/Lumine-
 
 Pasa los tokens a Figma. Los iconos los pasa `icons-to-figma` y los componentes, `components-to-figma`.
 
-El código manda: Figma se actualiza para parecerse a los tokens, nunca al revés. Si en Figma falta algo del código se crea; si en Figma sobra algo, se avisa y no se borra sin que una persona lo apruebe.
+El código manda ([ADR-008](../../../docs/adr/008-fuente-de-verdad.md)): Figma se actualiza para parecerse a los tokens, nunca al revés. Si en Figma falta algo del código se crea; si en Figma sobra algo, se avisa y no se borra sin que una persona lo apruebe.
 
 ## Archivos que lee
 

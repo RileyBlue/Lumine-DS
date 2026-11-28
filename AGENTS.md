@@ -13,11 +13,9 @@ Lumine-DS es el design system de Lumine, la plataforma escolar interna de la aca
 
 ## Cómo trabajamos
 
-- Todo se escribe y se responde en español, salvo los nombres en el código, que van en inglés ([ADR-001](docs/adr/001-alcance.md), principio 5).
-- Todo cambio va en una rama con su PR. No se sube directamente a `main`.
-- Los cambios se explican sin jerga.
+- Todo se escribe y se responde en español, salvo los nombres en el código, que van en inglés ([ADR-001](docs/adr/001-alcance.md), principio 5). Los cambios se explican sin jerga.
+- Todo cambio va en una rama con su PR. No se sube directamente a `main`. Si cambia `package.json`, se actualiza `package-lock.json` en la misma PR.
 - Si la interfaz cambia de idioma, se cambia el idioma declarado en `index.html` y en `.storybook/preview.ts`, y los textos escritos dentro de los componentes, como «Cerrar».
-- Si cambia `package.json`, se actualiza `package-lock.json` en la misma PR.
 - Cada PR rellena en su descripción la lista de `.github/pull_request_template.md`, también si se abre desde la terminal o la abre un asistente. Una casilla solo se marca si se comprobó; si no aplica, se marca y se escribe «no aplica».
 
 ## Decisiones
@@ -34,10 +32,11 @@ Lumine-DS es el design system de Lumine, la plataforma escolar interna de la aca
 | [ADR-005 · Accesibilidad: cinco reglas](docs/adr/005-accesibilidad.md) | Las cinco reglas de accesibilidad que se comprueban | Aceptado |
 | [ADR-006 · Nombres de props y variantes](docs/adr/006-api.md) | Cómo se nombran props y variantes y quién decide un nombre nuevo | Aceptado |
 | [ADR-007 · Título en Dialog](docs/adr/007-titulo-en-dialog.md) | `title` es el título visible también en `Dialog` | Aceptado |
+| [ADR-008 · Fuente de verdad](docs/adr/008-fuente-de-verdad.md) | Tokens y contratos mandan; Figma y Storybook son reflejos | Aceptado |
 
 ## Antes de escribir código
 
-- Lee el contrato del componente en `contracts/`, usa los nombres de `docs/prop-map.md` y pasa el checklist de `docs/accesibilidad.md`.
+- Usa las skills de `.claude/skills/` que sirvan para la tarea, lee el contrato del componente en `contracts/`, usa los nombres de `docs/prop-map.md` y pasa el checklist de `docs/accesibilidad.md`.
 - Antes de crear un componente, busca uno parecido. Si hace la misma función, se añade una variante o un prop al que existe. Si hace otra función, aunque se parezca (un acordeón no es un desplegable), se crea uno nuevo. En los dos casos, primero se pide aprobación (ver Permisos).
 
 ## Antes de terminar
@@ -53,6 +52,7 @@ Todo lo nuevo, sea un componente, una pantalla o un prototipo:
 2. Solo nombres de `docs/prop-map.md`: se comparan las props y los valores de `variant`.
 3. Cada componente tiene un contrato que cumple `contracts/contract.schema.json`.
 4. Accesibilidad según `docs/accesibilidad.md`: checklists, historias `Keyboard` y panel Accessibility.
+5. Tokens y Figma sin diferencias ([ADR-008](docs/adr/008-fuente-de-verdad.md)): se comprueba a mano con el checklist de la skill de tokens.
 
 ## Reglas de uso
 
