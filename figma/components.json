@@ -1,0 +1,27 @@
+{
+  "fileKey": "AnNYIBhMWsMimOzOKaTrEx",
+  "components": [
+    {
+      "name": "Button",
+      "key": "d21ec87ceaea519d1cf9a77c07ce1b461767f13f",
+      "id": "17:308",
+      "page": "Button",
+      "file": "src/components/Button.tsx",
+      "icons": ["Plus", "ArrowRight"],
+      "properties": [
+        { "order": 1, "name": "children.", "type": "BOOLEAN", "default": true },
+        { "order": 2, "name": "children", "type": "TEXT", "default": "Inscribir alumna" },
+        { "order": 3, "name": "iconStart", "type": "INSTANCE_SWAP", "default": "Plus" },
+        { "order": 4, "name": "iconStart.", "type": "BOOLEAN", "default": false },
+        { "order": 5, "name": "iconEnd", "type": "INSTANCE_SWAP", "default": "ArrowRight" },
+        { "order": 6, "name": "iconEnd.", "type": "BOOLEAN", "default": false },
+        { "order": 7, "name": "variant", "type": "VARIANT", "values": ["primary", "secondary", "outline", "ghost", "error"], "default": "primary" },
+        { "order": 8, "name": "size", "type": "VARIANT", "values": ["sm", "md", "lg"], "default": "md" },
+        { "order": 9, "name": "iconOnly", "type": "VARIANT", "values": ["false", "true"], "default": "false" },
+        { "order": 10, "name": "fullWidth", "type": "VARIANT", "values": ["false", "true"], "default": "false" },
+        { "order": 11, "name": "disabled", "type": "VARIANT", "values": ["false", "true"], "default": "false" },
+        { "order": 12, "name": "state", "type": "VARIANT", "values": ["default", "hover", "focus", "pressed"], "default": "default" }
+      ]
+    }
+  ]
+}
