@@ -9,8 +9,7 @@ Lumine-DS es el design system de Lumine, la plataforma escolar interna de la aca
 ## Tecnología
 
 - React con TypeScript y Vite; Tailwind para los estilos y Tabler Icons para los iconos. Ninguna librería de componentes: se crean desde cero.
-- Storybook para revisar los componentes; Vitest con Testing Library para sus pruebas.
-- Node 22, la misma versión que usa GitHub: con Node 20.14, Storybook no arranca.
+- Storybook para revisar los componentes; Vitest con Testing Library para sus pruebas. Node 22, la misma versión que usa GitHub: con Node 20.14, Storybook no arranca.
 
 ## Cómo trabajamos
 
@@ -87,6 +86,7 @@ Las de cada componente están en `guidelines` y `content` de su contrato; las de
 - `docs/adr/`: decisiones.
 - `scripts/`: generadores de tokens y contraste.
 - `.storybook/`: configuración de Storybook.
+- `.claude/skills/`: tareas guiadas para el asistente.
 - `.github/`: plantilla de PR y lo que GitHub ejecuta solo.
 - `package.json`: versiones y comandos.
 
