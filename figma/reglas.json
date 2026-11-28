@@ -1,0 +1,96 @@
+{
+  "description": "Cómo se convierte cada prop del código en una propiedad de Figma. Se mira cada regla en este orden y gana la primera que encaja. Una prop que no encaje en ninguna necesita una excepción en su contrato.",
+  "rules": [
+    {
+      "id": "look-boolean",
+      "match": [{ "type": "boolean", "names": ["disabled", "isLoading", "fullWidth", "invalid", "iconOnly"] }],
+      "properties": [{ "name": "{prop}", "type": "VARIANT", "values": ["false", "true"] }],
+      "why": "Es verdadero o falso y cambia cómo se ve: color, tamaño o ancho."
+    },
+    {
+      "id": "event",
+      "match": [{ "namePattern": "^on[A-Z]" }],
+      "properties": [],
+      "why": "Es un evento: no tiene nada que dibujar."
+    },
+    {
+      "id": "technical",
+      "match": [{ "names": ["id", "ref", "className"] }, { "namePattern": "^data-" }],
+      "properties": [],
+      "why": "Es un identificador, una referencia, una clase o un dato del código."
+    },
+    {
+      "id": "html-attribute",
+      "match": [{ "inherited": true }],
+      "properties": [],
+      "why": "Es un atributo de HTML."
+    },
+    {
+      "id": "list",
+      "match": [{ "typePattern": "\\[\\]$|^(readonly )?Array<" }],
+      "properties": [{ "name": "{prop}", "type": "VARIANT", "values": ["2", "3", "4", "5", "6", "7"] }],
+      "why": "Es una lista de elementos: la variante dice cuántos se ven."
+    },
+    {
+      "id": "icon",
+      "match": [{ "type": "Icon", "names": ["iconStart", "iconEnd"] }],
+      "properties": [
+        { "name": "{prop}", "type": "INSTANCE_SWAP" },
+        { "name": "{prop}.", "type": "BOOLEAN", "onlyIfOptional": true }
+      ],
+      "why": "Es un icono con un nombre del mapa de props: se intercambia y, si es opcional, se puede ocultar."
+    },
+    {
+      "id": "fixed-values",
+      "match": [{ "typePattern": "^('[^']*'|[0-9]+)( \\| ('[^']*'|[0-9]+))+$" }],
+      "properties": [{ "name": "{prop}", "type": "VARIANT", "values": "fromType" }],
+      "why": "Tiene valores fijos: la variante usa los mismos."
+    },
+    {
+      "id": "slot",
+      "match": [
+        { "type": "ReactNode", "names": ["footer"] },
+        { "type": "ReactNode", "names": ["children"], "anatomyPart": "content" }
+      ],
+      "properties": [{ "name": "{prop}", "type": "BOOLEAN" }],
+      "why": "Es un hueco para otro contenido: se enseña o se oculta."
+    },
+    {
+      "id": "optional-text",
+      "match": [
+        { "type": "string", "names": ["label", "title", "description", "hint", "errorMessage", "children"], "required": false },
+        { "type": "ReactNode", "names": ["label", "title", "description", "hint", "errorMessage", "children"], "required": false }
+      ],
+      "properties": [
+        { "name": "{prop}.", "type": "BOOLEAN" },
+        { "name": "{prop}", "type": "TEXT" }
+      ],
+      "why": "Es un texto opcional: se puede ocultar y se puede escribir."
+    },
+    {
+      "id": "text",
+      "match": [
+        { "type": "string", "names": ["label", "title", "description", "hint", "errorMessage", "children"] },
+        { "type": "ReactNode", "names": ["label", "title", "description", "hint", "errorMessage", "children"] }
+      ],
+      "properties": [{ "name": "{prop}", "type": "TEXT" }],
+      "why": "Es un texto que siempre se ve."
+    },
+    {
+      "id": "toggle-boolean",
+      "match": [{ "type": "boolean", "names": [] }],
+      "properties": [{ "name": "{prop}", "type": "BOOLEAN" }],
+      "why": "Es verdadero o falso y solo enseña u oculta una parte."
+    }
+  ],
+  "figmaOnly": [
+    {
+      "id": "browser-state",
+      "name": "state",
+      "type": "VARIANT",
+      "values": ["default", "hover", "focus", "pressed"],
+      "valuesFrom": "states.intrinsic",
+      "why": "Solo existe en Figma, para los estados que pone el navegador. Lleva `default` y los que declare el contrato; sin ninguno, no existe."
+    }
+  ]
+}

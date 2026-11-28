@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "test": "vitest run",
     "contrast": "node scripts/contrast.mjs",
+    "figma-map": "node scripts/figma-map.mjs",
     "tokens": "node scripts/build-tokens.mjs",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006 --exact-port",

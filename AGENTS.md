@@ -20,8 +20,7 @@ Lumine-DS es el design system de Lumine, la plataforma escolar interna de la aca
 
 ## Decisiones
 
-- Las decisiones del design system viven en `docs/adr/` y se leen antes de proponer cualquier cambio que afecte a lo que deciden.
-- Nunca se contradicen sin escribir un ADR nuevo.
+- Las decisiones del design system viven en `docs/adr/` y se leen antes de proponer cualquier cambio que afecte a lo que deciden. Nunca se contradicen sin escribir un ADR nuevo.
 
 | ADR | Decisión | Estado |
 | --- | --- | --- |
@@ -42,7 +41,6 @@ Lumine-DS es el design system de Lumine, la plataforma escolar interna de la aca
 ## Antes de terminar
 
 Todo lo nuevo, sea un componente, una pantalla o un prototipo:
-
 - Usa solo componentes del design system (si falta uno, se pide), tokens y nombres del prop map. Las pantallas añaden las clases de disposición que permite el ADR-001.
 - Cumple las cinco reglas de `docs/accesibilidad.md` y pasa `npm run tokens -- --check`, `npm run build` y `npm test`.
 
@@ -81,10 +79,11 @@ Las de cada componente están en `guidelines` y `content` de su contrato; las de
 - `docs/accesibilidad.md`: reglas y checklists.
 - `docs/tokens.md`: clase de cada token (generado).
 - `docs/contraste.md`: informe de contraste (generado).
+- `docs/figma-map.md`: propiedad de Figma de cada prop (generado).
 - `docs/audit.md`: auditoría inicial.
 - `docs/adr/`: decisiones.
-- `figma/`: lo que quedó en Figma en la última sincronización.
-- `scripts/`: generadores de tokens y contraste.
+- `figma/`: reglas para convertir props y lo que quedó en Figma en la última sincronización.
+- `scripts/`: generadores de tokens, contraste y mapa de Figma.
 - `.storybook/`: configuración de Storybook.
 - `.claude/skills/`: tareas guiadas para el asistente.
 - `.github/`: plantilla de PR y lo que GitHub ejecuta solo.
@@ -101,6 +100,7 @@ Las de cada componente están en `guidelines` y `content` de su contrato; las de
 - `npm run build-storybook`: compilar Storybook.
 - `npm run tokens`: generar los estilos; con `-- --check`, solo comprobar.
 - `npm run contrast`: informe de contraste; con `-- --check`, solo comprobar.
+- `npm run figma-map`: mapa de props en Figma; con `-- --check`, solo comprobar.
 
 ## Errores típicos
 
