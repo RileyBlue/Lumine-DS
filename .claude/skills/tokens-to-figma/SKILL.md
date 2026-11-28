@@ -13,6 +13,8 @@ Pasa los tokens a Figma. Los iconos los pasa `icons-to-figma` y los componentes,
 
 El código manda ([ADR-008](../../../docs/adr/008-fuente-de-verdad.md)): Figma se actualiza para parecerse a los tokens, nunca al revés. Si en Figma falta algo del código se crea; si en Figma sobra algo, se avisa y no se borra sin que una persona lo apruebe.
 
+Se ejecuta desde `main` al día, justo después de fusionar un cambio de tokens: lo que no está fusionado no se pasa.
+
 ## Archivos que lee
 
 - `tokens/*.json`: los tokens están en `tokens.json`. `contrast-pairs.json` no tiene tokens y no se pasa.
