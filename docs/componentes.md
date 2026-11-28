@@ -1,14 +1,14 @@
 # Estado de los componentes
 
-| Componente | Storybook | Solo tokens | Accesibilidad | Contrato | Aprobación |
-| --- | --- | --- | --- | --- | --- |
-| Badge | ✅ | ✅ | ✅ | ✅ | Anterior a la regla |
-| Button | ✅ | ✅ | ✅ | ✅ | Anterior a la regla |
-| Card | ✅ | ✅ | ✅ | ✅ | Anterior a la regla |
-| Dialog | ✅ | ✅ | ✅ | ✅ | [#51](https://github.com/RileyBlue/Lumine-DS/issues/51) |
-| Input | ✅ | ✅ | ✅ | ✅ | Anterior a la regla |
-| Textarea | ✅ | ✅ | ✅ | ✅ | [#50](https://github.com/RileyBlue/Lumine-DS/issues/50) |
-| Toast | ✅ | ✅ | ✅ | ✅ | [#52](https://github.com/RileyBlue/Lumine-DS/issues/52) |
+| Componente | Storybook | Solo tokens | Accesibilidad | Contrato | Figma | Aprobación |
+| --- | --- | --- | --- | --- | --- | --- |
+| Badge | ✅ | ✅ | ✅ | ✅ | — | Anterior a la regla |
+| Button | ✅ | ✅ | ✅ | ✅ | ✅ | Anterior a la regla |
+| Card | ✅ | ✅ | ✅ | ✅ | — | Anterior a la regla |
+| Dialog | ✅ | ✅ | ✅ | ✅ | — | [#51](https://github.com/RileyBlue/Lumine-DS/issues/51) |
+| Input | ✅ | ✅ | ✅ | ✅ | — | Anterior a la regla |
+| Textarea | ✅ | ✅ | ✅ | ✅ | — | [#50](https://github.com/RileyBlue/Lumine-DS/issues/50) |
+| Toast | ✅ | ✅ | ✅ | ✅ | — | [#52](https://github.com/RileyBlue/Lumine-DS/issues/52) |
 
 **Solo tokens** significa que el color, la letra, el espaciado, el radio, el borde y la sombra del
 componente salen de sus tokens. Las alturas y los tamaños de icono no tienen token: usan la escala de
@@ -34,3 +34,9 @@ componentes anteriores a esa regla no lo necesitan.
 [`contracts/`](https://github.com/RileyBlue/Lumine-DS/tree/main/contracts), que cumple el esquema y que
 todos los tokens que nombra existen. Sus reglas de uso (`guidelines`)
 y de textos (`content`) están en cada ficha.
+
+**Figma** significa que el componente está en el
+[archivo de Figma](https://www.figma.com/design/AnNYIBhMWsMimOzOKaTrEx/Lumine-DS) con las propiedades
+del [mapa](https://github.com/RileyBlue/Lumine-DS/blob/main/docs/figma-map.md), y que
+[`figma/components.json`](https://github.com/RileyBlue/Lumine-DS/blob/main/figma/components.json) guarda
+cómo quedó. El guion marca los que todavía no se han pasado.
