@@ -1,0 +1,4543 @@
+{
+  "syncedAt": "2026-11-28T01:03:20Z",
+  "fileKey": "AnNYIBhMWsMimOzOKaTrEx",
+  "collections": [
+    {
+      "name": "Primitives",
+      "id": "VariableCollectionId:5:2",
+      "variables": [
+        {
+          "name": "border-width/0",
+          "id": "VariableID:6:94",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-border-width-0)",
+          "scopes": [],
+          "value": 0
+        },
+        {
+          "name": "border-width/1",
+          "id": "VariableID:6:95",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-border-width-1)",
+          "scopes": [],
+          "value": 1
+        },
+        {
+          "name": "border-width/2",
+          "id": "VariableID:6:96",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-border-width-2)",
+          "scopes": [],
+          "value": 2
+        },
+        {
+          "name": "border-width/4",
+          "id": "VariableID:6:97",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-border-width-4)",
+          "scopes": [],
+          "value": 4
+        },
+        {
+          "name": "border-width/8",
+          "id": "VariableID:6:98",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-border-width-8)",
+          "scopes": [],
+          "value": 8
+        },
+        {
+          "name": "color/black/50",
+          "id": "VariableID:6:3",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-black-50)",
+          "scopes": [],
+          "value": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.5
+          }
+        },
+        {
+          "name": "color/blue/100",
+          "id": "VariableID:6:27",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-blue-100)",
+          "scopes": [],
+          "value": {
+            "r": 0.85824,
+            "g": 0.91783,
+            "b": 0.99727,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/blue/200",
+          "id": "VariableID:6:28",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-blue-200)",
+          "scopes": [],
+          "value": {
+            "r": 0.74509,
+            "g": 0.85866,
+            "b": 1.0,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/blue/300",
+          "id": "VariableID:6:29",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-blue-300)",
+          "scopes": [],
+          "value": {
+            "r": 0.55659,
+            "g": 0.77316,
+            "b": 1.0,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/blue/400",
+          "id": "VariableID:6:30",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-blue-400)",
+          "scopes": [],
+          "value": {
+            "r": 0.3158,
+            "g": 0.63559,
+            "b": 1.0,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/blue/50",
+          "id": "VariableID:6:26",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-blue-50)",
+          "scopes": [],
+          "value": {
+            "r": 0.93694,
+            "g": 0.96403,
+            "b": 0.99887,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/blue/500",
+          "id": "VariableID:6:31",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-blue-500)",
+          "scopes": [],
+          "value": {
+            "r": 0.16933,
+            "g": 0.49805,
+            "b": 1.0,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/blue/600",
+          "id": "VariableID:6:32",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-blue-600)",
+          "scopes": [],
+          "value": {
+            "r": 0.08362,
+            "g": 0.36442,
+            "b": 0.98634,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/blue/700",
+          "id": "VariableID:6:33",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-blue-700)",
+          "scopes": [],
+          "value": {
+            "r": 0.07791,
+            "g": 0.27914,
+            "b": 0.90177,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/blue/800",
+          "id": "VariableID:6:34",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-blue-800)",
+          "scopes": [],
+          "value": {
+            "r": 0.09978,
+            "g": 0.23377,
+            "b": 0.72292,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/blue/900",
+          "id": "VariableID:6:35",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-blue-900)",
+          "scopes": [],
+          "value": {
+            "r": 0.10906,
+            "g": 0.22219,
+            "b": 0.55751,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/blue/950",
+          "id": "VariableID:6:36",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-blue-950)",
+          "scopes": [],
+          "value": {
+            "r": 0.08726,
+            "g": 0.14313,
+            "b": 0.33569,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/brand/100",
+          "id": "VariableID:6:5",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-brand-100)",
+          "scopes": [],
+          "value": {
+            "r": 0.99402,
+            "g": 0.90184,
+            "b": 0.91748,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/brand/200",
+          "id": "VariableID:6:6",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-brand-200)",
+          "scopes": [],
+          "value": {
+            "r": 0.98577,
+            "g": 0.81292,
+            "b": 0.84416,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/brand/300",
+          "id": "VariableID:6:7",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-brand-300)",
+          "scopes": [],
+          "value": {
+            "r": 0.97599,
+            "g": 0.68219,
+            "b": 0.74136,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/brand/400",
+          "id": "VariableID:6:8",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-brand-400)",
+          "scopes": [],
+          "value": {
+            "r": 0.89966,
+            "g": 0.52954,
+            "b": 0.6125,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/brand/50",
+          "id": "VariableID:6:4",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-brand-50)",
+          "scopes": [],
+          "value": {
+            "r": 0.99654,
+            "g": 0.95745,
+            "b": 0.96384,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/brand/500",
+          "id": "VariableID:6:9",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-brand-500)",
+          "scopes": [],
+          "value": {
+            "r": 0.80793,
+            "g": 0.44716,
+            "b": 0.53084,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/brand/600",
+          "id": "VariableID:6:10",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-brand-600)",
+          "scopes": [],
+          "value": {
+            "r": 0.70829,
+            "g": 0.35816,
+            "b": 0.4433,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/brand/700",
+          "id": "VariableID:6:11",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-brand-700)",
+          "scopes": [],
+          "value": {
+            "r": 0.60021,
+            "g": 0.26179,
+            "b": 0.3501,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/brand/800",
+          "id": "VariableID:6:12",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-brand-800)",
+          "scopes": [],
+          "value": {
+            "r": 0.50589,
+            "g": 0.17647,
+            "b": 0.27059,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/brand/900",
+          "id": "VariableID:6:13",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-brand-900)",
+          "scopes": [],
+          "value": {
+            "r": 0.40428,
+            "g": 0.16023,
+            "b": 0.22511,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/brand/950",
+          "id": "VariableID:6:14",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-brand-950)",
+          "scopes": [],
+          "value": {
+            "r": 0.22882,
+            "g": 0.08516,
+            "b": 0.12217,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/gray/100",
+          "id": "VariableID:6:16",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-gray-100)",
+          "scopes": [],
+          "value": {
+            "r": 0.95284,
+            "g": 0.95693,
+            "b": 0.96512,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/gray/200",
+          "id": "VariableID:6:17",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-gray-200)",
+          "scopes": [],
+          "value": {
+            "r": 0.89834,
+            "g": 0.90644,
+            "b": 0.92263,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/gray/300",
+          "id": "VariableID:6:18",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-gray-300)",
+          "scopes": [],
+          "value": {
+            "r": 0.81902,
+            "g": 0.83581,
+            "b": 0.86101,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/gray/400",
+          "id": "VariableID:6:19",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-gray-400)",
+          "scopes": [],
+          "value": {
+            "r": 0.60001,
+            "g": 0.6314,
+            "b": 0.68522,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/gray/50",
+          "id": "VariableID:6:15",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-gray-50)",
+          "scopes": [],
+          "value": {
+            "r": 0.97639,
+            "g": 0.98099,
+            "b": 0.98559,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/gray/500",
+          "id": "VariableID:6:20",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-gray-500)",
+          "scopes": [],
+          "value": {
+            "r": 0.41545,
+            "g": 0.44709,
+            "b": 0.5105,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/gray/600",
+          "id": "VariableID:6:21",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-gray-600)",
+          "scopes": [],
+          "value": {
+            "r": 0.28883,
+            "g": 0.33355,
+            "b": 0.39612,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/gray/700",
+          "id": "VariableID:6:22",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-gray-700)",
+          "scopes": [],
+          "value": {
+            "r": 0.21153,
+            "g": 0.25503,
+            "b": 0.32471,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/gray/800",
+          "id": "VariableID:6:23",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-gray-800)",
+          "scopes": [],
+          "value": {
+            "r": 0.11697,
+            "g": 0.16075,
+            "b": 0.22202,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/gray/900",
+          "id": "VariableID:6:24",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-gray-900)",
+          "scopes": [],
+          "value": {
+            "r": 0.06453,
+            "g": 0.09374,
+            "b": 0.15678,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/gray/950",
+          "id": "VariableID:6:25",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-gray-950)",
+          "scopes": [],
+          "value": {
+            "r": 0.01158,
+            "g": 0.02761,
+            "b": 0.07188,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/green/100",
+          "id": "VariableID:6:60",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-green-100)",
+          "scopes": [],
+          "value": {
+            "r": 0.86088,
+            "g": 0.98821,
+            "b": 0.9047,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/green/200",
+          "id": "VariableID:6:61",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-green-200)",
+          "scopes": [],
+          "value": {
+            "r": 0.72508,
+            "g": 0.97126,
+            "b": 0.81184,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/green/300",
+          "id": "VariableID:6:62",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-green-300)",
+          "scopes": [],
+          "value": {
+            "r": 0.48146,
+            "g": 0.94635,
+            "b": 0.657,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/green/400",
+          "id": "VariableID:6:63",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-green-400)",
+          "scopes": [],
+          "value": {
+            "r": 0.01987,
+            "g": 0.87531,
+            "b": 0.44851,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/green/50",
+          "id": "VariableID:6:59",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-green-50)",
+          "scopes": [],
+          "value": {
+            "r": 0.94139,
+            "g": 0.9922,
+            "b": 0.95702,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/green/500",
+          "id": "VariableID:6:64",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-green-500)",
+          "scopes": [],
+          "value": {
+            "r": 0.0,
+            "g": 0.78716,
+            "b": 0.31562,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/green/600",
+          "id": "VariableID:6:65",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-green-600)",
+          "scopes": [],
+          "value": {
+            "r": 0.0,
+            "g": 0.6513,
+            "b": 0.24199,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/green/700",
+          "id": "VariableID:6:66",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-green-700)",
+          "scopes": [],
+          "value": {
+            "r": 0.0,
+            "g": 0.51,
+            "b": 0.20981,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/green/800",
+          "id": "VariableID:6:67",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-green-800)",
+          "scopes": [],
+          "value": {
+            "r": 0.0058,
+            "g": 0.40148,
+            "b": 0.18859,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/green/900",
+          "id": "VariableID:6:68",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-green-900)",
+          "scopes": [],
+          "value": {
+            "r": 0.05113,
+            "g": 0.32869,
+            "b": 0.17017,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/green/950",
+          "id": "VariableID:6:69",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-green-950)",
+          "scopes": [],
+          "value": {
+            "r": 0.012,
+            "g": 0.181,
+            "b": 0.0835,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/orange/100",
+          "id": "VariableID:6:49",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-orange-100)",
+          "scopes": [],
+          "value": {
+            "r": 1.0,
+            "g": 0.92888,
+            "b": 0.83258,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/orange/200",
+          "id": "VariableID:6:50",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-orange-200)",
+          "scopes": [],
+          "value": {
+            "r": 1.0,
+            "g": 0.84112,
+            "b": 0.65683,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/orange/300",
+          "id": "VariableID:6:51",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-orange-300)",
+          "scopes": [],
+          "value": {
+            "r": 1.0,
+            "g": 0.72228,
+            "b": 0.41393,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/orange/400",
+          "id": "VariableID:6:52",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-orange-400)",
+          "scopes": [],
+          "value": {
+            "r": 1.0,
+            "g": 0.53702,
+            "b": 0.01384,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/orange/50",
+          "id": "VariableID:6:48",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-orange-50)",
+          "scopes": [],
+          "value": {
+            "r": 1.0,
+            "g": 0.96905,
+            "b": 0.92926,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/orange/500",
+          "id": "VariableID:6:53",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-orange-500)",
+          "scopes": [],
+          "value": {
+            "r": 1.0,
+            "g": 0.41073,
+            "b": 0.0,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/orange/600",
+          "id": "VariableID:6:54",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-orange-600)",
+          "scopes": [],
+          "value": {
+            "r": 0.96071,
+            "g": 0.28819,
+            "b": 0.0,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/orange/700",
+          "id": "VariableID:6:55",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-orange-700)",
+          "scopes": [],
+          "value": {
+            "r": 0.79188,
+            "g": 0.20727,
+            "b": 0.0,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/orange/800",
+          "id": "VariableID:6:56",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-orange-800)",
+          "scopes": [],
+          "value": {
+            "r": 0.6245,
+            "g": 0.17663,
+            "b": 0.0,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/orange/900",
+          "id": "VariableID:6:57",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-orange-900)",
+          "scopes": [],
+          "value": {
+            "r": 0.49512,
+            "g": 0.16542,
+            "b": 0.04565,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/orange/950",
+          "id": "VariableID:6:58",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-orange-950)",
+          "scopes": [],
+          "value": {
+            "r": 0.26643,
+            "g": 0.07441,
+            "b": 0.02191,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/red/100",
+          "id": "VariableID:6:38",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-red-100)",
+          "scopes": [],
+          "value": {
+            "r": 0.9993,
+            "g": 0.88564,
+            "b": 0.88568,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/red/200",
+          "id": "VariableID:6:39",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-red-200)",
+          "scopes": [],
+          "value": {
+            "r": 1.0,
+            "g": 0.78984,
+            "b": 0.79003,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/red/300",
+          "id": "VariableID:6:40",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-red-300)",
+          "scopes": [],
+          "value": {
+            "r": 1.0,
+            "g": 0.63468,
+            "b": 0.63637,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/red/400",
+          "id": "VariableID:6:41",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-red-400)",
+          "scopes": [],
+          "value": {
+            "r": 1.0,
+            "g": 0.39115,
+            "b": 0.40386,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/red/50",
+          "id": "VariableID:6:37",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-red-50)",
+          "scopes": [],
+          "value": {
+            "r": 0.99684,
+            "g": 0.94959,
+            "b": 0.94959,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/red/500",
+          "id": "VariableID:6:42",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-red-500)",
+          "scopes": [],
+          "value": {
+            "r": 0.98266,
+            "g": 0.1718,
+            "b": 0.21307,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/red/600",
+          "id": "VariableID:6:43",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-red-600)",
+          "scopes": [],
+          "value": {
+            "r": 0.90646,
+            "g": 0.0,
+            "b": 0.04221,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/red/700",
+          "id": "VariableID:6:44",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-red-700)",
+          "scopes": [],
+          "value": {
+            "r": 0.75688,
+            "g": 0.0,
+            "b": 0.02875,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/red/800",
+          "id": "VariableID:6:45",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-red-800)",
+          "scopes": [],
+          "value": {
+            "r": 0.62221,
+            "g": 0.02879,
+            "b": 0.06894,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/red/900",
+          "id": "VariableID:6:46",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-red-900)",
+          "scopes": [],
+          "value": {
+            "r": 0.50917,
+            "g": 0.09233,
+            "b": 0.10069,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/red/950",
+          "id": "VariableID:6:47",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-red-950)",
+          "scopes": [],
+          "value": {
+            "r": 0.2754,
+            "g": 0.03159,
+            "b": 0.0345,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "color/white",
+          "id": "VariableID:6:2",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-color-white)",
+          "scopes": [],
+          "value": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          }
+        },
+        {
+          "name": "font-family/mono",
+          "id": "VariableID:6:100",
+          "type": "STRING",
+          "codeSyntax": "var(--primitive-font-family-mono)",
+          "scopes": [],
+          "value": "SFMono-Regular"
+        },
+        {
+          "name": "font-family/sans",
+          "id": "VariableID:6:99",
+          "type": "STRING",
+          "codeSyntax": "var(--primitive-font-family-sans)",
+          "scopes": [],
+          "value": "Inter"
+        },
+        {
+          "name": "font-size/2xl",
+          "id": "VariableID:6:106",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-font-size-2xl)",
+          "scopes": [],
+          "value": 24
+        },
+        {
+          "name": "font-size/3xl",
+          "id": "VariableID:6:107",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-font-size-3xl)",
+          "scopes": [],
+          "value": 30
+        },
+        {
+          "name": "font-size/4xl",
+          "id": "VariableID:6:108",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-font-size-4xl)",
+          "scopes": [],
+          "value": 36
+        },
+        {
+          "name": "font-size/5xl",
+          "id": "VariableID:6:109",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-font-size-5xl)",
+          "scopes": [],
+          "value": 48
+        },
+        {
+          "name": "font-size/base",
+          "id": "VariableID:6:103",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-font-size-base)",
+          "scopes": [],
+          "value": 16
+        },
+        {
+          "name": "font-size/lg",
+          "id": "VariableID:6:104",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-font-size-lg)",
+          "scopes": [],
+          "value": 18
+        },
+        {
+          "name": "font-size/sm",
+          "id": "VariableID:6:102",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-font-size-sm)",
+          "scopes": [],
+          "value": 14
+        },
+        {
+          "name": "font-size/xl",
+          "id": "VariableID:6:105",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-font-size-xl)",
+          "scopes": [],
+          "value": 20
+        },
+        {
+          "name": "font-size/xs",
+          "id": "VariableID:6:101",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-font-size-xs)",
+          "scopes": [],
+          "value": 12
+        },
+        {
+          "name": "font-weight/400",
+          "id": "VariableID:6:110",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-font-weight-400)",
+          "scopes": [],
+          "value": 400
+        },
+        {
+          "name": "font-weight/500",
+          "id": "VariableID:6:111",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-font-weight-500)",
+          "scopes": [],
+          "value": 500
+        },
+        {
+          "name": "font-weight/600",
+          "id": "VariableID:6:112",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-font-weight-600)",
+          "scopes": [],
+          "value": 600
+        },
+        {
+          "name": "font-weight/700",
+          "id": "VariableID:6:113",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-font-weight-700)",
+          "scopes": [],
+          "value": 700
+        },
+        {
+          "name": "line-height/1000",
+          "id": "VariableID:6:120",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-line-height-1000)",
+          "scopes": [],
+          "value": 40
+        },
+        {
+          "name": "line-height/1200",
+          "id": "VariableID:6:121",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-line-height-1200)",
+          "scopes": [],
+          "value": 48
+        },
+        {
+          "name": "line-height/400",
+          "id": "VariableID:6:114",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-line-height-400)",
+          "scopes": [],
+          "value": 16
+        },
+        {
+          "name": "line-height/500",
+          "id": "VariableID:6:115",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-line-height-500)",
+          "scopes": [],
+          "value": 20
+        },
+        {
+          "name": "line-height/600",
+          "id": "VariableID:6:116",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-line-height-600)",
+          "scopes": [],
+          "value": 24
+        },
+        {
+          "name": "line-height/700",
+          "id": "VariableID:6:117",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-line-height-700)",
+          "scopes": [],
+          "value": 28
+        },
+        {
+          "name": "line-height/800",
+          "id": "VariableID:6:118",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-line-height-800)",
+          "scopes": [],
+          "value": 32
+        },
+        {
+          "name": "line-height/900",
+          "id": "VariableID:6:119",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-line-height-900)",
+          "scopes": [],
+          "value": 36
+        },
+        {
+          "name": "radius/0",
+          "id": "VariableID:6:85",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-radius-0)",
+          "scopes": [],
+          "value": 0
+        },
+        {
+          "name": "radius/050",
+          "id": "VariableID:6:86",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-radius-050)",
+          "scopes": [],
+          "value": 2
+        },
+        {
+          "name": "radius/100",
+          "id": "VariableID:6:87",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-radius-100)",
+          "scopes": [],
+          "value": 4
+        },
+        {
+          "name": "radius/150",
+          "id": "VariableID:6:88",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-radius-150)",
+          "scopes": [],
+          "value": 6
+        },
+        {
+          "name": "radius/200",
+          "id": "VariableID:6:89",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-radius-200)",
+          "scopes": [],
+          "value": 8
+        },
+        {
+          "name": "radius/300",
+          "id": "VariableID:6:90",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-radius-300)",
+          "scopes": [],
+          "value": 12
+        },
+        {
+          "name": "radius/400",
+          "id": "VariableID:6:91",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-radius-400)",
+          "scopes": [],
+          "value": 16
+        },
+        {
+          "name": "radius/600",
+          "id": "VariableID:6:92",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-radius-600)",
+          "scopes": [],
+          "value": 24
+        },
+        {
+          "name": "radius/full",
+          "id": "VariableID:6:93",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-radius-full)",
+          "scopes": [],
+          "value": 9999
+        },
+        {
+          "name": "shadow/blur/100",
+          "id": "VariableID:6:127",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-shadow-blur-100)",
+          "scopes": [],
+          "value": 1
+        },
+        {
+          "name": "shadow/blur/1600",
+          "id": "VariableID:6:131",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-shadow-blur-1600)",
+          "scopes": [],
+          "value": 16
+        },
+        {
+          "name": "shadow/blur/200",
+          "id": "VariableID:6:128",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-shadow-blur-200)",
+          "scopes": [],
+          "value": 2
+        },
+        {
+          "name": "shadow/blur/400",
+          "id": "VariableID:6:129",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-shadow-blur-400)",
+          "scopes": [],
+          "value": 4
+        },
+        {
+          "name": "shadow/blur/800",
+          "id": "VariableID:6:130",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-shadow-blur-800)",
+          "scopes": [],
+          "value": 8
+        },
+        {
+          "name": "shadow/color/10",
+          "id": "VariableID:6:133",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-shadow-color-10)",
+          "scopes": [],
+          "value": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.1
+          }
+        },
+        {
+          "name": "shadow/color/25",
+          "id": "VariableID:6:134",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-shadow-color-25)",
+          "scopes": [],
+          "value": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.25
+          }
+        },
+        {
+          "name": "shadow/color/5",
+          "id": "VariableID:6:132",
+          "type": "COLOR",
+          "codeSyntax": "var(--primitive-shadow-color-5)",
+          "scopes": [],
+          "value": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.05
+          }
+        },
+        {
+          "name": "shadow/offset/0",
+          "id": "VariableID:6:122",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-shadow-offset-0)",
+          "scopes": [],
+          "value": 0
+        },
+        {
+          "name": "shadow/offset/100",
+          "id": "VariableID:6:123",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-shadow-offset-100)",
+          "scopes": [],
+          "value": 1
+        },
+        {
+          "name": "shadow/offset/200",
+          "id": "VariableID:6:124",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-shadow-offset-200)",
+          "scopes": [],
+          "value": 2
+        },
+        {
+          "name": "shadow/offset/400",
+          "id": "VariableID:6:125",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-shadow-offset-400)",
+          "scopes": [],
+          "value": 4
+        },
+        {
+          "name": "shadow/offset/800",
+          "id": "VariableID:6:126",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-shadow-offset-800)",
+          "scopes": [],
+          "value": 8
+        },
+        {
+          "name": "spacing/0",
+          "id": "VariableID:6:70",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-0)",
+          "scopes": [],
+          "value": 0
+        },
+        {
+          "name": "spacing/050",
+          "id": "VariableID:6:71",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-050)",
+          "scopes": [],
+          "value": 2
+        },
+        {
+          "name": "spacing/100",
+          "id": "VariableID:6:72",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-100)",
+          "scopes": [],
+          "value": 4
+        },
+        {
+          "name": "spacing/1000",
+          "id": "VariableID:6:80",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-1000)",
+          "scopes": [],
+          "value": 40
+        },
+        {
+          "name": "spacing/1200",
+          "id": "VariableID:6:81",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-1200)",
+          "scopes": [],
+          "value": 48
+        },
+        {
+          "name": "spacing/150",
+          "id": "VariableID:6:73",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-150)",
+          "scopes": [],
+          "value": 6
+        },
+        {
+          "name": "spacing/1600",
+          "id": "VariableID:6:82",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-1600)",
+          "scopes": [],
+          "value": 64
+        },
+        {
+          "name": "spacing/200",
+          "id": "VariableID:6:74",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-200)",
+          "scopes": [],
+          "value": 8
+        },
+        {
+          "name": "spacing/2000",
+          "id": "VariableID:6:83",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-2000)",
+          "scopes": [],
+          "value": 80
+        },
+        {
+          "name": "spacing/2400",
+          "id": "VariableID:6:84",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-2400)",
+          "scopes": [],
+          "value": 96
+        },
+        {
+          "name": "spacing/300",
+          "id": "VariableID:6:75",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-300)",
+          "scopes": [],
+          "value": 12
+        },
+        {
+          "name": "spacing/400",
+          "id": "VariableID:6:76",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-400)",
+          "scopes": [],
+          "value": 16
+        },
+        {
+          "name": "spacing/500",
+          "id": "VariableID:6:77",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-500)",
+          "scopes": [],
+          "value": 20
+        },
+        {
+          "name": "spacing/600",
+          "id": "VariableID:6:78",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-600)",
+          "scopes": [],
+          "value": 24
+        },
+        {
+          "name": "spacing/800",
+          "id": "VariableID:6:79",
+          "type": "FLOAT",
+          "codeSyntax": "var(--primitive-spacing-800)",
+          "scopes": [],
+          "value": 32
+        }
+      ]
+    },
+    {
+      "name": "Semantic",
+      "id": "VariableCollectionId:5:3",
+      "variables": [
+        {
+          "name": "border-width",
+          "id": "VariableID:7:96",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-border-width-default)",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "alias": "border-width/1"
+        },
+        {
+          "name": "border-width/focus",
+          "id": "VariableID:7:98",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-border-width-focus)",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "alias": "border-width/2"
+        },
+        {
+          "name": "border-width/strong",
+          "id": "VariableID:7:97",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-border-width-strong)",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "alias": "border-width/2"
+        },
+        {
+          "name": "color/background/brand",
+          "id": "VariableID:5:5",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-brand-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/brand/800"
+        },
+        {
+          "name": "color/background/brand/hover",
+          "id": "VariableID:5:6",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-brand-hover)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/brand/900"
+        },
+        {
+          "name": "color/background/brand/pressed",
+          "id": "VariableID:7:13",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-brand-pressed)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/brand/950"
+        },
+        {
+          "name": "color/background/brand/subtle",
+          "id": "VariableID:7:10",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-brand-subtle-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/brand/100"
+        },
+        {
+          "name": "color/background/brand/subtle/hover",
+          "id": "VariableID:7:11",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-brand-subtle-hover)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/brand/200"
+        },
+        {
+          "name": "color/background/brand/subtle/pressed",
+          "id": "VariableID:7:12",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-brand-subtle-pressed)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/brand/200"
+        },
+        {
+          "name": "color/background/error",
+          "id": "VariableID:7:20",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-error-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/red/700"
+        },
+        {
+          "name": "color/background/error/hover",
+          "id": "VariableID:7:22",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-error-hover)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/red/800"
+        },
+        {
+          "name": "color/background/error/pressed",
+          "id": "VariableID:7:23",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-error-pressed)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/red/900"
+        },
+        {
+          "name": "color/background/error/subtle",
+          "id": "VariableID:7:21",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-error-subtle-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/red/100"
+        },
+        {
+          "name": "color/background/info",
+          "id": "VariableID:7:14",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-info-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/blue/700"
+        },
+        {
+          "name": "color/background/info/subtle",
+          "id": "VariableID:7:15",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-info-subtle-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/blue/100"
+        },
+        {
+          "name": "color/background/neutral",
+          "id": "VariableID:7:2",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-neutral-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "color/background/neutral/disabled",
+          "id": "VariableID:7:8",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-neutral-disabled)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/gray/100"
+        },
+        {
+          "name": "color/background/neutral/hover",
+          "id": "VariableID:7:6",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-neutral-hover)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/gray/100"
+        },
+        {
+          "name": "color/background/neutral/inverted",
+          "id": "VariableID:7:5",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-neutral-inverted-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/gray/900"
+        },
+        {
+          "name": "color/background/neutral/overlay",
+          "id": "VariableID:7:9",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-neutral-overlay-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/black/50"
+        },
+        {
+          "name": "color/background/neutral/pressed",
+          "id": "VariableID:7:7",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-neutral-pressed)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/gray/200"
+        },
+        {
+          "name": "color/background/neutral/strong",
+          "id": "VariableID:7:4",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-neutral-strong-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/gray/200"
+        },
+        {
+          "name": "color/background/neutral/subtle",
+          "id": "VariableID:7:3",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-neutral-subtle-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/gray/50"
+        },
+        {
+          "name": "color/background/success",
+          "id": "VariableID:7:16",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-success-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/green/700"
+        },
+        {
+          "name": "color/background/success/subtle",
+          "id": "VariableID:7:17",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-success-subtle-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/green/100"
+        },
+        {
+          "name": "color/background/warning",
+          "id": "VariableID:7:18",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-warning-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/orange/700"
+        },
+        {
+          "name": "color/background/warning/subtle",
+          "id": "VariableID:7:19",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-background-warning-subtle-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/orange/100"
+        },
+        {
+          "name": "color/border/brand",
+          "id": "VariableID:7:54",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-border-brand-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/brand/700"
+        },
+        {
+          "name": "color/border/error",
+          "id": "VariableID:7:58",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-border-error-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/red/700"
+        },
+        {
+          "name": "color/border/focus",
+          "id": "VariableID:7:59",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-border-focus)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/brand/900"
+        },
+        {
+          "name": "color/border/focus-outer",
+          "id": "VariableID:7:60",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-border-focus-outer)",
+          "scopes": [
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "color/border/info",
+          "id": "VariableID:7:55",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-border-info-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/blue/700"
+        },
+        {
+          "name": "color/border/neutral",
+          "id": "VariableID:7:52",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-border-neutral-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/gray/200"
+        },
+        {
+          "name": "color/border/neutral/strong",
+          "id": "VariableID:7:53",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-border-neutral-strong-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/gray/500"
+        },
+        {
+          "name": "color/border/success",
+          "id": "VariableID:7:56",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-border-success-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/green/700"
+        },
+        {
+          "name": "color/border/warning",
+          "id": "VariableID:7:57",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-border-warning-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/orange/700"
+        },
+        {
+          "name": "color/icon/brand",
+          "id": "VariableID:7:42",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-brand-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/brand/700"
+        },
+        {
+          "name": "color/icon/brand/inverted",
+          "id": "VariableID:7:43",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-brand-inverted-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "color/icon/error",
+          "id": "VariableID:7:50",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-error-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/red/700"
+        },
+        {
+          "name": "color/icon/error/inverted",
+          "id": "VariableID:7:51",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-error-inverted-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "color/icon/info",
+          "id": "VariableID:7:44",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-info-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/blue/700"
+        },
+        {
+          "name": "color/icon/info/inverted",
+          "id": "VariableID:7:45",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-info-inverted-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "color/icon/neutral",
+          "id": "VariableID:7:38",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-neutral-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/gray/700"
+        },
+        {
+          "name": "color/icon/neutral/disabled",
+          "id": "VariableID:7:41",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-neutral-disabled)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/gray/400"
+        },
+        {
+          "name": "color/icon/neutral/inverted",
+          "id": "VariableID:7:40",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-neutral-inverted-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "color/icon/neutral/subtle",
+          "id": "VariableID:7:39",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-neutral-subtle-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/gray/500"
+        },
+        {
+          "name": "color/icon/success",
+          "id": "VariableID:7:46",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-success-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/green/700"
+        },
+        {
+          "name": "color/icon/success/inverted",
+          "id": "VariableID:7:47",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-success-inverted-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "color/icon/warning",
+          "id": "VariableID:7:48",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-warning-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/orange/700"
+        },
+        {
+          "name": "color/icon/warning/inverted",
+          "id": "VariableID:7:49",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-icon-warning-inverted-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "color/text/brand",
+          "id": "VariableID:7:28",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-brand-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/brand/800"
+        },
+        {
+          "name": "color/text/brand/inverted",
+          "id": "VariableID:7:29",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-brand-inverted-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "color/text/error",
+          "id": "VariableID:7:36",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-error-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/red/800"
+        },
+        {
+          "name": "color/text/error/inverted",
+          "id": "VariableID:7:37",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-error-inverted-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "color/text/info",
+          "id": "VariableID:7:30",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-info-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/blue/800"
+        },
+        {
+          "name": "color/text/info/inverted",
+          "id": "VariableID:7:31",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-info-inverted-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "color/text/neutral",
+          "id": "VariableID:7:24",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-neutral-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/gray/900"
+        },
+        {
+          "name": "color/text/neutral/disabled",
+          "id": "VariableID:7:27",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-neutral-disabled)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/gray/400"
+        },
+        {
+          "name": "color/text/neutral/inverted",
+          "id": "VariableID:7:26",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-neutral-inverted-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "color/text/neutral/subtle",
+          "id": "VariableID:7:25",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-neutral-subtle-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/gray/600"
+        },
+        {
+          "name": "color/text/success",
+          "id": "VariableID:7:32",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-success-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/green/800"
+        },
+        {
+          "name": "color/text/success/inverted",
+          "id": "VariableID:7:33",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-success-inverted-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "color/text/warning",
+          "id": "VariableID:7:34",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-warning-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/orange/800"
+        },
+        {
+          "name": "color/text/warning/inverted",
+          "id": "VariableID:7:35",
+          "type": "COLOR",
+          "codeSyntax": "var(--semantic-color-text-warning-inverted-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/white"
+        },
+        {
+          "name": "font-family",
+          "id": "VariableID:7:61",
+          "type": "STRING",
+          "codeSyntax": "var(--semantic-font-family-default)",
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "alias": "font-family/sans"
+        },
+        {
+          "name": "radius/full",
+          "id": "VariableID:7:95",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-radius-full)",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "alias": "radius/full"
+        },
+        {
+          "name": "radius/lg",
+          "id": "VariableID:7:93",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-radius-lg)",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "alias": "radius/300"
+        },
+        {
+          "name": "radius/md",
+          "id": "VariableID:7:92",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-radius-md)",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "alias": "radius/200"
+        },
+        {
+          "name": "radius/none",
+          "id": "VariableID:7:90",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-radius-none)",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "alias": "radius/0"
+        },
+        {
+          "name": "radius/sm",
+          "id": "VariableID:7:91",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-radius-sm)",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "alias": "radius/100"
+        },
+        {
+          "name": "radius/xl",
+          "id": "VariableID:7:94",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-radius-xl)",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "alias": "radius/400"
+        },
+        {
+          "name": "space/2xl",
+          "id": "VariableID:7:87",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-space-2xl)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "spacing/800"
+        },
+        {
+          "name": "space/2xs",
+          "id": "VariableID:7:81",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-space-2xs)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "spacing/050"
+        },
+        {
+          "name": "space/3xl",
+          "id": "VariableID:7:88",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-space-3xl)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "spacing/1200"
+        },
+        {
+          "name": "space/4xl",
+          "id": "VariableID:7:89",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-space-4xl)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "spacing/1600"
+        },
+        {
+          "name": "space/lg",
+          "id": "VariableID:7:85",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-space-lg)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "spacing/400"
+        },
+        {
+          "name": "space/md",
+          "id": "VariableID:7:84",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-space-md)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "spacing/300"
+        },
+        {
+          "name": "space/none",
+          "id": "VariableID:7:80",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-space-none)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "spacing/0"
+        },
+        {
+          "name": "space/sm",
+          "id": "VariableID:7:83",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-space-sm)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "spacing/200"
+        },
+        {
+          "name": "space/xl",
+          "id": "VariableID:7:86",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-space-xl)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "spacing/600"
+        },
+        {
+          "name": "space/xs",
+          "id": "VariableID:7:82",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-space-xs)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "spacing/100"
+        },
+        {
+          "name": "typography/body/font-size",
+          "id": "VariableID:7:71",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-body-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "font-size/base"
+        },
+        {
+          "name": "typography/body/font-weight",
+          "id": "VariableID:7:73",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-body-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "font-weight/400"
+        },
+        {
+          "name": "typography/body/line-height",
+          "id": "VariableID:7:72",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-body-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "line-height/600"
+        },
+        {
+          "name": "typography/caption/font-size",
+          "id": "VariableID:7:77",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-caption-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "font-size/xs"
+        },
+        {
+          "name": "typography/caption/font-weight",
+          "id": "VariableID:7:79",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-caption-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "font-weight/400"
+        },
+        {
+          "name": "typography/caption/line-height",
+          "id": "VariableID:7:78",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-caption-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "line-height/400"
+        },
+        {
+          "name": "typography/display/font-size",
+          "id": "VariableID:7:62",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-display-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "font-size/5xl"
+        },
+        {
+          "name": "typography/display/font-weight",
+          "id": "VariableID:7:64",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-display-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "font-weight/700"
+        },
+        {
+          "name": "typography/display/line-height",
+          "id": "VariableID:7:63",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-display-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "line-height/1200"
+        },
+        {
+          "name": "typography/heading/font-size",
+          "id": "VariableID:7:65",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-heading-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "font-size/3xl"
+        },
+        {
+          "name": "typography/heading/font-weight",
+          "id": "VariableID:7:67",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-heading-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "font-weight/700"
+        },
+        {
+          "name": "typography/heading/line-height",
+          "id": "VariableID:7:66",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-heading-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "line-height/900"
+        },
+        {
+          "name": "typography/label/font-size",
+          "id": "VariableID:7:74",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-label-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "font-size/sm"
+        },
+        {
+          "name": "typography/label/font-weight",
+          "id": "VariableID:7:76",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-label-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "font-weight/500"
+        },
+        {
+          "name": "typography/label/line-height",
+          "id": "VariableID:7:75",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-label-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "line-height/500"
+        },
+        {
+          "name": "typography/title/font-size",
+          "id": "VariableID:7:68",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-title-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "font-size/xl"
+        },
+        {
+          "name": "typography/title/font-weight",
+          "id": "VariableID:7:70",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-title-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "font-weight/600"
+        },
+        {
+          "name": "typography/title/line-height",
+          "id": "VariableID:7:69",
+          "type": "FLOAT",
+          "codeSyntax": "var(--semantic-typography-title-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "line-height/700"
+        }
+      ]
+    },
+    {
+      "name": "Component",
+      "id": "VariableCollectionId:5:4",
+      "variables": [
+        {
+          "name": "badge/background/brand/subtle",
+          "id": "VariableID:8:107",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-background-brand-subtle-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/brand/subtle"
+        },
+        {
+          "name": "badge/background/error/subtle",
+          "id": "VariableID:8:111",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-background-error-subtle-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/error/subtle"
+        },
+        {
+          "name": "badge/background/info/subtle",
+          "id": "VariableID:8:108",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-background-info-subtle-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/info/subtle"
+        },
+        {
+          "name": "badge/background/neutral/strong",
+          "id": "VariableID:8:106",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-background-neutral-strong-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral/strong"
+        },
+        {
+          "name": "badge/background/success/subtle",
+          "id": "VariableID:8:109",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-background-success-subtle-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/success/subtle"
+        },
+        {
+          "name": "badge/background/warning/subtle",
+          "id": "VariableID:8:110",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-background-warning-subtle-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/warning/subtle"
+        },
+        {
+          "name": "badge/gap/md",
+          "id": "VariableID:8:130",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-badge-gap-md)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/xs"
+        },
+        {
+          "name": "badge/gap/sm",
+          "id": "VariableID:8:129",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-badge-gap-sm)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/xs"
+        },
+        {
+          "name": "badge/icon/brand",
+          "id": "VariableID:8:119",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-icon-brand-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/brand"
+        },
+        {
+          "name": "badge/icon/error",
+          "id": "VariableID:8:123",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-icon-error-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/error"
+        },
+        {
+          "name": "badge/icon/info",
+          "id": "VariableID:8:120",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-icon-info-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/info"
+        },
+        {
+          "name": "badge/icon/neutral",
+          "id": "VariableID:8:118",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-icon-neutral-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/neutral"
+        },
+        {
+          "name": "badge/icon/success",
+          "id": "VariableID:8:121",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-icon-success-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/success"
+        },
+        {
+          "name": "badge/icon/warning",
+          "id": "VariableID:8:122",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-icon-warning-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/warning"
+        },
+        {
+          "name": "badge/label/font-size/md",
+          "id": "VariableID:8:132",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-badge-label-font-size-md)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/label/font-size"
+        },
+        {
+          "name": "badge/label/font-size/sm",
+          "id": "VariableID:8:131",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-badge-label-font-size-sm)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/caption/font-size"
+        },
+        {
+          "name": "badge/label/font-weight",
+          "id": "VariableID:8:135",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-badge-label-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/label/font-weight"
+        },
+        {
+          "name": "badge/label/line-height/md",
+          "id": "VariableID:8:134",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-badge-label-line-height-md)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/label/line-height"
+        },
+        {
+          "name": "badge/label/line-height/sm",
+          "id": "VariableID:8:133",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-badge-label-line-height-sm)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/caption/line-height"
+        },
+        {
+          "name": "badge/padding-x/md",
+          "id": "VariableID:8:126",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-badge-padding-x-md)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/md"
+        },
+        {
+          "name": "badge/padding-x/sm",
+          "id": "VariableID:8:125",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-badge-padding-x-sm)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/sm"
+        },
+        {
+          "name": "badge/padding-y/md",
+          "id": "VariableID:8:128",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-badge-padding-y-md)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/xs"
+        },
+        {
+          "name": "badge/padding-y/sm",
+          "id": "VariableID:8:127",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-badge-padding-y-sm)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/2xs"
+        },
+        {
+          "name": "badge/radius",
+          "id": "VariableID:8:124",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-badge-radius)",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "alias": "radius/full"
+        },
+        {
+          "name": "badge/text/brand",
+          "id": "VariableID:8:113",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-text-brand-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/brand"
+        },
+        {
+          "name": "badge/text/error",
+          "id": "VariableID:8:117",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-text-error-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/error"
+        },
+        {
+          "name": "badge/text/info",
+          "id": "VariableID:8:114",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-text-info-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/info"
+        },
+        {
+          "name": "badge/text/neutral",
+          "id": "VariableID:8:112",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-text-neutral-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral"
+        },
+        {
+          "name": "badge/text/success",
+          "id": "VariableID:8:115",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-text-success-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/success"
+        },
+        {
+          "name": "badge/text/warning",
+          "id": "VariableID:8:116",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-badge-text-warning-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/warning"
+        },
+        {
+          "name": "button/background/brand",
+          "id": "VariableID:8:6",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-background-brand-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/brand"
+        },
+        {
+          "name": "button/background/brand/hover",
+          "id": "VariableID:8:7",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-background-brand-hover)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/brand/hover"
+        },
+        {
+          "name": "button/background/brand/pressed",
+          "id": "VariableID:8:8",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-background-brand-pressed)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/brand/pressed"
+        },
+        {
+          "name": "button/background/brand/subtle",
+          "id": "VariableID:8:9",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-background-brand-subtle-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/brand/subtle"
+        },
+        {
+          "name": "button/background/brand/subtle/hover",
+          "id": "VariableID:8:10",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-background-brand-subtle-hover)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/brand/subtle/hover"
+        },
+        {
+          "name": "button/background/brand/subtle/pressed",
+          "id": "VariableID:8:11",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-background-brand-subtle-pressed)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/brand/subtle/pressed"
+        },
+        {
+          "name": "button/background/error",
+          "id": "VariableID:8:12",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-background-error-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/error"
+        },
+        {
+          "name": "button/background/error/hover",
+          "id": "VariableID:8:13",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-background-error-hover)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/error/hover"
+        },
+        {
+          "name": "button/background/error/pressed",
+          "id": "VariableID:8:14",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-background-error-pressed)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/error/pressed"
+        },
+        {
+          "name": "button/background/neutral",
+          "id": "VariableID:8:2",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-background-neutral-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral"
+        },
+        {
+          "name": "button/background/neutral/disabled",
+          "id": "VariableID:8:5",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-background-neutral-disabled)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral/disabled"
+        },
+        {
+          "name": "button/background/neutral/hover",
+          "id": "VariableID:8:3",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-background-neutral-hover)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral/hover"
+        },
+        {
+          "name": "button/background/neutral/pressed",
+          "id": "VariableID:8:4",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-background-neutral-pressed)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral/pressed"
+        },
+        {
+          "name": "button/border-width",
+          "id": "VariableID:8:28",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-border-width-default)",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "alias": "border-width"
+        },
+        {
+          "name": "button/border-width/focus",
+          "id": "VariableID:8:29",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-border-width-focus)",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "alias": "border-width/focus"
+        },
+        {
+          "name": "button/border/focus",
+          "id": "VariableID:8:26",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-border-focus)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/focus"
+        },
+        {
+          "name": "button/border/focus-outer",
+          "id": "VariableID:8:27",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-border-focus-outer)",
+          "scopes": [
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/focus-outer"
+        },
+        {
+          "name": "button/border/neutral/strong",
+          "id": "VariableID:8:25",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-border-neutral-strong-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/neutral/strong"
+        },
+        {
+          "name": "button/focus-offset",
+          "id": "VariableID:8:30",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-focus-offset)",
+          "scopes": [],
+          "alias": "space/2xs"
+        },
+        {
+          "name": "button/gap/lg",
+          "id": "VariableID:8:37",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-gap-lg)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/sm"
+        },
+        {
+          "name": "button/gap/md",
+          "id": "VariableID:8:36",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-gap-md)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/sm"
+        },
+        {
+          "name": "button/gap/sm",
+          "id": "VariableID:8:35",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-gap-sm)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/xs"
+        },
+        {
+          "name": "button/icon/brand",
+          "id": "VariableID:8:22",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-icon-brand-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/brand"
+        },
+        {
+          "name": "button/icon/brand/inverted",
+          "id": "VariableID:8:23",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-icon-brand-inverted-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/brand/inverted"
+        },
+        {
+          "name": "button/icon/error/inverted",
+          "id": "VariableID:8:24",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-icon-error-inverted-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/error/inverted"
+        },
+        {
+          "name": "button/icon/neutral",
+          "id": "VariableID:8:20",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-icon-neutral-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/neutral"
+        },
+        {
+          "name": "button/icon/neutral/disabled",
+          "id": "VariableID:8:21",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-icon-neutral-disabled)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/neutral/disabled"
+        },
+        {
+          "name": "button/label/font-size/lg",
+          "id": "VariableID:8:40",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-label-font-size-lg)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/body/font-size"
+        },
+        {
+          "name": "button/label/font-size/md",
+          "id": "VariableID:8:39",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-label-font-size-md)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/body/font-size"
+        },
+        {
+          "name": "button/label/font-size/sm",
+          "id": "VariableID:8:38",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-label-font-size-sm)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/label/font-size"
+        },
+        {
+          "name": "button/label/font-weight",
+          "id": "VariableID:8:44",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-label-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/label/font-weight"
+        },
+        {
+          "name": "button/label/line-height/lg",
+          "id": "VariableID:8:43",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-label-line-height-lg)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/body/line-height"
+        },
+        {
+          "name": "button/label/line-height/md",
+          "id": "VariableID:8:42",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-label-line-height-md)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/body/line-height"
+        },
+        {
+          "name": "button/label/line-height/sm",
+          "id": "VariableID:8:41",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-label-line-height-sm)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/label/line-height"
+        },
+        {
+          "name": "button/padding-x/lg",
+          "id": "VariableID:8:34",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-padding-x-lg)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/xl"
+        },
+        {
+          "name": "button/padding-x/md",
+          "id": "VariableID:8:33",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-padding-x-md)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/lg"
+        },
+        {
+          "name": "button/padding-x/sm",
+          "id": "VariableID:8:32",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-padding-x-sm)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/md"
+        },
+        {
+          "name": "button/radius",
+          "id": "VariableID:8:31",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-button-radius)",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "alias": "radius/md"
+        },
+        {
+          "name": "button/text/brand",
+          "id": "VariableID:8:17",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-text-brand-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/brand"
+        },
+        {
+          "name": "button/text/brand/inverted",
+          "id": "VariableID:8:18",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-text-brand-inverted-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/brand/inverted"
+        },
+        {
+          "name": "button/text/error/inverted",
+          "id": "VariableID:8:19",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-text-error-inverted-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/error/inverted"
+        },
+        {
+          "name": "button/text/neutral",
+          "id": "VariableID:8:15",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-text-neutral-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral"
+        },
+        {
+          "name": "button/text/neutral/disabled",
+          "id": "VariableID:8:16",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-button-text-neutral-disabled)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral/disabled"
+        },
+        {
+          "name": "card/background/neutral",
+          "id": "VariableID:8:81",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-card-background-neutral-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral"
+        },
+        {
+          "name": "card/border-width",
+          "id": "VariableID:8:101",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-border-width-default)",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "alias": "border-width"
+        },
+        {
+          "name": "card/border/neutral",
+          "id": "VariableID:8:82",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-card-border-neutral-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/neutral"
+        },
+        {
+          "name": "card/content/font-size",
+          "id": "VariableID:8:92",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-content-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/body/font-size"
+        },
+        {
+          "name": "card/content/font-weight",
+          "id": "VariableID:8:94",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-content-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/body/font-weight"
+        },
+        {
+          "name": "card/content/line-height",
+          "id": "VariableID:8:93",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-content-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/body/line-height"
+        },
+        {
+          "name": "card/content/text/neutral",
+          "id": "VariableID:8:91",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-card-content-text-neutral-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral"
+        },
+        {
+          "name": "card/description/font-size",
+          "id": "VariableID:8:88",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-description-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/label/font-size"
+        },
+        {
+          "name": "card/description/font-weight",
+          "id": "VariableID:8:90",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-description-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/body/font-weight"
+        },
+        {
+          "name": "card/description/line-height",
+          "id": "VariableID:8:89",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-description-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/label/line-height"
+        },
+        {
+          "name": "card/description/text/neutral/subtle",
+          "id": "VariableID:8:87",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-card-description-text-neutral-subtle-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral/subtle"
+        },
+        {
+          "name": "card/footer/background/neutral/subtle",
+          "id": "VariableID:8:95",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-card-footer-background-neutral-subtle-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral/subtle"
+        },
+        {
+          "name": "card/footer/border-width",
+          "id": "VariableID:8:97",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-footer-border-width-default)",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "alias": "border-width"
+        },
+        {
+          "name": "card/footer/border/neutral",
+          "id": "VariableID:8:96",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-card-footer-border-neutral-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/neutral"
+        },
+        {
+          "name": "card/footer/gap",
+          "id": "VariableID:8:100",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-footer-gap)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/sm"
+        },
+        {
+          "name": "card/footer/padding-x",
+          "id": "VariableID:8:98",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-footer-padding-x)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/xl"
+        },
+        {
+          "name": "card/footer/padding-y",
+          "id": "VariableID:8:99",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-footer-padding-y)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/md"
+        },
+        {
+          "name": "card/gap/header",
+          "id": "VariableID:8:105",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-gap-header)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/xs"
+        },
+        {
+          "name": "card/gap/sections",
+          "id": "VariableID:8:104",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-gap-sections)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/lg"
+        },
+        {
+          "name": "card/padding",
+          "id": "VariableID:8:103",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-padding)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/xl"
+        },
+        {
+          "name": "card/radius",
+          "id": "VariableID:8:102",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-radius)",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "alias": "radius/lg"
+        },
+        {
+          "name": "card/title/font-size",
+          "id": "VariableID:8:84",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-title-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/title/font-size"
+        },
+        {
+          "name": "card/title/font-weight",
+          "id": "VariableID:8:86",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-title-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/title/font-weight"
+        },
+        {
+          "name": "card/title/line-height",
+          "id": "VariableID:8:85",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-card-title-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/title/line-height"
+        },
+        {
+          "name": "card/title/text/neutral",
+          "id": "VariableID:8:83",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-card-title-text-neutral-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral"
+        },
+        {
+          "name": "dialog/backdrop/background/neutral/overlay",
+          "id": "VariableID:8:173",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-dialog-backdrop-background-neutral-overlay-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral/overlay"
+        },
+        {
+          "name": "dialog/background/neutral",
+          "id": "VariableID:8:172",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-dialog-background-neutral-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral"
+        },
+        {
+          "name": "dialog/content/font-size",
+          "id": "VariableID:8:179",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-dialog-content-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/body/font-size"
+        },
+        {
+          "name": "dialog/content/font-weight",
+          "id": "VariableID:8:181",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-dialog-content-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/body/font-weight"
+        },
+        {
+          "name": "dialog/content/line-height",
+          "id": "VariableID:8:180",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-dialog-content-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/body/line-height"
+        },
+        {
+          "name": "dialog/content/text/neutral",
+          "id": "VariableID:8:178",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-dialog-content-text-neutral-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral"
+        },
+        {
+          "name": "dialog/footer/gap",
+          "id": "VariableID:8:182",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-dialog-footer-gap)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/sm"
+        },
+        {
+          "name": "dialog/gap/header",
+          "id": "VariableID:8:185",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-dialog-gap-header)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/md"
+        },
+        {
+          "name": "dialog/gap/sections",
+          "id": "VariableID:8:186",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-dialog-gap-sections)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/lg"
+        },
+        {
+          "name": "dialog/padding",
+          "id": "VariableID:8:184",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-dialog-padding)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/xl"
+        },
+        {
+          "name": "dialog/radius",
+          "id": "VariableID:8:183",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-dialog-radius)",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "alias": "radius/lg"
+        },
+        {
+          "name": "dialog/title/font-size",
+          "id": "VariableID:8:175",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-dialog-title-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/title/font-size"
+        },
+        {
+          "name": "dialog/title/font-weight",
+          "id": "VariableID:8:177",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-dialog-title-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/title/font-weight"
+        },
+        {
+          "name": "dialog/title/line-height",
+          "id": "VariableID:8:176",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-dialog-title-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/title/line-height"
+        },
+        {
+          "name": "dialog/title/text/neutral",
+          "id": "VariableID:8:174",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-dialog-title-text-neutral-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral"
+        },
+        {
+          "name": "input/background/neutral",
+          "id": "VariableID:8:45",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-background-neutral-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral"
+        },
+        {
+          "name": "input/background/neutral/disabled",
+          "id": "VariableID:8:46",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-background-neutral-disabled)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral/disabled"
+        },
+        {
+          "name": "input/border-width",
+          "id": "VariableID:8:72",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-border-width-default)",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "alias": "border-width"
+        },
+        {
+          "name": "input/border-width/focus",
+          "id": "VariableID:8:73",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-border-width-focus)",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "alias": "border-width/focus"
+        },
+        {
+          "name": "input/border/error",
+          "id": "VariableID:8:50",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-border-error-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/error"
+        },
+        {
+          "name": "input/border/focus",
+          "id": "VariableID:8:51",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-border-focus)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/focus"
+        },
+        {
+          "name": "input/border/focus-outer",
+          "id": "VariableID:8:52",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-border-focus-outer)",
+          "scopes": [
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/focus-outer"
+        },
+        {
+          "name": "input/border/neutral/strong",
+          "id": "VariableID:8:49",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-border-neutral-strong-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/neutral/strong"
+        },
+        {
+          "name": "input/field/font-size/lg",
+          "id": "VariableID:8:61",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-field-font-size-lg)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/body/font-size"
+        },
+        {
+          "name": "input/field/font-size/md",
+          "id": "VariableID:8:60",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-field-font-size-md)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/body/font-size"
+        },
+        {
+          "name": "input/field/font-size/sm",
+          "id": "VariableID:8:59",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-field-font-size-sm)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/label/font-size"
+        },
+        {
+          "name": "input/field/font-weight",
+          "id": "VariableID:8:65",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-field-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/body/font-weight"
+        },
+        {
+          "name": "input/field/line-height/lg",
+          "id": "VariableID:8:64",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-field-line-height-lg)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/body/line-height"
+        },
+        {
+          "name": "input/field/line-height/md",
+          "id": "VariableID:8:63",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-field-line-height-md)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/body/line-height"
+        },
+        {
+          "name": "input/field/line-height/sm",
+          "id": "VariableID:8:62",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-field-line-height-sm)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/label/line-height"
+        },
+        {
+          "name": "input/field/text/neutral",
+          "id": "VariableID:8:57",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-field-text-neutral-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral"
+        },
+        {
+          "name": "input/field/text/neutral/disabled",
+          "id": "VariableID:8:58",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-field-text-neutral-disabled)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral/disabled"
+        },
+        {
+          "name": "input/focus-offset",
+          "id": "VariableID:8:74",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-focus-offset)",
+          "scopes": [],
+          "alias": "space/2xs"
+        },
+        {
+          "name": "input/gap/icon",
+          "id": "VariableID:8:80",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-gap-icon)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/sm"
+        },
+        {
+          "name": "input/gap/stack",
+          "id": "VariableID:8:79",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-gap-stack)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/xs"
+        },
+        {
+          "name": "input/icon/neutral/disabled",
+          "id": "VariableID:8:48",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-icon-neutral-disabled)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/neutral/disabled"
+        },
+        {
+          "name": "input/icon/neutral/subtle",
+          "id": "VariableID:8:47",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-icon-neutral-subtle-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/neutral/subtle"
+        },
+        {
+          "name": "input/label/font-size",
+          "id": "VariableID:8:54",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-label-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/label/font-size"
+        },
+        {
+          "name": "input/label/font-weight",
+          "id": "VariableID:8:56",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-label-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/label/font-weight"
+        },
+        {
+          "name": "input/label/line-height",
+          "id": "VariableID:8:55",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-label-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/label/line-height"
+        },
+        {
+          "name": "input/label/text/neutral",
+          "id": "VariableID:8:53",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-label-text-neutral-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral"
+        },
+        {
+          "name": "input/message/font-size",
+          "id": "VariableID:8:69",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-message-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/label/font-size"
+        },
+        {
+          "name": "input/message/font-weight",
+          "id": "VariableID:8:71",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-message-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/body/font-weight"
+        },
+        {
+          "name": "input/message/line-height",
+          "id": "VariableID:8:70",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-message-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/label/line-height"
+        },
+        {
+          "name": "input/message/text/error",
+          "id": "VariableID:8:68",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-message-text-error-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/error"
+        },
+        {
+          "name": "input/message/text/neutral/subtle",
+          "id": "VariableID:8:67",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-message-text-neutral-subtle-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral/subtle"
+        },
+        {
+          "name": "input/padding-x/lg",
+          "id": "VariableID:8:78",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-padding-x-lg)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/lg"
+        },
+        {
+          "name": "input/padding-x/md",
+          "id": "VariableID:8:77",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-padding-x-md)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/md"
+        },
+        {
+          "name": "input/padding-x/sm",
+          "id": "VariableID:8:76",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-padding-x-sm)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/md"
+        },
+        {
+          "name": "input/placeholder/text/neutral/subtle",
+          "id": "VariableID:8:66",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-input-placeholder-text-neutral-subtle-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral/subtle"
+        },
+        {
+          "name": "input/radius",
+          "id": "VariableID:8:75",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-input-radius)",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "alias": "radius/md"
+        },
+        {
+          "name": "textarea/background/neutral",
+          "id": "VariableID:8:136",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-textarea-background-neutral-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral"
+        },
+        {
+          "name": "textarea/background/neutral/disabled",
+          "id": "VariableID:8:137",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-textarea-background-neutral-disabled)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral/disabled"
+        },
+        {
+          "name": "textarea/border-width",
+          "id": "VariableID:8:161",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-border-width-default)",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "alias": "border-width"
+        },
+        {
+          "name": "textarea/border-width/focus",
+          "id": "VariableID:8:162",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-border-width-focus)",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "alias": "border-width/focus"
+        },
+        {
+          "name": "textarea/border/error",
+          "id": "VariableID:8:139",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-textarea-border-error-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/error"
+        },
+        {
+          "name": "textarea/border/focus",
+          "id": "VariableID:8:140",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-textarea-border-focus)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/focus"
+        },
+        {
+          "name": "textarea/border/focus-outer",
+          "id": "VariableID:8:141",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-textarea-border-focus-outer)",
+          "scopes": [
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/focus-outer"
+        },
+        {
+          "name": "textarea/border/neutral/strong",
+          "id": "VariableID:8:138",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-textarea-border-neutral-strong-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/neutral/strong"
+        },
+        {
+          "name": "textarea/field/font-size/lg",
+          "id": "VariableID:8:150",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-field-font-size-lg)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/body/font-size"
+        },
+        {
+          "name": "textarea/field/font-size/md",
+          "id": "VariableID:8:149",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-field-font-size-md)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/body/font-size"
+        },
+        {
+          "name": "textarea/field/font-size/sm",
+          "id": "VariableID:8:148",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-field-font-size-sm)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/label/font-size"
+        },
+        {
+          "name": "textarea/field/font-weight",
+          "id": "VariableID:8:154",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-field-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/body/font-weight"
+        },
+        {
+          "name": "textarea/field/line-height/lg",
+          "id": "VariableID:8:153",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-field-line-height-lg)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/body/line-height"
+        },
+        {
+          "name": "textarea/field/line-height/md",
+          "id": "VariableID:8:152",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-field-line-height-md)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/body/line-height"
+        },
+        {
+          "name": "textarea/field/line-height/sm",
+          "id": "VariableID:8:151",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-field-line-height-sm)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/label/line-height"
+        },
+        {
+          "name": "textarea/field/text/neutral",
+          "id": "VariableID:8:146",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-textarea-field-text-neutral-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral"
+        },
+        {
+          "name": "textarea/field/text/neutral/disabled",
+          "id": "VariableID:8:147",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-textarea-field-text-neutral-disabled)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral/disabled"
+        },
+        {
+          "name": "textarea/focus-offset",
+          "id": "VariableID:8:163",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-focus-offset)",
+          "scopes": [],
+          "alias": "space/2xs"
+        },
+        {
+          "name": "textarea/gap/stack",
+          "id": "VariableID:8:171",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-gap-stack)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/xs"
+        },
+        {
+          "name": "textarea/label/font-size",
+          "id": "VariableID:8:143",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-label-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/label/font-size"
+        },
+        {
+          "name": "textarea/label/font-weight",
+          "id": "VariableID:8:145",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-label-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/label/font-weight"
+        },
+        {
+          "name": "textarea/label/line-height",
+          "id": "VariableID:8:144",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-label-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/label/line-height"
+        },
+        {
+          "name": "textarea/label/text/neutral",
+          "id": "VariableID:8:142",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-textarea-label-text-neutral-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral"
+        },
+        {
+          "name": "textarea/message/font-size",
+          "id": "VariableID:8:158",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-message-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/label/font-size"
+        },
+        {
+          "name": "textarea/message/font-weight",
+          "id": "VariableID:8:160",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-message-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/body/font-weight"
+        },
+        {
+          "name": "textarea/message/line-height",
+          "id": "VariableID:8:159",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-message-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/label/line-height"
+        },
+        {
+          "name": "textarea/message/text/error",
+          "id": "VariableID:8:157",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-textarea-message-text-error-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/error"
+        },
+        {
+          "name": "textarea/message/text/neutral/subtle",
+          "id": "VariableID:8:156",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-textarea-message-text-neutral-subtle-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral/subtle"
+        },
+        {
+          "name": "textarea/padding-x/lg",
+          "id": "VariableID:8:167",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-padding-x-lg)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/lg"
+        },
+        {
+          "name": "textarea/padding-x/md",
+          "id": "VariableID:8:166",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-padding-x-md)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/md"
+        },
+        {
+          "name": "textarea/padding-x/sm",
+          "id": "VariableID:8:165",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-padding-x-sm)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/md"
+        },
+        {
+          "name": "textarea/padding-y/lg",
+          "id": "VariableID:8:170",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-padding-y-lg)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/md"
+        },
+        {
+          "name": "textarea/padding-y/md",
+          "id": "VariableID:8:169",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-padding-y-md)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/sm"
+        },
+        {
+          "name": "textarea/padding-y/sm",
+          "id": "VariableID:8:168",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-padding-y-sm)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/xs"
+        },
+        {
+          "name": "textarea/placeholder/text/neutral/subtle",
+          "id": "VariableID:8:155",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-textarea-placeholder-text-neutral-subtle-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral/subtle"
+        },
+        {
+          "name": "textarea/radius",
+          "id": "VariableID:8:164",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-textarea-radius)",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "alias": "radius/md"
+        },
+        {
+          "name": "toast/background/neutral",
+          "id": "VariableID:8:187",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-toast-background-neutral-default)",
+          "scopes": [
+            "FRAME_FILL",
+            "SHAPE_FILL"
+          ],
+          "alias": "color/background/neutral"
+        },
+        {
+          "name": "toast/border-width",
+          "id": "VariableID:8:200",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-toast-border-width-default)",
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "alias": "border-width"
+        },
+        {
+          "name": "toast/border/error",
+          "id": "VariableID:8:191",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-toast-border-error-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/error"
+        },
+        {
+          "name": "toast/border/info",
+          "id": "VariableID:8:188",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-toast-border-info-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/info"
+        },
+        {
+          "name": "toast/border/success",
+          "id": "VariableID:8:189",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-toast-border-success-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/success"
+        },
+        {
+          "name": "toast/border/warning",
+          "id": "VariableID:8:190",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-toast-border-warning-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/border/warning"
+        },
+        {
+          "name": "toast/font-size",
+          "id": "VariableID:8:197",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-toast-font-size)",
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "alias": "typography/body/font-size"
+        },
+        {
+          "name": "toast/font-weight",
+          "id": "VariableID:8:199",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-toast-font-weight)",
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "alias": "typography/body/font-weight"
+        },
+        {
+          "name": "toast/gap/icon",
+          "id": "VariableID:8:203",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-toast-gap-icon)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/sm"
+        },
+        {
+          "name": "toast/icon/error",
+          "id": "VariableID:8:195",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-toast-icon-error-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/error"
+        },
+        {
+          "name": "toast/icon/info",
+          "id": "VariableID:8:192",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-toast-icon-info-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/info"
+        },
+        {
+          "name": "toast/icon/success",
+          "id": "VariableID:8:193",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-toast-icon-success-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/success"
+        },
+        {
+          "name": "toast/icon/warning",
+          "id": "VariableID:8:194",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-toast-icon-warning-default)",
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "alias": "color/icon/warning"
+        },
+        {
+          "name": "toast/line-height",
+          "id": "VariableID:8:198",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-toast-line-height)",
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "alias": "typography/body/line-height"
+        },
+        {
+          "name": "toast/padding",
+          "id": "VariableID:8:202",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-toast-padding)",
+          "scopes": [
+            "GAP"
+          ],
+          "alias": "space/md"
+        },
+        {
+          "name": "toast/radius",
+          "id": "VariableID:8:201",
+          "type": "FLOAT",
+          "codeSyntax": "var(--component-toast-radius)",
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "alias": "radius/md"
+        },
+        {
+          "name": "toast/text/neutral",
+          "id": "VariableID:8:196",
+          "type": "COLOR",
+          "codeSyntax": "var(--component-toast-text-neutral-default)",
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "alias": "color/text/neutral"
+        }
+      ]
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "typography/display",
+      "id": "S:513d2dcf6ea6f14d3b79062dea5e1104e2f2789a,"
+    },
+    {
+      "name": "typography/heading",
+      "id": "S:f6c011e0b0667749cdf2a5f60d5bfd00d02145d2,"
+    },
+    {
+      "name": "typography/title",
+      "id": "S:4ea13f98a0c2cdb54c5b3db0f35f7b878f1dd6e0,"
+    },
+    {
+      "name": "typography/body",
+      "id": "S:e4102442afa0d3ef2c3f9bac940618dd7fc1b1ae,"
+    },
+    {
+      "name": "typography/label",
+      "id": "S:6eee8b48020f00dd7fa1724e59c2575c6dab1bd4,"
+    },
+    {
+      "name": "typography/caption",
+      "id": "S:93a5aa4a6aaf9760dba8b19178871f96bada8397,"
+    }
+  ],
+  "effectStyles": [
+    {
+      "name": "elevation/sm",
+      "id": "S:207e2a70d3001aea4b08e774abb97cfa3a31283d,"
+    },
+    {
+      "name": "elevation/md",
+      "id": "S:30efba0a4e876720d49c0ce551c4e73392ec4c6a,"
+    },
+    {
+      "name": "elevation/lg",
+      "id": "S:63ebf39e7132e4ea7a95fdc9f29ae93a6c4f536e,"
+    }
+  ]
+}
