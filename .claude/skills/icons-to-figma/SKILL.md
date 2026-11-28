@@ -1,6 +1,6 @@
 ---
 name: icons-to-figma
-description: Lleva a la página Icons de Figma los iconos de Tabler Icons que usan los componentes de src/components, como componentes de 24 × 24 px. Úsala cuando pidan pasar o actualizar los iconos en Figma, cuando un componente empiece a usar un icono nuevo, o antes de components-to-figma. No pasa tokens ni componentes.
+description: Lleva a la página Icons de Figma los iconos de Tabler Icons que usan los componentes de src/components, y los de sus historias que pida components-to-figma, como componentes de 24 × 24 px. Úsala cuando pidan pasar o actualizar los iconos en Figma, cuando un componente empiece a usar un icono nuevo, o antes de components-to-figma. No pasa tokens ni componentes.
 ---
 
 # Iconos a Figma
@@ -9,7 +9,7 @@ Archivo de destino: <https://www.figma.com/design/AnNYIBhMWsMimOzOKaTrEx/Lumine-
 
 ## Alcance
 
-Pasa a Figma los iconos que usan los componentes, no toda la librería, y solo en versión outline: nunca los filled.
+Pasa a Figma los iconos que usan los componentes, no toda la librería, y solo en versión outline: nunca los filled. Además, los que `components-to-figma` pida porque una propiedad de un componente en Figma toma su icono de una historia.
 
 Se usa antes de `components-to-figma`. Requisito: `tokens-to-figma` ya ejecutada. Los tokens los pasa `tokens-to-figma` y los componentes, `components-to-figma`.
 
@@ -17,7 +17,9 @@ Los iconos que sobren en Figma se avisan y no se borran sin que una persona lo a
 
 ## Archivos que lee
 
-- `src/components/*.tsx`: qué iconos importan de `@tabler/icons-react`. Solo los componentes: no cuentan `*.stories.tsx` ni `*.test.tsx`. No cuentan las importaciones de tipos (`type Icon`). Con un nombre cambiado (`IconX as Close`) vale el original.
+- `figma/components.json`, si existe: los iconos anotados en `icons` también se usan.
+- Las historias de un componente, solo para los iconos que `components-to-figma` pida mientras lo pasa.
+- `src/components/*.tsx`: qué iconos importan de `@tabler/icons-react`. De aquí salen solo los de los componentes: no cuentan `*.stories.tsx` ni `*.test.tsx`. No cuentan las importaciones de tipos (`type Icon`). Con un nombre cambiado (`IconX as Close`) vale el original.
 - `node_modules/@tabler/icons-react/dist/esm/icons/<Nombre>.mjs`: el dibujo de cada icono, en `__iconNode`. Si falta la carpeta, `npm ci`.
 - `node_modules/@tabler/icons-react/dist/esm/defaultAttributes.mjs`: lo común a todos (lienzo de 24 × 24, sin relleno, trazo de 2 y extremos y uniones redondos).
 
@@ -94,4 +96,4 @@ Se comprueba leyendo Figma después de escribir.
 - [ ] El grosor está enlazado a la variable `border-width/strong` y el color al token `color.icon.neutral`.
 - [ ] La descripción tiene el nombre completo y el trazo.
 - [ ] No hay ningún duplicado.
-- [ ] En la página están solo los iconos que usan los componentes; si sobra alguno, se avisó.
+- [ ] En la página están solo los iconos que usan los componentes, los anotados en `figma/components.json` y los que se acaban de pedir; si sobra alguno, se avisó.
